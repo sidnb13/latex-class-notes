@@ -1,0 +1,80 @@
+\subsection{Rank and independence}
+
+If $\{\vec{v}_1,\vec{v}_2,\cdots ,\vec{v}_m\}$ is a collection if independent vectors then
+
+\[
+\left(\begin{array}{ccccc}
+\mid & \mid & \mid & & \mid \\
+\vec{v}_{1} & \bar{v}_{2} & \bar{v}_{3} & \ldots & \bar{v}_{m} \\
+\mid & \mid & \mid & & \mid
+\end{array}\right)
+\]
+
+must have a rank of $m$. This is because row reducing the matrix corresponds to the following relation:
+
+\[c_1\vec{v}_1+c_2\vec{v}_2+c_3\vec{v}_3+\dots +c_m\vec{v}_m=\vec{0}\]
+
+\noindent
+Also, $m\leq n$ where $n$ is the number of rows in each column vector, in order to have linear independence for this set.
+
+\subsection{Dimension}
+
+Considering an $xy$-plane in $\R^3$:
+
+\[V=\left\{\begin{pmatrix}s\\t\\0\\ \end{pmatrix}\Bigg| s,t \in \mathbb{R} \right\}\]
+
+The basis of this set contains 2 vectors (e.g. dimension of 2), with example being:
+
+\[\mathfrak{B}=\left\{\begin{pmatrix}1\\0\\0 \end{pmatrix} , \begin{pmatrix} 0\\1\\0 \end{pmatrix} \right\}\]
+
+\begin{framed}
+    If $V$ is a subspace of $\R^n$ and $\mathfrak{B}$ and $\mathfrak{C}$ are two bases of $V$, then
+    $\mathfrak{B}$ and $\mathfrak{C}$ contain the same number of vectors.
+\end{framed}
+
+\textbf{Dimension} of a subspace is number of vectors in the basis.
+
+\subsubsection{Example}
+
+Considering the following matrix:
+
+\[A=\begin{pmatrix}
+    1&2&0&1&2\\
+    1&2&0&2&3\\
+    1&2&0&3&4\\
+    1&2&0&4&5\\
+    \end{pmatrix}\]
+
+By discounting the redundant vectors, a possible basis for $\mathrm{Im}(A)$:
+
+\[\mathfrak{B}_\mathrm{image}=\left \{\begin{pmatrix} 1\\1\\1\\1 \end{pmatrix},\begin{pmatrix}1\\2\\3\\4 \end{pmatrix} \right\}\]
+
+So the dimension of $\mathrm{Im}(A)$ is 2.
+Finding a basis for $\mathrm{ker}(A)$ is the same as solving $A\vec{x}=\vec{0}$:
+
+\[\mbox{ker}(A)=\left\{\begin{pmatrix}-2s-w\\ s\\t\\-w\\w \end{pmatrix} \Bigg| s,t,w\in\mathbb{R} \right\}=
+\left\{s\begin{pmatrix}-2\\1\\0\\0\\0\\\end{pmatrix}+t\begin{pmatrix}0\\0\\1\\0\\0\\\end{pmatrix}+w\begin{pmatrix}-1\\0\\0\\-1\\1\\\end{pmatrix}\Bigg|s,t,w\in\mathbb{R}\right\}\]
+
+So the basis for $\mathrm{ker}(A)$:
+
+\[\mathfrak{B}_\mathrm{kernel}=\left\{\begin{pmatrix}-2\\1\\0\\0\\0\\ \end{pmatrix}, \begin{pmatrix} 0\\0\\1\\0\\0\\ \end{pmatrix}, \begin{pmatrix}-1\\0\\0\\-1\\1\\ \end{pmatrix} \right\}\]
+
+And dimension of $\mathrm{ker}(A)$ is 3.
+However, it is shown that $\mathrm{rref}(A)$ gives dimension of \textbf{image and kernel}.
+
+\subsection{Rank-Nullity Theorem}
+
+\begin{framed}
+    \begin{itemize}
+        \item If $T$ is a linear transformation, 
+        then \\$\mathrm{dim}(\mathrm{Im}(T))+\mathrm{dim}(\mathrm{ker}(T))=\text{dimension of domain of }T$
+        \item If $A$ is a matrix, then $\mathrm{rank}(A)+\mathrm{nullity}(A)=\text{number of columns of }A$
+        \item In a linear system, 
+        \\$\text{number of leading variables}+\text{number of free variables}=\text{total number of variables}$
+    \end{itemize}
+\end{framed}
+
+Considering non-invertible matrices $A$ and $B$, let $AB$ be invertible.
+It must hold true that $\mathrm{ker}(B)=\{\vec{0}\}$. If the dimensions of $B$ are $p\times n$,
+$\mathrm{Im}(B)$ is a subspace of $\R^p$ has dimension $n$. This means that it is a vertically rectangular
+matrix with $n\leq p$. Thus, $A$ is $n\times p$ so it is horizontally rectangular.

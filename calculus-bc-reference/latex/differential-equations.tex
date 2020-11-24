@@ -1,0 +1,56 @@
+\subsection{Separation of Variables}\label{subsec:separation-of-variables}
+
+\href{https://ocw.mit.edu/courses/mathematics/18-03sc-differential-equations-fall-2011/unit-i-first-order-differential-equations/basic-de-and-separable-equations/MIT18_03SCF11_s1_2text.pdf}{MIT OCW Reference}
+
+\begin{gather*}
+    \frac{dy}{dx}=x(y-1)\\
+    \frac{dy}{y-1}=xdx\\
+    \ln{|y-1|}+C=\frac{x^2}{2}+C\\
+    |y-1|=e^Ce^{\frac{x^2}{2}} \Leftrightarrow |y-1|=Ce^{\frac{x^2}{2}}\\
+    y-1=\pm Ce^{\frac{x^2}{2}}\\
+    y=1+Ce^{\frac{x^2}{2}}\\
+\end{gather*}
+
+\subsection{Exponential growth}\label{subsec:exponential-growth}
+
+\[\frac{dP}{dt}=kP \Rightarrow P=P_0e^{kt}\]
+
+A negative growth constant $k$ represents decay and a positive one represents growth.
+For half life problems, one is solving for half (or any fraction or multiple) of the initial population.
+
+\begin{gather*}
+    \frac{1}{2}P_0=P_0e^{kt}\\
+    \frac{1}{2}=e^{kt} \Rightarrow t=\frac{\ln{\frac{1}{2}}}{k}\\
+\end{gather*}
+
+\subsection{Euler's Method}\label{subsec:euler's-method}
+
+When approximating a lower $x$-value than given, the procedure is still identical \textbf{but $\Delta{x}$ is negative}.
+
+\[y_{new}=y_{old}+\frac{dy}{dx}|_{(x_{old},y_{old})}\Delta{x}\]
+
+\subsection{Slope Fields}\label{subsec:slope-fields}
+
+A differential equation in the form $\frac{dy}{dx}=F(x,y)$, where the slopes 
+at each point in a 2D graph are plotted with line segments.
+The solution curves for a differential equation align with these segments,
+and the initial condition can be visualized.
+
+\subsection{Logistic Growth}\label{subsec:logistic-growth}
+
+Growth is limited by the carrying capacity $L$, which is found by setting the differential equation to 0
+since this is when the curve flattens and the carrying capacity is achieved.
+There is a positive growth constant $k$. $\lim_{t\to{\infty}}\frac{dP}{dt}=0$ always because 
+of the asymptote to $L$.
+However, $\frac{dP}{dt}$ \textbf{asymptotes to $0$} and is never exactly 0.
+
+\[\frac{dP}{dt}=kP(L-P)\]
+
+When derived, the population formula is as follows, with $A$ being a constant.
+
+\[P(t)=\frac{L}{1+Ae^{-kt}}\]
+
+The inflection point of the population (not growth) equation is when the population is growing the fastest.
+This occurs at the time $t$ when $P=\frac{L}{2}$.
+Furthermore, the carrying capacity of this population is given by
+$\lim_{t\to{\infty}}P(t)=L$, which is always true due to form of $P(t)$.

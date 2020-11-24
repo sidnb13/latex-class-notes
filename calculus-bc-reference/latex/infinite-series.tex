@@ -1,0 +1,68 @@
+\subsection{Fundamental Series}
+
+As listed below the harmonic series \ref{eq:1}, diverging due to P-series, and alternating series \ref{eq:2}, which converges according to AST.
+
+\begin{equation}\label{eq:1}
+    \sum_{n=1}^{\infty}\frac{1}{n}
+\end{equation}
+\begin{equation}\label{eq:2}
+    \sum_{n=1}^{\infty}\frac{(-1)^n}{n}
+\end{equation}
+
+\subsection{P-series test}
+
+A series in the form of $\sum_{n=1}^{\infty}\frac{1}{n^P}$.
+If $P\leq{1}$, the series diverges, if $P>1$, it converges.
+
+\subsection{n-th term test (divergence only)}
+
+If $\lim_{n\to{\infty}}|a_n|\neq{0}$, the series diverges, else if it is 0, it is \textbf{inconclusive}.
+But if a series diverges, \emph{it is not neccesarily due to the $n$-th term test}.
+
+\subsection{Geometric series}
+
+$\sum_{n=1}^{\infty}a_1r^{n-1}$ converges if and only if $|r|<1$.
+A power series is a form of a geometric one.
+
+\[\Rightarrow \sum_{n=1}^{\infty}a_1r^{n-1}=\frac{a_1}{1-r}\]
+
+\subsection{Ratio test}
+
+$\sum_{n=1}^{\infty}a_n$ converges if $\lim_{n\to{\infty}}|\frac{a_{n+1}}{a_n}|<1$.\\
+$\sum_{n=1}^{\infty}a_n$ diverges if $\lim_{n\to{\infty}}|\frac{a_{n+1}}{a_n}|>1$.\\
+The test if inconclusive is the result is 1.
+
+\subsection{Alternating series test}
+
+A decreasing alternating series, where $|a_{n+1}|<|a_n|$, converges if $\lim_{n\to{\infty}}a_n=0$.
+
+\subsection{Taylor/Maclaurin Series}
+
+\[\sum_{n=0}^{\infty}\frac{f^n(c)(x-c)^n}{n!}\]
+
+Since the coefficient of each term is the $n$-th derivative, if given a term $T$, the derivative can be found by setting $\frac{f^n(c)(x-c)^n}{n!}=T$ in order to get an expression.
+
+\bigskip A Maclaurin polynomial is a Taylor polynomial centered at $x=0$. Here are some common Maclaurin polynomial for function:
+\begin{itemize}
+    \item $\frac{1}{1-x}=1+x+x^2+x^3+\dots=\sum_{n=0}^{\infty}x^n$
+    \item $e^x=1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+\dots=\sum_{n=0}^{\infty}\frac{x^n}{n!}$
+    \item $\sin{x}=x-\frac{x^3}{3!}+\frac{x^5}{5!}-\frac{x^7}{7!}+\dots=\sum_{n=0}^{\infty}x^n$
+    \item $\cos{x}=1-\frac{x^2}{2!}+\frac{x^4}{4!}-\frac{x^6}{6!}+\dots=\sum_{n=0}^{\infty}x^n$
+    \item $\ln(1+x)=x-\frac{x^2}{2!}+\frac{x^3}{3!}-\frac{x^4}{4!}+\dots=\sum_{n=0}^{\infty}x^n$
+\end{itemize}
+
+\subsection{Trigonometric Identities}
+
+Pythagorean Identities
+\begin{itemize}
+    \item $\sin^2{x}+\cos^2{x}=1$
+    \item $\tan^2{x}+1=sec^2{x}$
+    \item $1+\cot^2{x}=\csc^2{x}$
+\end{itemize}\bigskip
+
+Double-Angle Identities
+\begin{itemize}
+    \item $\sin{2x}=2\sin{x}\cos{x}$
+    \item $\cos{2x}=\cos^2{x}-\sin^2{x}$
+    \item $\tan{2x}=\frac{2\tan{x}}{1-\tan^2{x}}$
+\end{itemize}

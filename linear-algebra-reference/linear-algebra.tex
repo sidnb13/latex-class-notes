@@ -1,0 +1,92 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{spalign}
+\usepackage{amsmath}
+\usepackage{framed}
+
+\newcommand{\R}{\mathbb{R}}
+
+\hbadness=99999
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\urlstyle{urlcolor=blue}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\setcounter{tocdepth}{2}
+
+\renewcommand{\contentsname}{Table of Contents}
+\title{Linear Algebra Reference}
+\author{Sidharth Baskaran}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+    \includegraphics[scale=0.3]{cover.png}
+\end{center}
+
+\tableofcontents
+\newpage
+% -------------------------------------
+
+\section{Row and Column Picture}
+\input{tex/1_row-col.tex}
+
+\section{Matrix Multiplication}
+\input{tex/2_multiplication.tex}
+
+\section{Factorization into A=LU}
+\input{tex/3_alu.tex}
+
+\section{Linear Transformations}
+\input{tex/4_linear-transformations.tex}
+
+\section{Inverse Matrices}
+\input{tex/5_inverses.tex}
+
+\section{Linear Transformations and Inverse Matrices}
+\input{tex/6_transformation-inverses.tex}
+
+\section{Linear Transformations in Geometry}
+\input{tex/7_transformations-geometry.tex}
+
+\section{Inverse of a Linear Transformation}
+\input{tex/8_inverse_lin_trans.tex}
+
+\section{The Matrix Product}
+\input{tex/9_matrix-product.tex}
+
+\section{Transposes, Permutations, Spaces}
+\input{tex/10_transposes-permutations.tex}
+
+\section{Image and Kernel}
+\input{tex/11_image-kernel.tex}
+
+\section{Subspaces and Basis}
+\input{tex/12_subspaces.tex}
+
+\section{Basis of a Kernel}
+\input{tex/13_basis-kernel.tex}
+
+\section{Dimension}
+\input{tex/14_dimension.tex}
+
+\section{Coordinates}
+\input{tex/15_coordinates.tex}
+
+\section{Determinants}
+\input{tex/16_determinants.tex}
+
+\section{Intro to Dynamical Systems}
+\input{tex/17_intro-dynamical-systems.tex}
+
+% -------------------------------------
+\end{document}

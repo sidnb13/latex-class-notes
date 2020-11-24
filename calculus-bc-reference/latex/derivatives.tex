@@ -1,0 +1,45 @@
+\subsection{Derivative Rules}\label{subsec:derivative-rules}
+
+\begin{enumerate}
+    \item Power Rule: $\frac{d}{dx}x^n=nx^{n-1}$
+    \item Product Rule: $\frac{d}{dx}f(x)g(x)=f'(x)g(x)+g'(x)f(x)$
+    \item Quotient Rule: $\frac{d}{dx}\frac{f(x)}{g(x)}=\frac{f'(x)g(x)-g'(x)f(x)}{(g(x))^2}$
+    \item Chain Rule: $\frac{d}{dx}f(g(x))=g'(x)f'(g(x))$
+    \item Logarithmic Derivatives
+    \begin{enumerate}
+        \item $\frac{d}{dx}\ln(f(x))=\frac{f'(x)}{f(x)}$
+        \item $\frac{d}{dx}\log_{a}(f(x))=\frac{f'(x)}{\ln{a}f(x)}$
+    \end{enumerate}
+    \item Trigonometric Derivatives
+    \begin{enumerate}
+        \item $\frac{d}{dx}\sin{x}=\cos{x}$
+        \item $\frac{d}{dx}\cos{x}=-\sin{x}$
+        \item $\frac{d}{dx}\tan{x}=\sec^2{x}$
+        \item $\frac{d}{dx}\cot{x}=-\csc^2{x}$
+        \item $\frac{d}{dx}\sec{x}=\sec{x}\tan{x}$
+        \item $\frac{d}{dx}\csc{x}=-\csc{x}\cot{x}$
+    \end{enumerate}
+    \item Inverse Trigonometric Derivatives
+    \begin{enumerate}
+        \item $\frac{d}{dx}\arcsin(f(x))=\frac{f'(x)}{\sqrt{1-(f(x))^2}}$
+        \item $\frac{d}{dx}\arccos(f(x))=\frac{-f'(x)}{\sqrt{1-(f(x))^2}}$
+        \item $\frac{d}{dx}\arctan(f(x))=\frac{f'(x)}{1+(f(x))^2}$
+        \item $\frac{d}{dx}\arccot(f(x))=\frac{-f'(x)}{1+(f(x))^2}$
+        \item $\frac{d}{dx}\arcsec(f(x))=\frac{f'(x)}{|f(x)|\sqrt{(f(x))^2-1}}$
+        \item $\frac{d}{dx}\arccsc(f(x))=\frac{-f'(x)}{|f(x)|\sqrt{(f(x))^2-1}}$
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{Example of logarithmic differentiation}
+
+\begin{center}
+    Take $\ln$ of both sides, differentiate, then get in terms of $f'(x)$ and simplify.
+\end{center}
+
+\begin{gather*}
+    f(x)=2^x\\
+    \ln(f(x))=x\ln(2)\\
+    \frac{f'(x)}{f(x)}=\ln{2}\\
+    f'(x)=\ln{2}\cdot f(x)\\
+    f'(x)=\ln{2}\cdot 2^x\\
+\end{gather*}

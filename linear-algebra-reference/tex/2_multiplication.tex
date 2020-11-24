@@ -1,0 +1,89 @@
+\subsection{Row and Column Swapping}
+
+Can define elementary row operations in the identity matrix.
+
+\subsubsection{Swapping rows}
+
+\[
+    \begin{bmatrix}
+        0&1\\
+        1&0
+    \end{bmatrix}
+    \begin{bmatrix}
+        a&b\\
+        c&d
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        c&d\\
+        a&b
+    \end{bmatrix}
+\]
+
+Modifier $B$ is always on \textbf{left}.
+
+\subsubsection{Swapping columns}
+
+\[
+    \begin{bmatrix}
+        a&b\\
+        c&d
+    \end{bmatrix}
+    \begin{bmatrix}
+        0&1\\
+        1&0
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        b&a\\
+        d&c
+    \end{bmatrix}
+\]
+
+Modifier $B$ is always on \textbf{right}.
+
+\subsection{Elimination steps}
+
+Performing elimination:
+
+\[E_{2,1}A+E_{3,2}A=(E_{2,1}E_{3,2})A=U\]
+
+Elimination algorithm:
+\begin{itemize}
+    \item $E_{2,1}$ is the pivot. Swap with $R_2$ if 0 (and $(2,1)$ is nonzero).
+    \item $E_{3,2}$ involves getting $(2,2)$ as a pivot assuming nonzero to get $(3,2)$ as 0
+    \item Result is invertible and non-singular, where $U$ is upper-triangular
+\end{itemize}
+
+Matrix multiplication is not necessarily commutative but always associative.
+
+\subsection{Matrix Multiplication Facts}
+
+If $A$ is an $m\times n$ matrix and $B$ is $n\times p$, then $AB=C$ must be $m\times p$.
+Standard method would be to take dot products by row and column. By column: Columns of $C$ are combinations of columns
+of $A$. By row: Rows of $C$ are combinations of rows of $B$.
+
+\subsection{Example (Row)}
+
+\[
+    \left[\begin{array}{ll}
+        2 & 7 \\
+        3 & 8 \\
+        4 & 9
+        \end{array}\right]\left[\begin{array}{ll}
+        1 & 6 \\
+        0 & 0
+        \end{array}\right]=\left[\begin{array}{l}
+        2 \\
+        3 \\
+        4
+        \end{array}\right]\left[\begin{array}{ll}
+        1 & 6
+        \end{array}\right]+\left[\begin{array}{l}
+        7 \\
+        8 \\
+        9
+        \end{array}\right]\left[\begin{array}{ll}
+        0 & 0
+    \end{array}\right]
+\]

@@ -1,0 +1,218 @@
+\subsection{In/Out Rates}\label{subsec:in/out-rates}
+
+When finding the \emph{total} quantity at a certain time (not specific to how much going in/out), the net rate is used.
+This is given by $R(t)-E(t)$ where $R(t)$ is the rate in and $E(t)$ is the rate out.
+Thus, the quantity at a certain time is 
+given by the following equation. 
+
+\[A(t_f)=A(t_i)+\int_{t_i}^{t_f}(R(t)-E(t))dt\]
+
+\subsection{Average Value and R.O.C of a Function}\label{subsec:average-value-and-r.o.c-of-a-function}
+
+Average value involves the antiderivative of $f$ while the average R.O.C involves $f$ itself.
+
+\begin{gather*}
+    f_{avg}=\frac{\int_{a}^{b}f(x)dx}{b-a}\\
+    A=\frac{f(b)-f(a)}{b-a}\\
+\end{gather*}
+
+Arclength of a function also is given from an integral and is found from the following (useful in perimeter problems).
+
+\[S=\int_{a}^{b}\sqrt{1+f'(x)^2}\:dx\]
+
+\subsection{Accumulation Functions}\label{subsec:accumulation-functions}
+
+Generally given in the following form as $F(x)$.
+The integral must use a different variable 
+$t$ as it is not dependent on $x$. $a$ is a constant representing the lower integral limit.
+
+\[F(x)=\int_{a}^{x}f(t)dt\]
+
+Differentiation is also applicable, with each progression a lower offset of a normal function's derivative, observable in the following expressions.
+
+\begin{gather*}
+    F'(x)=1\cdot{f(x)}-0=f(x)\\
+    F''(x)=f'(x)\\
+\end{gather*}
+
+\subsection{Area and Volume}\label{subsec:area-and-volume}
+
+\subsubsection{Area}
+
+Area with respect to a curve $f(x)$ and the $x$-axis is given by $\int_{a}^{b}f(x)dx$.
+If the curve from $a$ to $b$ is below 
+the $x$-axis, then it is negative in value, \textbf{but the area is not negative}.
+
+\bigskip\begin{tikzpicture}
+    \begin{axis}[
+        xmin=0,xmax=6.5,
+        ymin=0,ymax=25.5,
+        axis x line=middle,
+        axis y line=middle,
+        axis line style=<->,
+        xlabel={$x$},
+        ylabel={$f(x)$}
+        ]
+    \addplot[red,thick,smooth,name path=A] {x^2} node [pos=.85,above left,color=black] {$f(x)=x^2$};
+    \addplot[draw=none,name path=B] {0};
+    \addplot[gray,opacity=.2] fill between[of=A and B,soft clip={domain=2:4}]; 
+    \end{axis}
+\end{tikzpicture}\bigskip
+
+Area of two intersecting regions is given by $\int_{a}^{b}(f(x)-g(x))dx$.
+
+\bigskip\begin{tikzpicture}
+    \begin{axis}[
+        xmin=0,xmax=6.5,
+        ymin=0,ymax=25.5,
+        axis x line=middle,
+        axis y line=middle,
+        axis line style=<->,
+        xlabel={$x$},
+        ylabel={$f(x)$}
+        ]
+    \addplot[red,thick,smooth,name path=A] {x^2} node [pos=.85,above left,color=black] {$f(x)=x^2$};
+    \addplot[blue,thick,name path=B] {4*x} node [pos=.9,below right,color=black] {$g(x)=4x$};
+    \addplot[gray,opacity=.2] fill between[of=A and B,soft clip={domain=0:4}]; 
+    \end{axis}
+\end{tikzpicture}\bigskip
+
+Area of regions with multiple intersections is given by $\int_{a}^{b}|f(x)-g(x)|dx$, ignoring the central intersection point.
+
+\bigskip\begin{tikzpicture}
+    \begin{axis}[
+        xmin=0,xmax=4.5,
+        ymin=-2,ymax=2,
+        axis x line=middle,
+        axis y line=middle,
+        axis line style=<->,
+        xlabel={$x$},
+        ylabel={$f(x)$}
+        ]
+    \addplot[red,thick,smooth,name path=A] {sin(deg(x))} node [pos=.65,above right,color=black] {$f(x)=\sin{x}$};
+    \addplot[blue,thick,smooth,name path=B] {cos(deg(x))} node [pos=.8,below left,color=black] {$g(x)=\cos{x}$};
+    \addplot[gray,opacity=.2] fill between[of=A and B,soft clip={domain=0:4}]; 
+    \end{axis}
+\end{tikzpicture}\bigskip
+
+$dy$ integration is similar to normal integration, but uses the $y$-axis for reference.
+The following example uses $f(y)=sin(y)$ and $g(y)=cos(y)$, with the integral being $\int_{0}^{\pi/4}(g(y)-f(y))\:dy$.
+
+\subsection{Volume around horizontal axes}\label{subsec:volume-around-horizontal-axes}
+
+Given that $f(x)\geq{g(x)}\;\forall{x} \in [a,b]$, the integral is as follows for the region $R$ revolved around $x=0$.
+
+\[V_x=\pi \int_{a}^{b}(f(x)^2-g(x)^2)\:dx\]
+
+\bigskip\begin{tikzpicture}
+    \begin{axis}[
+        xmin=0,xmax=6.5,
+        ymin=0,ymax=25.5,
+        axis x line=middle,
+        axis y line=middle,
+        axis line style=<->,
+        xlabel={$x$},
+        ylabel={$f(x)$}
+        ]
+    \addplot[red,thick,smooth,name path=A] {x^2+5} node [pos=.85,above left,color=black] {$f(x)=4x$};
+    \addplot[blue,thick,name path=B] {4*x+5} node [pos=.9,below right,color=black] {$g(x)=x^2$};
+    \addplot[gray,opacity=.2] fill between[of=A and B,soft clip={domain=0:4}]; 
+    \node[label={180:{$R$}}] at (axis cs:2.5,11.5) {};
+    \end{axis}
+\end{tikzpicture}\bigskip
+
+For the same region $R$ revolving around $x=2$, the radius of rotation (washer space) is reduced, so 2 is subtracted.
+This would give the integral equation as the following.
+If $x=-2$, for instance, 2 would be added as it increases the washer radius.
+
+\[V_x=\pi \int_{0}^{4}((f(x)-2)^2-(g(x)-2)^2)\:dx\]
+
+\bigskip\begin{tikzpicture}
+    \begin{axis}[
+        xmin=0,xmax=6.5,
+        ymin=0,ymax=25.5,
+        axis x line=middle,
+        axis y line=middle,
+        axis line style=<->,
+        xlabel={$x$},
+        ylabel={$f(x)$}
+        ]
+    \addplot[red,thick,smooth,name path=A] {x^2+5} node [pos=.85,above left,color=black] {$f(x)=4x$};
+    \addplot[blue,thick,name path=B] {4*x+5} node [pos=.9,below right,color=black] {$g(x)=x^2$};
+    \addplot[gray,opacity=.2] fill between[of=A and B,soft clip={domain=0:4}]; 
+    \node[label={180:{$R$}}] at (axis cs:2.5,11.5) {};
+    \draw[dashed] (0,2) -- (7,2);
+    \end{axis}
+\end{tikzpicture}\bigskip
+
+\subsection{Volume around vertical axes}\label{subsec:volume-around-vertical-axes}
+
+\begin{tikzpicture}
+    \begin{axis}[
+        xmin=-3,xmax=6.5,
+        ymin=0,ymax=30,
+        axis x line=middle,
+        axis y line=middle,
+        axis line style=<->,
+        xlabel={$x$},
+        ylabel={$f(x)$}
+        ]
+    \addplot[red,thick,smooth,name path=A] {x^2+5} node [pos=.85,above left,color=black] {$f(x)=4x$};
+    \addplot[blue,thick,name path=B] {4*x+5} node [pos=.9,below right,color=black] {$g(x)=x^2$};
+    \addplot[gray,opacity=.2] fill between[of=A and B,soft clip={domain=0:4}]; 
+    \node[label={180:{$R$}}] at (axis cs:2.5,11) {};
+    \draw[dashed] (-2,0) -- (-2,30);
+    \end{axis}
+\end{tikzpicture}\bigskip
+
+Is given in the general form $V_y=2\pi \int_{a}^{b}(radius)(height)\:dx$.
+The height is the value of $f(x)$ and the radius is some value of $x$ since this is with respect to the $y$-axis.
+The preceding example is a rotation around $y=-2$, and the integral would be given by the following.
+
+\[V_y=2\pi \int_{0}^{4}(x+2)(f(x)-g(x))\:dx\]
+
+The procedure is the opposite when given a vertical axis on the other side of the graph in quadrant I, namely $x=7$.
+This is because the radius would be given by $7-x$ since that difference is the distance between each varying point and $x=7$.
+The formula would be the following.
+
+\[V_y=2\pi \int_{0}^{4}(7-x)(f(x)-g(x))\:dx\]
+
+\bigskip\begin{tikzpicture}
+    \begin{axis}[
+        xmin=0,xmax=7.5,
+        ymin=0,ymax=30,
+        axis x line=middle,
+        axis y line=middle,
+        axis line style=<->,
+        xlabel={$x$},
+        ylabel={$f(x)$}
+        ]
+    \addplot[red,thick,smooth,name path=A] {x^2+5} node [pos=.85,above left,color=black] {$f(x)=4x$};
+    \addplot[blue,thick,name path=B] {4*x+5} node [pos=.9,below right,color=black] {$g(x)=x^2$};
+    \addplot[gray,opacity=.2] fill between[of=A and B,soft clip={domain=0:4}]; 
+    \node[label={180:{$R$}}] at (axis cs:2.5,11.4) {};
+    \draw[dashed] (7,0) -- (7,30);
+    \end{axis}
+\end{tikzpicture}\bigskip
+
+Notably, the last two examples can also be computed using $dy$ integration in a similar way to horizontal axis-based solids. 
+However, the bottom function would become the top one and the limits would become the $y$-coordinates.
+They are below.
+Let $g(y)=\sqrt{y}$ and $f(y)=\frac{y}{4}$.
+
+\begin{gather*}
+    A_y=\pi \int_{5}^{21}((g(y)+2)^2-(f(y)+2)^2)dy\\
+    A_y=\pi \int_{5}^{21}((7-g(y))^2-(7-f(y))^2)dy\\
+\end{gather*}
+
+\subsection{Volume with known cross-sections}
+
+Let $s=f(x)-g(x)$ and $g(x)\leq{f(x)}\;\forall{x}\in{[a,b]}$.
+
+\begin{itemize}
+    \item Squares: $\int_{a}^{b}s^2dx$
+    \item Rectangles (with the length being $n$ times the width): $\int_{a}^{b}ns^2dx$
+    \item Equilateral triangles: $\int_{a}^{b}\frac{\sqrt{3}s^2}{4}dx$
+    \item Semi-circles: $\int_{a}^{b}\frac{1}{8}\pi s^2dx$
+    \item Right isosceles triangle: $\int_{a}^{b}\frac{1}{4}s^2dx$
+\end{itemize}
