@@ -1,0 +1,33 @@
+\subsection{Eigenspace}
+
+Kernel of a matrix always forms subspace of domain. If $\lambda$ is an eigenvalue for $A$,
+kernel of $A-\lambda I$ is the \textbf{eigenspace} associated with $\lambda$ and 
+this is denotes as $E_\lambda=\mathrm{ker}(A-\lambda I)$.
+
+If $A-\lambda I$ has column vectors $\vec{v}_1$ and $\vec{v}_2$, then 
+$E_\lambda=\mathrm{span}\left\{\begin{bmatrix}c_1\\c_2\end{bmatrix}\right\}$ where $c_1\vec{v}_1+c_2\vec{v}_2=\vec{0}$.
+
+\subsection{Multiplicity}
+
+Dimension of eigenspace $E_\lambda$ is \textbf{geometric multiplicity} of $\lambda$.
+Multiplicity of root $\lambda$ is \textbf{algebraic multiplicity} in characteristic polynomial $p_A(\lambda)$.
+Therefore, geometric multiplicity $\leq$ algebraic multiplicity, considering the case of $p_A(\lambda)=(\lambda-\lambda_0)^2$.
+
+Thus, this represents a $2\times 2$ matrix which fixes one line and moves every other line, known as a shear. All lines but $x$-axis move.
+Has characteristic polynomial $p_A(\lambda)=(\lambda-1)^2$, so $E_1=\mathrm{ker}\begin{bmatrix}0&k\\0&0\end{bmatrix}=\mathrm{span}\left\{\begin{bmatrix}1\\0\end{bmatrix}\right\}$.
+
+\subsection{Eigenbasis}
+
+Consists of the eigenvectors of the coefficient matrix. An $n\times n$ matrix needs $n$ linearly independent
+eigenvectors to have an eigenbasis. This means that if $A$ has eigenvectors $\lambda_1\neq\lambda_2$, then $E_{\lambda_1}\cap E_{\lambda_2}=\left\{\vec{0}\right\}$.
+This is because if some $\vec{v}\in E_{\lambda_1}$, then $A\vec{v}=\lambda_1\vec{v}$ and $A\vec{v}=\lambda_2\vec{v}$.
+Thus, $(\lambda_1-\lambda_2)\vec{v}=\vec{0}$, so $\vec{v}=\vec{0}$.
+
+\noindent
+Furthermore, if $E_{\lambda_1}$ has basis $\mathfrak{E}_{\lambda_1}$ and $E_{\lambda_2}$ with $\mathfrak{E}_{\lambda_2}$, $\mathfrak{E}_{\lambda_1}\cup \mathfrak{E}_{\lambda_2}$ is linearly independent as well 
+with the total elements being the sum of the number of elements in each individual basis.
+Can then be concluded that:
+
+$$
+\boxed{\text{An $n\times n$ matrix has eigenbasis iff sum of geometric multiplicities of eigenvalues is $n$.}}
+$$
