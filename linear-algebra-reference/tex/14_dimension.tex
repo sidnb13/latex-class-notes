@@ -21,11 +21,11 @@ Also, $m\leq n$ where $n$ is the number of rows in each column vector, in order 
 
 Considering an $xy$-plane in $\R^3$:
 
-\[V=\left\{\begin{pmatrix}s\\t\\0\\ \end{pmatrix}\Bigg| s,t \in \mathbb{R} \right\}\]
+\[V=\left\{\begin{bmatrix}s\\t\\0\\ \end{bmatrix}\Bigg| s,t \in \mathbb{R} \right\}\]
 
 The basis of this set contains 2 vectors (e.g. dimension of 2), with example being:
 
-\[\mathfrak{B}=\left\{\begin{pmatrix}1\\0\\0 \end{pmatrix} , \begin{pmatrix} 0\\1\\0 \end{pmatrix} \right\}\]
+\[\mathfrak{B}=\left\{\begin{bmatrix}1\\0\\0 \end{bmatrix} , \begin{bmatrix} 0\\1\\0 \end{bmatrix} \right\}\]
 
 \begin{framed}
     If $V$ is a subspace of $\R^n$ and $\mathfrak{B}$ and $\mathfrak{C}$ are two bases of $V$, then
@@ -38,26 +38,26 @@ The basis of this set contains 2 vectors (e.g. dimension of 2), with example bei
 
 Considering the following matrix:
 
-\[A=\begin{pmatrix}
+\[A=\begin{bmatrix}
     1&2&0&1&2\\
     1&2&0&2&3\\
     1&2&0&3&4\\
     1&2&0&4&5\\
-    \end{pmatrix}\]
+    \end{bmatrix}\]
 
 By discounting the redundant vectors, a possible basis for $\mathrm{Im}(A)$:
 
-\[\mathfrak{B}_\mathrm{image}=\left \{\begin{pmatrix} 1\\1\\1\\1 \end{pmatrix},\begin{pmatrix}1\\2\\3\\4 \end{pmatrix} \right\}\]
+\[\mathfrak{B}_\mathrm{image}=\left \{\begin{bmatrix} 1\\1\\1\\1 \end{bmatrix},\begin{bmatrix}1\\2\\3\\4 \end{bmatrix} \right\}\]
 
 So the dimension of $\mathrm{Im}(A)$ is 2.
 Finding a basis for $\mathrm{ker}(A)$ is the same as solving $A\vec{x}=\vec{0}$:
 
-\[\mbox{ker}(A)=\left\{\begin{pmatrix}-2s-w\\ s\\t\\-w\\w \end{pmatrix} \Bigg| s,t,w\in\mathbb{R} \right\}=
-\left\{s\begin{pmatrix}-2\\1\\0\\0\\0\\\end{pmatrix}+t\begin{pmatrix}0\\0\\1\\0\\0\\\end{pmatrix}+w\begin{pmatrix}-1\\0\\0\\-1\\1\\\end{pmatrix}\Bigg|s,t,w\in\mathbb{R}\right\}\]
+\[\mbox{ker}(A)=\left\{\begin{bmatrix}-2s-w\\ s\\t\\-w\\w \end{bmatrix} \Bigg| s,t,w\in\mathbb{R} \right\}=
+\left\{s\begin{bmatrix}-2\\1\\0\\0\\0\\\end{bmatrix}+t\begin{bmatrix}0\\0\\1\\0\\0\\\end{bmatrix}+w\begin{bmatrix}-1\\0\\0\\-1\\1\\\end{bmatrix}\Bigg|s,t,w\in\mathbb{R}\right\}\]
 
 So the basis for $\mathrm{ker}(A)$:
 
-\[\mathfrak{B}_\mathrm{kernel}=\left\{\begin{pmatrix}-2\\1\\0\\0\\0\\ \end{pmatrix}, \begin{pmatrix} 0\\0\\1\\0\\0\\ \end{pmatrix}, \begin{pmatrix}-1\\0\\0\\-1\\1\\ \end{pmatrix} \right\}\]
+\[\mathfrak{B}_\mathrm{kernel}=\left\{\begin{bmatrix}-2\\1\\0\\0\\0\\ \end{bmatrix}, \begin{bmatrix} 0\\0\\1\\0\\0\\ \end{bmatrix}, \begin{bmatrix}-1\\0\\0\\-1\\1\\ \end{bmatrix} \right\}\]
 
 And dimension of $\mathrm{ker}(A)$ is 3.
 However, it is shown that $\mathrm{rref}(A)$ gives dimension of \textbf{image and kernel}.

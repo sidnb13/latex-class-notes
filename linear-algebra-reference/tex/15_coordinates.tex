@@ -2,9 +2,9 @@
 
 For example, the basis of $xy$ plane can be:
 
-\[\mathfrak{B}=\left\{\begin{pmatrix} 1\\1\\0\\ \end{pmatrix}, \begin{pmatrix}1\\-1\\0\\ \end{pmatrix}\right\}\]
+\[\mathfrak{B}=\left\{\begin{bmatrix} 1\\1\\0\\ \end{bmatrix}, \begin{bmatrix}1\\-1\\0\\ \end{bmatrix}\right\}\]
 
-To form $\begin{bmatrix}1\\ 0\\0\end{bmatrix}$ with this basis, can do $\begin{pmatrix} 1\\0\\0\\ \end{pmatrix}=\frac{1}{2}\begin{pmatrix} 1\\1\\0\\ \end{pmatrix}+\frac{1}{2}\begin{pmatrix}1\\-1\\0\\ \end{pmatrix}$.
+To form $\begin{bmatrix}1\\ 0\\0\end{bmatrix}$ with this basis, can do $\begin{bmatrix} 1\\0\\0\\ \end{bmatrix}=\frac{1}{2}\begin{bmatrix} 1\\1\\0\\ \end{bmatrix}+\frac{1}{2}\begin{bmatrix}1\\-1\\0\\ \end{bmatrix}$.
 The coefficients used form the following vector:
 
 \[\begin{bmatrix}\frac{1}{2}\\ \frac{1}{2}\end{bmatrix}\]
@@ -12,7 +12,7 @@ The coefficients used form the following vector:
 Known as \textbf{$\mathfrak{B}$-coordinate vector}.
 Notation:
 
-\[\left[\begin{pmatrix} 1 \\ 0 \\ 0 \end{pmatrix} \right]_\mathfrak{B}=\begin{pmatrix} \frac{1}{2} \\ \frac{1}{2} \\ \end{pmatrix} \]
+\[\left[\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \right]_\mathfrak{B}=\begin{bmatrix} \frac{1}{2} \\ \frac{1}{2} \\ \end{bmatrix} \]
 
 \begin{framed}
 \noindent
@@ -23,12 +23,12 @@ is linearly independent, then $[\vec{v}_i]_{\mathfrak{B}}=\vec{e}_i\in\R^m$.
 This is because row-reducing the matrix of $\mathfrak{B}$ gives $\mathrm{rref}(A)$ where $A$ is this matrix. Given the same
 $\mathfrak{B}$, can find the components of $\vec{w}$:
 
-\[\left[\vec w \right]_\mathfrak{B}=\begin{pmatrix}c_1\\c_2\\ \vdots\\ c_m\end{pmatrix}\]
+\[\left[\vec w \right]_\mathfrak{B}=\begin{bmatrix}c_1\\c_2\\ \vdots\\ c_m\end{bmatrix}\]
 \[\vec{w}=c_{1} \vec{v}_{1}+c_{2} \vec{v}_{2}+\cdots+c_{m} \vec{v}_{m}\]
 
 Thus,
 
-\[\vec w = \begin{pmatrix}|&|&\dots&|\\ \vec v_1 &\vec v_2 & \dots &\vec v_m\\  |&|&\dots&| \end{pmatrix}\begin{pmatrix}c_1\\c_2\\\vdots\\c_m\end{pmatrix}\]
+\[\vec w = \begin{bmatrix}|&|&\dots&|\\ \vec v_1 &\vec v_2 & \dots &\vec v_m\\  |&|&\dots&| \end{bmatrix}\begin{bmatrix}c_1\\c_2\\\vdots\\c_m\end{bmatrix}\]
 
 Matrix is called change of basis matrix $S$. A standard basis is given as $\vec{e}_1,\vec{e}_2,\cdots$. A nonstandard basis is not of this form.
 
