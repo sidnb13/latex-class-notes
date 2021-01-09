@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{spalign}
+\usepackage{amsmath}
+\usepackage{framed}
+
+\newcommand{\R}{\mathbb{R}}
+
+\hbadness=99999
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\urlstyle{urlcolor=blue}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+\setcounter{tocdepth}{2}
+
+\renewcommand{\contentsname}{Table of Contents}
+\title{Multivariable Calculus Reference}
+\author{Sidharth Baskaran}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+% -------------------------------------
+
+\section{Paths whose image curve is a circle}
+\input{tex/1-paths-circular-image-curve.tex}
+
+% -------------------------------------
+\end{document}

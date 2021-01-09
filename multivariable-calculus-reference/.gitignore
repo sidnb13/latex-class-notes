@@ -1,0 +1,4 @@
+output/*
+!output/*.pdf
+.DS_Store
+.vscode/
