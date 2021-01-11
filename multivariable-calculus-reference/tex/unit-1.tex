@@ -4,7 +4,8 @@
 
 Unit circle is set of points in $\R^2$ defined as $C=\{(x,y)\in\mathbb{R} ^2|x^2+y^2=1\}$. Ellipse is
 $C=\{(x,y)\in\mathbb{R} ^2|\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\}$
-Has standard parameterization of $\vec{c}(t)=\big(\cos(t),\sin(t)\big)$.\newline 
+Has standard parameterization of $\vec{c}(t)=\big(\cos(t),\sin(t)\big)$.
+When parameterizing, always start from $t=0$ reference unless otherwise given.\newline 
 
 \begin{center}
     \includegraphics[scale=0.3]{unit-circle.png}
@@ -21,12 +22,14 @@ Has standard parameterization of $\vec{c}(t)=\big(\cos(t),\sin(t)\big)$.\newline
 
 \subsection{Observations}
 
-\[\boxed{\vec{p}(t)=(a\cos (\pm nt) + x_0, b\sin (\pm nt) + y_0)}\]
+\[\boxed{\vec{p}(t)=(a\cos (\pm n(t \pm\theta)) + x_0, b\sin (\pm n(t \pm \theta)) + y_0)}\]
 
 If $-t$ for $t$, orientation is CW, CCW is $t$. If $a=b$, then curve is 
 a circle of radius $a$ or $b$, else an ellipse with horizontal and vertical radii.
 $x_0$ and $y_0$ simply shift the center coordinate. $n>0\in \R$ determines how many times
-the circle is traversed given $t\in[0,2\pi]$, for example.
+the circle is traversed given $t\in[0,2\pi]$, for example. $\theta$ is the phase shift.
+When changing direction of traversal, cannot have $a>b$ for $[a,b]$ so to decrease argument of $\sin$ or $\cos$
+must have $-t$ for $t$. Starting out, $-t$ goes through the angle range and $t$ is just a sign flip.
 
 \section{Paths whose image is a line or line segment in the plane}
 
@@ -89,3 +92,58 @@ direction vectors are parallel ($\vec{m_1}=k\vec{m}_2$). Collisions still exist.
 To determine skew, parallel, or coincide, use parameters $s,t$ for each line and solve SOE.
 If same slope, rule out skew clearly, then check if $s,t\in\R$: if not, then parallel, if so, then they coincide. If intersecting and want to check if collide, some $t$
 must satisfy all relations.
+
+\section{Cycloid Problem}
+
+\begin{center}
+    \includegraphics*[scale=0.9]{cycloid.png}
+\end{center}
+
+With radius 1 and passing through the origin:
+
+\[\vec{c}(t)=(t-\sin t, 1 - \cos t)\]
+
+Observe that:
+
+\[\vec{c}^\prime(t)=(1-\cos t, \sin t)\]
+
+Can define the vector $\vec{u}=\left(\begin{array}{c}x^{\prime}(t) \\0\end{array}\right)$
+such that $\vec{u}$ is always horizontal and $||\vec{u}||=|x^\prime(t)|$. Reaches maximum
+value at $t\in[k\pi|k\in\R]$ and is has minimum cusp where it is 0 at $t\in [2k\pi|k\in\R]$.
+Thus, $x^\prime(t)\geq 0$ always, as the x-coordinate is never decreasing. \newline
+
+\noindent
+Can also define the vector $\vec{v}=\left(\begin{array}{c}0 \\y^{\prime}(t)\end{array}\right)$
+with the same properties. Reaches maximum value when $t\in[k\frac{\pi}{2}|k\in\R]$.
+Can change, as observe $t$ when $\sin t < 0$ or $ >0 $.
+
+\section{Velocity Vector}
+
+Vector $\vec{u}(t_0)+\vec{v}(t_0)$ is he velocity vector to the curve $\vec{c}(t)$ at $t=t_0$.\newline
+
+\noindent
+Let $\vec{c}:\;[a,b]\rightarrow \R^n$ have a path $\vec{c}(t)=\left(x_{1}(t), x_{2}(t), x_{3}(t), \ldots, x_{n}(t)\right)$ (let $x_i(t):[a,b]\rightarrow \R$ for each $i$)
+\begin{itemize}
+    \item If $t_0\in[a,b]$, then $\vec{c}^{\prime}\left(t_{0}\right):=\left(x_{1}^{\prime}\left(t_{0}\right), x_{2}^{\prime}\left(t_{0}\right), x_{3}^{\prime}\left(t_{0}\right), \ldots, x_{n}^{\prime}\left(t_{0}\right)\right)$; the velocity vector to $\vec{c}$ at $t_0$
+    \item The path $\vec{c}^{\prime}\left(t_{0}\right):=\left(x_{1}^{\prime}\left(t_{0}\right), x_{2}^{\prime}\left(t_{0}\right), x_{3}^{\prime}\left(t_{0}\right), \ldots, x_{n}^{\prime}\left(t_{0}\right)\right)$; the velocity vector to $\vec{c}$ is referred to as velocity of $\vec{c}(t)$
+\end{itemize}
+
+Recall chain rule: if $y=f(x)$ where $x$ is a function of $t$, $y'(t)=x'f'(x)$, not to be confused with product rule.
+Can write $f'(x)=\frac{y'(t)}{x'(t)}$
+
+\begin{itemize}
+    \item If $\vec{p}(t)=\vec{c}(t)+\vec{r}(t),$ then $\vec{p}^{\prime}(t)=\vec{c}^{\prime}(t)+\vec{r}^{\prime}(t)$
+    \item If $g(t)=\vec{c}(t) \cdot \vec{r}(t),$ then $g^{\prime}(t)=\vec{c}^{\prime}(t) \cdot \vec{r}(t)+\vec{c}(t) \cdot \vec{r}^{\prime}(t)$
+    \item If $\vec{p}(t)=f(t) \vec{c}(t),$ then $\vec{p}^{\prime}(t)=f^{\prime}(t) \vec{c}(t)+f(t) \vec{c}^{\prime}(t)$
+    \item If $\vec{p}(t)=\vec{c}(t) \times \vec{r}(t),$ then $\vec{p}^{\prime}(t)=\vec{c}^{\prime}(t) \times \vec{r}(t)+\vec{c}(t) \times \vec{r}^{\prime}(t)$
+    \item If $\vec{p}(t)=\vec{c}(f(t)),$ then $\vec{p}^{\prime}(t)=f^{\prime}(t) \vec{c}^{\prime}(f(t))$
+    \item If $g(t)=\|\vec{c}(t)\|,$ then $g^{\prime}(t)=\frac{\vec{c}(t) \cdot \vec{c}^{\prime}(t)}{\|\vec{c}(t)\|}$
+\end{itemize}
+
+\section{Space Curves}
+
+\begin{itemize}
+    \item Projection into the $x y$ plane is the path $(x(t), y(t), 0)$.
+    \item Projection into the $x z-$ plane is the path $(x(t), 0, z(t))$.
+    \item Projection into the $y z$ plane is the path $(0, y(t), z(t))$.
+\end{itemize}
