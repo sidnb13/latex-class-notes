@@ -147,3 +147,74 @@ Can write $f'(x)=\frac{y'(t)}{x'(t)}$
     \item Projection into the $x z-$ plane is the path $(x(t), 0, z(t))$.
     \item Projection into the $y z$ plane is the path $(0, y(t), z(t))$.
 \end{itemize}
+
+\section{Speed and Arclength}
+
+\subsection{Speed}
+
+Speed of a parametric function in $\R^n$ is given by:
+
+$$||\vec{c}'(t)||=\sqrt{\displaystyle\sum_{i=1}^{n}c_i(t)^2}$$
+
+(being the magnitude of the velocity vector)
+
+\subsection{Arclength}
+
+Arclength of a parametric function is given by:
+
+\[S=\int_a^b ||\vec{c}'(t)||dt=\int_a^b\sqrt{(\frac{dx}{dt})^2+(\frac{dy}{dt})^2+(\frac{dz}{dt})^2+\cdots}\;dt\]
+
+Can approximate arclength as a sum of the lengths of secant vector approximations
+$\vec{s}_i=\vec{c}(t_i)-\vec{c}(t_{i-1})$:
+
+\[\mbox{arclength}\approx\sum_{i=1}^n||\vec{s}_i||\]
+
+According to the MVT, there exists a $\hat{t}_i$ in $(t_{i-1},t_i)$ (open interval due to differentiability requirement) such that:
+
+\begin{align*}
+    x'(\hat{t}_i)&=\frac{x(t_i)-x(t_{i-1})}{t_i-t_{i-1}}\\
+    y'(\hat{t}_i)&=\frac{y(t_i)-y(t_{i-1})}{t_i-t_{i-1}}
+\end{align*}
+
+This means that, since $\vec{s}_i$ is given as the difference between 2 points,
+being a secant:
+
+\begin{align*}
+    \vec{s}_i&=\left((t_i-t_{i-1})x(\hat{t}_i), (t_i-t_{i-1})y(\hat{t}_i)\right )\\
+    \vec{s}_i&=(t_i-t_{i-1})\left(x'(\hat{t}_i),y'(\hat{t}_i)\right)\\
+    \vec{s}_i&=(t_i-t_{i-1})\vec{c}\,'(\hat{t}_i)
+\end{align*}
+
+Thus,
+
+\begin{align*}
+    \mbox{arclength}&\approx\sum_{i=1}^n||\vec{s}_i||\\
+    \mbox{arclength}&\approx\sum_{i=1}^n||\Delta t \,\vec{c}\,'(\hat{t}_i)||\\
+    \mbox{arclength}&\approx\sum_{i=1}^n\Delta t||\vec{c}\,'(\hat{t}_i)||
+\end{align*}
+
+Can define the arclength differential as follows:
+
+\[\mathrm{d}s=\sqrt{\mathrm{d}x^2+\mathrm{d}y^2}\]
+
+Can just define arclength as $\text{arclength}=\int \mathrm{ds}$
+
+\subsection{Arclength Parameterization}
+
+Higher the speed of a curve, farther the points are spaced apart.
+An arclength parametrization of a curve is a path whose image is the desired curve and whose speed is constantly one.
+Or, $\vec{c}:[a,b]\to\mathbb{R}^n$ with $||\vec{c}\,'(t)||=1$ for $t\in[a,b]$.
+If a curve is not an arclength parameterization, then can do $\frac{\vec{c}(t)}{||\vec{c}'(t)||}$.\newline
+
+\noindent
+When speed is variable, is difficult to define arclength parameterization.
+Thus, can define displacement to be $s(t)=\int_a^b (t)dt$. If $v(t)!\neq 0$,
+then $s$ is injective because according to FTC, $s'(t)=v(t)$.
+By definition, $v'(t)\geq 0$ always since it is composed of a radical, so it must be \textbf{increasing}.
+Thus, if $t_1=t_2$, $s(t_1)\neq s(t_2)$.\newline
+
+\noindent
+This means that $s$ is invertible, so can solve for $t$ to get $t=\varphi(s)$.
+An arclength parameterization can be found by:
+
+\[\boxed{\vec{p}(s)=\vec{c}(\varphi(s))}\]
