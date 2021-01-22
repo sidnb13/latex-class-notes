@@ -119,6 +119,8 @@ Can change, as observe $t$ when $\sin t < 0$ or $ >0 $.
 
 \section{Velocity Vector}
 
+\subsection{Definitions}
+
 Vector $\vec{u}(t_0)+\vec{v}(t_0)$ is he velocity vector to the curve $\vec{c}(t)$ at $t=t_0$.\newline
 
 \noindent
@@ -139,6 +141,13 @@ Can write $f'(x)=\frac{y'(t)}{x'(t)}$
     \item If $\vec{p}(t)=\vec{c}(f(t)),$ then $\vec{p}^{\prime}(t)=f^{\prime}(t) \vec{c}^{\prime}(f(t))$
     \item If $g(t)=\|\vec{c}(t)\|,$ then $g^{\prime}(t)=\frac{\vec{c}(t) \cdot \vec{c}^{\prime}(t)}{\|\vec{c}(t)\|}$
 \end{itemize}
+
+\subsection{Tangent Line}
+
+Tangent line can be visualized as a base vector in standard position plus a velocity vector
+tangent to the tip which traces a shifted line in some interval. General formula with base vector $\vec{c}(t_0)$ and slope $\vec{c}'(t_0)$:
+
+\[\boxed{\ell(t)=\vec{c}(t_0)+(t-t_0)\vec{c}'(t_0)}\]
 
 \section{Space Curves}
 
@@ -211,10 +220,65 @@ When speed is variable, is difficult to define arclength parameterization.
 Thus, can define displacement to be $s(t)=\int_a^b (t)dt$. If $v(t)!\neq 0$,
 then $s$ is injective because according to FTC, $s'(t)=v(t)$.
 By definition, $v'(t)\geq 0$ always since it is composed of a radical, so it must be \textbf{increasing}.
-Thus, if $t_1=t_2$, $s(t_1)\neq s(t_2)$.\newline
+Thus, if $t_1=t_2$, $s(t_1)\neq s(t_2)$. Arclength parameterization:
+
+\[s(t)=\int_0^t||\vec{c}'(u)||du\]
 
 \noindent
 This means that $s$ is invertible, so can solve for $t$ to get $t=\varphi(s)$.
 An arclength parameterization can be found by:
 
 \[\boxed{\vec{p}(s)=\vec{c}(\varphi(s))}\]
+
+\section{Curvature}
+
+\section{Proofs}
+
+Recall that to make an arclength parameterization accumulate the magnitudes of infinitesimal velocity vectors:
+
+\[s(t)=\int_a^t ||\vec{r}'(u)||du\]
+
+Given some curve $\vec{r}(t)$, define an arclength parameterization by $\vec{r}(g(s))\rightarrow \vec{r}_1(s)$, so 
+$\vec{r}$ is defined in terms of $s$. The unit tangent vector $\vec{T}_1(s)$ is then $\frac{\vec{r}_1'(s)}{||\vec{r}_1'(s)||}=\vec{r}_1'(s)$.
+
+\begin{align*}
+    \vec{T}_1(s)&=\vec{r}_1'(s)\\
+    &=\frac{d}{ds}\vec{r}_1(s)\\
+    &=\frac{d}{ds}\vec{r}(g(s))\\
+    &=\vec{r}'(g(s))\cdot g'(s)=\vec{r}'(t)\cdot \frac{dt}{ds}\\
+    &=\frac{\vec{r}'(t)}{\frac{ds}{dt}}=\frac{\vec{r}'(t)}{||\vec{r}'(t)||}
+\end{align*}
+
+This means that $\vec{T}_1(s)=T(t)$
+
+Continuing, to find curvature $\kappa(t)$:
+
+\begin{align*}
+    \vec{T}_1'(s)&=\frac{d}{ds}\vec{T}(t)\\
+    &=\frac{d}{ds}\vec{T}(g(s))\\
+    &=\vec{T}'(t)\cdot \frac{dt}{ds}\\
+    &=\frac{\vec{T}'(t)}{\frac{ds}{dt}}\\
+    &=\frac{\vec{T}'(t)}{||\vec{r}'(t)||}\\
+\end{align*}
+
+Thus, $\boxed{\kappa(t)=\frac{\vec{T}'(t)||}{||\vec{r}'(t)||}}$
+
+\subsection{Definition}
+
+Given a curve $C$ parameterized with arclength by the path $\vec{c}:[a,b]\rightarrow \R^n$,
+curvature is defined as:
+
+\[\boxed{\kappa(s)=||\vec{T}'(s)||}\]
+
+where $\vec{c}'(s)\neq 0$ and $\vec{T}(s)=\frac{\vec{c}'(s)}{||\vec{c}'(s)||}$ (normalized slope vector).\newline
+
+A loose geometric interpretation is that a greater $\kappa(s)$ implies
+more curvature, that is, the curve is changing at a greater rate there.
+When $\vec{c}'(s)\neq 0$ is always true for a curve, it is \textbf{regular}.
+Is defined in terms of arclength parameterization so curvature
+is an intrinsic property of the curve independent of parameterization.\newline
+
+\noindent
+Formula for curvature at the point $\vec{c}(t)$:
+
+\[\boxed{\kappa(t)=\frac{||T'(t)||}{||\vec{c}\,'(t)||}=\frac{||\vec{c}\,'(t)\times \vec{c}\,''(t)||}{||\vec{c}\,'(t)||^3}}\]
