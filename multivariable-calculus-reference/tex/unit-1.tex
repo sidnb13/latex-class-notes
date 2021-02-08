@@ -117,6 +117,18 @@ Can also define the vector $\vec{v}=\left(\begin{array}{c}0 \\y^{\prime}(t)\end{
 with the same properties. Reaches maximum value when $t\in[k\frac{\pi}{2}|k\in\R]$.
 Can change, as observe $t$ when $\sin t < 0$ or $ >0 $.
 
+\subsection{Hypercycloid Derivation}
+
+\begin{center}
+    \includegraphics*[scale=0.5]{Screen Shot 2021-02-06 at 9.40.41 AM.png}
+\end{center}
+
+\subsection{Hypocycloid Derivation}
+
+\begin{center}
+    \includegraphics*[scale=0.6]{Screen Shot 2021-02-06 at 9.58.04 AM.png}
+\end{center}
+
 \section{Velocity Vector}
 
 \subsection{Definitions}
@@ -232,7 +244,7 @@ An arclength parameterization can be found by:
 
 \section{Curvature}
 
-\section{Proofs}
+\subsection{Proofs}
 
 Recall that to make an arclength parameterization accumulate the magnitudes of infinitesimal velocity vectors:
 
@@ -282,3 +294,86 @@ is an intrinsic property of the curve independent of parameterization.\newline
 Formula for curvature at the point $\vec{c}(t)$:
 
 \[\boxed{\kappa(t)=\frac{||T'(t)||}{||\vec{c}\,'(t)||}=\frac{||\vec{c}\,'(t)\times \vec{c}\,''(t)||}{||\vec{c}\,'(t)||^3}}\]
+
+\section{Motion in 3D space}
+
+Given a path $\vec{c}: \mathbb{R} \rightarrow \mathbb{R}^{3}$ with $\vec{c}(t)=(x(t), y(t), z(t)),$ then we have defined:
+\begin{itemize}
+    \item $\cdot \vec{v}(t)=\vec{c}^{\prime}(t)=\left(x^{\prime}(t), y^{\prime}(t), z^{\prime}(t)\right)$ is also path in $\mathbb{R}^{3}$ called the velocity of $\vec{c}$
+    \item $\vec{a}(t)=\vec{v}^{\prime}(t)=\vec{c}^{\prime \prime}(t)=\left(x^{\prime \prime}(t), y^{\prime \prime}(t), z^{\prime \prime}(t)\right)$ is also a path in $\mathbb{R}^{3}$ called the acceleration of $\vec{c}$
+    \item $v(t)=\|\vec{v}(t)\|=\left\|\vec{c}^{\prime}(t)\right\|$ is a scalar valued function on $\mathbb{R}$ (that's a fancy way of saying the domain and codomain of this function are both $\mathbb{R}$ ) called the speed of $\vec{c}$
+    \item $\vec{T}(t)=\frac{\vec{c}^{\prime}(t)}{v(t)}$ is also a path in $\mathbb{R}^{3}$ called the unit tangent to $\vec{c}$
+    \item $\kappa(t)=\frac{\vec{T}^{\prime}(t)}{v(t)}=\frac{\left\|\vec{c}^{\prime}(t) \times \vec{c}^{\prime \prime}(t)\right\|}{\left\|\vec{c}^{\prime}(t)\right\|^{3}}$ is a scalar valued function on $\mathbb{R}$ called the curvature of $\vec{c}$
+\end{itemize}
+
+Note that $\vec{T}\cdot \vec{T}=||\vec{v}||^2=1$.
+Computing the derivative, $\frac{\mathrm{d}}{\mathrm{d} t} \vec{T} \cdot \vec{T}=2 \vec{T} \cdot \vec{T}^{\prime}=0$
+This means that $\vec{T}\perp \vec{T}'$.\newline
+
+\noindent
+Define $\boxed{\vec{N}(t)=\frac{\vec{T}^{\prime}(t)}{\left\|\vec{T}^{\prime}(t)\right\|}}$ as
+the unit normal vector, which is the unit tangent to the unit tangent. From observation, $\vec{T}\perp \vec{N}$.
+Fact: the acceleration vector always lies in the plane spanned by $\vec{N}$ and $\vec{T}$.\newline
+
+\noindent
+Acceleration $\vec{a}(t)$ is thus split component-wise into $a_T$ from $\vec{T}$
+and $a_N$ from $\vec{N}$:
+
+\[\boxed{a_T=v'(t)=\frac{\vec{a(t)}\cdot \vec{v}(t)}{v(t)}}\]
+\[\boxed{a_N=\kappa(t)v(t)^2=\frac{||\vec{a}(t)\times \vec{v}(t)||}{v(t)}=\sqrt{\|\vec{a}(t)\|^{2}-\left|a_{T}\right|^{2}}}\]
+
+\section{Derivatives of parameterized curves}
+
+\subsection{Arclength parameterization derivation}
+
+Take the following function:
+
+\[\vec{r}(t)=\langle x(t),y(t) \rangle\]
+
+An arclength parameterization is achieved with the following computation:
+
+\[s=\int_0^t \sqrt{x'(u)^2+y'(u)^2}\;du\]
+
+Can say that $t=g(s)$, so the arclength parameterization, which is the path in terms of $s$:
+
+\[\vec{r}_1(s)=\langle x(g(s)),y(g(s))\rangle\]
+
+Taking the derivative by the chain rule:
+
+\begin{align*}
+    \vec{r}_1'(s)&=\langle x'(g(s))\cdot g'(s),y'(g(s))\cdot g'(s)\rangle \\
+    &=g'(s)\langle x'(t),y'(t) \rangle \\
+\end{align*}
+
+Note that $g'(s)=\frac{dt}{ds}=\frac{1}{\frac{ds}{dt}}=\frac{1}{||\vec{r}'(t)||}$ by taking the derivative of the integral for arclength:
+
+\[\vec{r}_1'(s)=\frac{1}{||\vec{r}'(t)||}\langle x'(t),y'(t) \rangle=\vec{T}(t)\]
+
+Following from this, $g'(s)=\frac{1}{||\vec{r}'(g(s))||}$ so $g''(s)=-\frac{1}{||\vec{r}'(g(s))||^2}\cdot g'(s)=-\frac{1}{||\vec{r}'(t)||^3}$
+
+\subsection{Orthogonal derivative and position vectors}
+
+Observe that $\vec{r}\cdot \vec{r}=||\vec{r}||^2$.
+Thus, $\frac{d}{dt}[\vec{r}\cdot \vec{r}]=2\vec{r}\cdot\vec{r}'=2||\vec{r}||||\vec{r}||'$.
+Rearranging: $\frac{\vec{r}\cdot \vec{r}}{||\vec{r}||}=||\vec{r}||'$.
+Means that magnitude of position vector has to be a constant value in order for it
+to be $\perp$ to derivative.
+
+\section{Planetary motion}
+
+\begin{itemize}
+    \item Law of ellipses -- orbit of planet is ellipse with sun as focus
+    \item Law of equal area in equal time -- position vector pointing from sun to planet sweeps out equal area in equal time (so speed must increase/decrease)
+\end{itemize}
+
+Can approximate the area swept in time by $\frac{dA}{dt}=\frac{1}{2}||\vec{r}(t)\times \vec{r}'(t)||=\frac{1}{2}||\vec{J}||$.
+The differential equation for each of Kepler's laws is: $\vec{r}''(t)=-\frac{k}{||\vec{r}(t)||^3}\vec{r}(t)$, so it is in the direction of $\vec{r}(t)$.
+Thus, differentiating $\frac{d\vec{J}}{dt}=\frac{d}{dt}(\vec{r}'(t)\times \vec{r}''(t))=0$.
+
+\subsection{Cross-product identities}
+
+Cross product identities:
+\begin{itemize}
+    \item $\boxed{\vec{u}\times(\vec{v}\times \vec{w})=(u\cdot w)\vec{v}-(\vec{u}\cdot \vec{v})\vec{w}}$
+    \item $\boxed{u\cdot(\vec{v}\times \vec{w})=v\cdot(\vec{w}\times \vec{u})=\vec{w}\cdot(\vec{u}\times \vec{v})}$
+\end{itemize}
