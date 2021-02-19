@@ -22,7 +22,7 @@ When parameterizing, always start from $t=0$ reference unless otherwise given.\n
 
 \subsection{Observations}
 
-\[\boxed{\vec{p}(t)=(a\cos (\pm n(t \pm\theta)) + x_0, b\sin (\pm n(t \pm \theta)) + y_0)}\]
+\[\boxed{\vec{p}(t)=(a\cos (\pm (nt \pm\theta)) + x_0, b\sin (\pm (nt \pm \theta)) + y_0)}\]
 
 If $-t$ for $t$, orientation is CW, CCW is $t$. If $a=b$, then curve is 
 a circle of radius $a$ or $b$, else an ellipse with horizontal and vertical radii.
@@ -376,4 +376,38 @@ Cross product identities:
 \begin{itemize}
     \item $\boxed{\vec{u}\times(\vec{v}\times \vec{w})=(u\cdot w)\vec{v}-(\vec{u}\cdot \vec{v})\vec{w}}$
     \item $\boxed{u\cdot(\vec{v}\times \vec{w})=v\cdot(\vec{w}\times \vec{u})=\vec{w}\cdot(\vec{u}\times \vec{v})}$
+\end{itemize}
+
+\section{Planes}
+
+If $(x,y,z)$ is a point on the plane, then given $\vec{P}_0=(x_0,y_0,z_0)$, $(x-x_0,y-y_0,z-z_0)$ is a vector on the plane perpendicular to $\vec{n}$, the
+normal vector. Thus, $(A,B,C)\cdot(x-x_0,y-y_0,z-z_0)=0$ where $A,B,C$ are vector coordinates of $\vec{n}$. With expansion:
+
+\begin{align*}
+    A(x-x_0)+B(y-y_0)+C(z-z_0)&=0\\
+    Ax+By+Cz=Ax_0+By_0+Cz_0&=0\\
+    Ax+By+Cz=\vec{n}\cdot \vec{P}_0
+\end{align*}
+
+Note that $(A,B,C)$ form coordinates of $\vec{n}$.
+
+To find a plane containing 3 points $\vec{v}_1,\vec{v}_2,\vec{v}_3$, compute, for example $\vec{c}_1=\vec{v}_3-\vec{v}_1$ and $\vec{c}_2=\vec{v}_2-\vec{v}_1$.
+This finds 2 vectors in the plane. Then compute $\vec{c}_1\times \vec{c}_2=\vec{n}$. \newline
+
+\noindent
+The trace of a plane is the intersection of a plane $\mathcal{P}$ with $xy$, $xz$, or $yz$ coordinate planes. Can be found by setting respective variable to 0.
+\subsection{Cross-product rules and identities}
+
+Overview
+\begin{itemize}
+    \item $||\vec{a}\times \vec{b}||=||\vec{a}||||\vec{b}||\sin\theta$
+    \item $\vec{a},\vec{b}\perp \vec{a}\times \vec{b}$
+\end{itemize}
+
+Algebraic
+\begin{itemize}
+    \item $\vec{a}\times \vec{b}=\vec{0}$
+    \item $\vec{a}\times \vec{b}=-\vec{b}\times \vec{a}$
+    \item Distributive properties hold -- preserve direction however
+    \item $(\alpha \vec{a})\times \vec{b}=\alpha(\vec{a}\times \vec{b})$
 \end{itemize}
