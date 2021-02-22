@@ -67,4 +67,49 @@ Linear functions in 2 variables are of the form $f(x,y)=mx+ny+r|m,n,r\in \R$.
 
 Can specify a contour interval for each $z=c$ value. Is a 2D representation of
 level curves of $f(x,y)$ at an interval. Going along level curve means change in altitude is
-0. Altitude has change of $\pm m$ (contour interval) when going up/down contour levels.\newline
+0. Altitude has change of $\pm m$ (contour interval) when going up/down contour levels. Average ROC is $\Delta \text{elevation}/\Delta \text{distance}$.
+Path of steepest ascent follows the shortest possible segment from one contour line to another and always points in steepest direction.
+
+\begin{center}
+    \includegraphics[scale=0.3]{steepest-ascent.png}
+\end{center}
+
+\section{Partial Derivatives}
+
+\subsection{Definition}
+
+If $f:\R^2\rightarrow \R$ is given by $f(x,y)=z$ abd $P_0=(a,b)$ is a point in the domain of $f$,
+then the partial derivative are:
+\begin{itemize}
+    \item If $h:\R\rightarrow \R$ by $h(t)=f(t,b)$, then partial derivative with respect to $x$ at $P_0$
+    is $h'(a)$ with following limit definition
+
+    \[\left.\frac{\partial f}{\partial x}\right|_{(a, b)}=f_{x}(a, b)=\lim _{h \rightarrow 0} \frac{f(x+h, b)-f(x, b)}{h}=\lim _{x \rightarrow a} \frac{f(x, b)-f(a, b)}{x-a}\]
+
+    \item If $g:\R\rightarrow \R$ by $g(t)=g(t,b)$ then partial derivative with respect to $y$ at $P_0$ is $g'(b)$ with following limit definition
+    
+    \[\left.\frac{\partial f}{\partial y}\right|_{(a, b)}=f_{y}(a, b)=\lim _{h \rightarrow 0} \frac{f(a, x+h)-f(a, b)}{h}=\lim _{y \rightarrow b} \frac{f(a, y)-f(a, b)}{y-b}\]
+
+\end{itemize}
+
+Can be thought of as the intersection of the plane shifted by $b$ with $f$, and the derivative of the resulting trace.
+
+\subsection{Linear approximation with planes}
+
+Let $z=f(x,y)$ be a scalar-valued function in $\R^2$ and $P_0=(a,b)$ be a point in domain of $f$. Can have 2 slope vectors representing partial derivatives:
+$(1,0,f_x(a,b))$ and $(0,1,f_y(a,b))$. Can find a linear approximation by finding set of points in plane spanned by these vectors passing through
+$(a,b,f(a,b))$.
+
+\[\vec{n}=(1,0,f_x(a,b))\times(0,1,f_y(a,b))=(-f_x(a,b),-f_y(a,b),1)\]
+
+Building the plane:
+
+\begin{align*}
+    (x-a, y-b, z-f(a, b)) \cdot \vec{n} &=0 \\
+    (x-a, y-b, z-f(a, b)) \cdot\left(-f_{x}(a, b),-f_{y}(a, b), 1\right) &=0 \\
+    -f_{x}(a, b)(x-a)-f_{y}(a, b)(y-b)+z-f(a, b) &=0
+\end{align*}
+
+Thus,
+
+\[z=f(a, b)+f_{x}(a, b)(x-a)+f_{y}(a, b)(y-b)\]
