@@ -142,8 +142,8 @@ Let $\vec{c}:\;[a,b]\rightarrow \R^n$ have a path $\vec{c}(t)=\left(x_{1}(t), x_
     \item The path $\vec{c}^{\prime}\left(t_{0}\right):=\left(x_{1}^{\prime}\left(t_{0}\right), x_{2}^{\prime}\left(t_{0}\right), x_{3}^{\prime}\left(t_{0}\right), \ldots, x_{n}^{\prime}\left(t_{0}\right)\right)$; the velocity vector to $\vec{c}$ is referred to as velocity of $\vec{c}(t)$
 \end{itemize}
 
-Recall chain rule: if $y=f(x)$ where $x$ is a function of $t$, $y'(t)=x'f'(x)$, not to be confused with product rule.
-Can write $f'(x)=\frac{y'(t)}{x'(t)}$
+Recall chain rule: if $y=f(x)$ where $x$ is a function of $t$, $y\,'(t)=x\,'f\,'(x)$, not to be confused with product rule.
+Can write $f\,'(x)=\frac{y\,'(t)}{x\,'(t)}$
 
 \begin{itemize}
     \item If $\vec{p}(t)=\vec{c}(t)+\vec{r}(t),$ then $\vec{p}^{\prime}(t)=\vec{c}^{\prime}(t)+\vec{r}^{\prime}(t)$
@@ -157,9 +157,9 @@ Can write $f'(x)=\frac{y'(t)}{x'(t)}$
 \subsection{Tangent Line}
 
 Tangent line can be visualized as a base vector in standard position plus a velocity vector
-tangent to the tip which traces a shifted line in some interval. General formula with base vector $\vec{c}(t_0)$ and slope $\vec{c}'(t_0)$:
+tangent to the tip which traces a shifted line in some interval. General formula with base vector $\vec{c}(t_0)$ and slope $\vec{c}\,'(t_0)$:
 
-\[\boxed{\ell(t)=\vec{c}(t_0)+(t-t_0)\vec{c}'(t_0)}\]
+\[\boxed{\ell(t)=\vec{c}(t_0)+(t-t_0)\vec{c}\,'(t_0)}\]
 
 \section{Space Curves}
 
@@ -175,7 +175,7 @@ tangent to the tip which traces a shifted line in some interval. General formula
 
 Speed of a parametric function in $\R^n$ is given by:
 
-$$||\vec{c}'(t)||=\sqrt{\displaystyle\sum_{i=1}^{n}c_i(t)^2}$$
+$$||\vec{c}\,'(t)||=\sqrt{\displaystyle\sum_{i=1}^{n}c_i(t)^2}$$
 
 (being the magnitude of the velocity vector)
 
@@ -183,7 +183,7 @@ $$||\vec{c}'(t)||=\sqrt{\displaystyle\sum_{i=1}^{n}c_i(t)^2}$$
 
 Arclength of a parametric function is given by:
 
-\[S=\int_a^b ||\vec{c}'(t)||dt=\int_a^b\sqrt{(\frac{dx}{dt})^2+(\frac{dy}{dt})^2+(\frac{dz}{dt})^2+\cdots}\;dt\]
+\[S=\int_a^b ||\vec{c}\,'(t)||dt=\int_a^b\sqrt{(\frac{dx}{dt})^2+(\frac{dy}{dt})^2+(\frac{dz}{dt})^2+\cdots}\;dt\]
 
 Can approximate arclength as a sum of the lengths of secant vector approximations
 $\vec{s}_i=\vec{c}(t_i)-\vec{c}(t_{i-1})$:
@@ -193,8 +193,8 @@ $\vec{s}_i=\vec{c}(t_i)-\vec{c}(t_{i-1})$:
 According to the MVT, there exists a $\hat{t}_i$ in $(t_{i-1},t_i)$ (open interval due to differentiability requirement) such that:
 
 \begin{align*}
-    x'(\hat{t}_i)&=\frac{x(t_i)-x(t_{i-1})}{t_i-t_{i-1}}\\
-    y'(\hat{t}_i)&=\frac{y(t_i)-y(t_{i-1})}{t_i-t_{i-1}}
+    x\,'(\hat{t}_i)&=\frac{x(t_i)-x(t_{i-1})}{t_i-t_{i-1}}\\
+    y\,'(\hat{t}_i)&=\frac{y(t_i)-y(t_{i-1})}{t_i-t_{i-1}}
 \end{align*}
 
 This means that, since $\vec{s}_i$ is given as the difference between 2 points,
@@ -202,16 +202,16 @@ being a secant:
 
 \begin{align*}
     \vec{s}_i&=\left((t_i-t_{i-1})x(\hat{t}_i), (t_i-t_{i-1})y(\hat{t}_i)\right )\\
-    \vec{s}_i&=(t_i-t_{i-1})\left(x'(\hat{t}_i),y'(\hat{t}_i)\right)\\
-    \vec{s}_i&=(t_i-t_{i-1})\vec{c}\,'(\hat{t}_i)
+    \vec{s}_i&=(t_i-t_{i-1})\left(x\,'(\hat{t}_i),y\,'(\hat{t}_i)\right)\\
+    \vec{s}_i&=(t_i-t_{i-1})\vec{c}\,\,'(\hat{t}_i)
 \end{align*}
 
 Thus,
 
 \begin{align*}
     \mbox{arclength}&\approx\sum_{i=1}^n||\vec{s}_i||\\
-    \mbox{arclength}&\approx\sum_{i=1}^n||\Delta t \,\vec{c}\,'(\hat{t}_i)||\\
-    \mbox{arclength}&\approx\sum_{i=1}^n\Delta t||\vec{c}\,'(\hat{t}_i)||
+    \mbox{arclength}&\approx\sum_{i=1}^n||\Delta t \,\vec{c}\,\,'(\hat{t}_i)||\\
+    \mbox{arclength}&\approx\sum_{i=1}^n\Delta t||\vec{c}\,\,'(\hat{t}_i)||
 \end{align*}
 
 Can define the arclength differential as follows:
@@ -224,17 +224,17 @@ Can just define arclength as $\text{arclength}=\int \mathrm{ds}$
 
 Higher the speed of a curve, farther the points are spaced apart.
 An arclength parametrization of a curve is a path whose image is the desired curve and whose speed is constantly one.
-Or, $\vec{c}:[a,b]\to\mathbb{R}^n$ with $||\vec{c}\,'(t)||=1$ for $t\in[a,b]$.
-If a curve is not an arclength parameterization, then can do $\frac{\vec{c}(t)}{||\vec{c}'(t)||}$ but only dividing the coefficients (slopes).\newline
+Or, $\vec{c}:[a,b]\to\mathbb{R}^n$ with $||\vec{c}\,\,'(t)||=1$ for $t\in[a,b]$.
+If a curve is not an arclength parameterization, then can do $\frac{\vec{c}(t)}{||\vec{c}\,'(t)||}$ but only dividing the coefficients (slopes).\newline
 
 \noindent
 When speed is variable, is difficult to define arclength parameterization.
 Thus, can define displacement to be $s(t)=\int_a^b (t)dt$. If $v(t)!\neq 0$,
-then $s$ is injective because according to FTC, $s'(t)=v(t)$.
-By definition, $v'(t)\geq 0$ always since it is composed of a radical, so it must be \textbf{increasing}.
+then $s$ is injective because according to FTC, $s\,'(t)=v(t)$.
+By definition, $v\,'(t)\geq 0$ always since it is composed of a radical, so it must be \textbf{increasing}.
 Thus, if $t_1=t_2$, $s(t_1)\neq s(t_2)$. Arclength parameterization:
 
-\[s(t)=\int_0^t||\vec{c}'(u)||du\]
+\[s(t)=\int_0^t||\vec{c}\,'(u)||du\]
 
 \noindent
 This means that $s$ is invertible, so can solve for $t$ to get $t=\varphi(s)$.
@@ -248,17 +248,17 @@ An arclength parameterization can be found by:
 
 Recall that to make an arclength parameterization accumulate the magnitudes of infinitesimal velocity vectors:
 
-\[s(t)=\int_a^t ||\vec{r}'(u)||du\]
+\[s(t)=\int_a^t ||\vec{r}\,'(u)||du\]
 
 Given some curve $\vec{r}(t)$, define an arclength parameterization by $\vec{r}(g(s))\rightarrow \vec{r}_1(s)$, so 
-$\vec{r}$ is defined in terms of $s$. The unit tangent vector $\vec{T}_1(s)$ is then $\frac{\vec{r}_1'(s)}{||\vec{r}_1'(s)||}=\vec{r}_1'(s)$.
+$\vec{r}$ is defined in terms of $s$. The unit tangent vector $\vec{T}_1(s)$ is then $\frac{\vec{r}_1\,'(s)}{||\vec{r}_1\,'(s)||}=\vec{r}_1\,'(s)$.
 
 \begin{align*}
-    \vec{T}_1(s)&=\vec{r}_1'(s)\\
+    \vec{T}_1(s)&=\vec{r}_1\,'(s)\\
     &=\frac{d}{ds}\vec{r}_1(s)\\
     &=\frac{d}{ds}\vec{r}(g(s))\\
-    &=\vec{r}'(g(s))\cdot g'(s)=\vec{r}'(t)\cdot \frac{dt}{ds}\\
-    &=\frac{\vec{r}'(t)}{\frac{ds}{dt}}=\frac{\vec{r}'(t)}{||\vec{r}'(t)||}
+    &=\vec{r}\,'(g(s))\cdot g\,'(s)=\vec{r}\,'(t)\cdot \frac{dt}{ds}\\
+    &=\frac{\vec{r}\,'(t)}{\frac{ds}{dt}}=\frac{\vec{r}\,'(t)}{||\vec{r}\,'(t)||}
 \end{align*}
 
 This means that $\vec{T}_1(s)=T(t)$
@@ -266,34 +266,34 @@ This means that $\vec{T}_1(s)=T(t)$
 Continuing, to find curvature $\kappa(t)$:
 
 \begin{align*}
-    \vec{T}_1'(s)&=\frac{d}{ds}\vec{T}(t)\\
+    \vec{T}_1\,'(s)&=\frac{d}{ds}\vec{T}(t)\\
     &=\frac{d}{ds}\vec{T}(g(s))\\
-    &=\vec{T}'(t)\cdot \frac{dt}{ds}\\
-    &=\frac{\vec{T}'(t)}{\frac{ds}{dt}}\\
-    &=\frac{\vec{T}'(t)}{||\vec{r}'(t)||}\\
+    &=\vec{T}\,'(t)\cdot \frac{dt}{ds}\\
+    &=\frac{\vec{T}\,'(t)}{\frac{ds}{dt}}\\
+    &=\frac{\vec{T}\,'(t)}{||\vec{r}\,'(t)||}\\
 \end{align*}
 
-Thus, $\boxed{\kappa(t)=\frac{\vec{T}'(t)||}{||\vec{r}'(t)||}}$
+Thus, $\boxed{\kappa(t)=\frac{\vec{T}\,'(t)||}{||\vec{r}\,'(t)||}}$
 
 \subsection{Definition}
 
 Given a curve $C$ parameterized with arclength by the path $\vec{c}:[a,b]\rightarrow \R^n$,
 curvature is defined as:
 
-\[\boxed{\kappa(s)=||\vec{T}'(s)||}\]
+\[\boxed{\kappa(s)=||\vec{T}\,'(s)||}\]
 
-where $\vec{c}'(s)\neq 0$ and $\vec{T}(s)=\frac{\vec{c}'(s)}{||\vec{c}'(s)||}$ (normalized slope vector).\newline
+where $\vec{c}\,'(s)\neq 0$ and $\vec{T}(s)=\frac{\vec{c}\,'(s)}{||\vec{c}\,'(s)||}$ (normalized slope vector).\newline
 
 A loose geometric interpretation is that a greater $\kappa(s)$ implies
 more curvature, that is, the curve is changing at a greater rate there.
-When $\vec{c}'(s)\neq 0$ is always true for a curve, it is \textbf{regular}.
+When $\vec{c}\,'(s)\neq 0$ is always true for a curve, it is \textbf{regular}.
 Is defined in terms of arclength parameterization so curvature
 is an intrinsic property of the curve independent of parameterization.\newline
 
 \noindent
 Formula for curvature at the point $\vec{c}(t)$:
 
-\[\boxed{\kappa(t)=\frac{||T'(t)||}{||\vec{c}\,'(t)||}=\frac{||\vec{c}\,'(t)\times \vec{c}\,''(t)||}{||\vec{c}\,'(t)||^3}}\]
+\[\boxed{\kappa(t)=\frac{||T\,'(t)||}{||\vec{c}\,\,'(t)||}=\frac{||\vec{c}\,\,'(t)\times \vec{c}\,\,'\,'(t)||}{||\vec{c}\,\,'(t)||^3}}\]
 
 \section{Motion in 3D space}
 
@@ -301,14 +301,14 @@ Given a path $\vec{c}: \mathbb{R} \rightarrow \mathbb{R}^{3}$ with $\vec{c}(t)=(
 \begin{itemize}
     \item $\cdot \vec{v}(t)=\vec{c}^{\prime}(t)=\left(x^{\prime}(t), y^{\prime}(t), z^{\prime}(t)\right)$ is also path in $\mathbb{R}^{3}$ called the velocity of $\vec{c}$
     \item $\vec{a}(t)=\vec{v}^{\prime}(t)=\vec{c}^{\prime \prime}(t)=\left(x^{\prime \prime}(t), y^{\prime \prime}(t), z^{\prime \prime}(t)\right)$ is also a path in $\mathbb{R}^{3}$ called the acceleration of $\vec{c}$
-    \item $v(t)=\|\vec{v}(t)\|=\left\|\vec{c}^{\prime}(t)\right\|$ is a scalar valued function on $\mathbb{R}$ (that's a fancy way of saying the domain and codomain of this function are both $\mathbb{R}$ ) called the speed of $\vec{c}$
+    \item $v(t)=\|\vec{v}(t)\|=\left\|\vec{c}^{\prime}(t)\right\|$ is a scalar valued function on $\mathbb{R}$ (that\,'s a fancy way of saying the domain and codomain of this function are both $\mathbb{R}$ ) called the speed of $\vec{c}$
     \item $\vec{T}(t)=\frac{\vec{c}^{\prime}(t)}{v(t)}$ is also a path in $\mathbb{R}^{3}$ called the unit tangent to $\vec{c}$
     \item $\kappa(t)=\frac{\vec{T}^{\prime}(t)}{v(t)}=\frac{\left\|\vec{c}^{\prime}(t) \times \vec{c}^{\prime \prime}(t)\right\|}{\left\|\vec{c}^{\prime}(t)\right\|^{3}}$ is a scalar valued function on $\mathbb{R}$ called the curvature of $\vec{c}$
 \end{itemize}
 
 Note that $\vec{T}\cdot \vec{T}=||\vec{v}||^2=1$.
 Computing the derivative, $\frac{\mathrm{d}}{\mathrm{d} t} \vec{T} \cdot \vec{T}=2 \vec{T} \cdot \vec{T}^{\prime}=0$
-This means that $\vec{T}\perp \vec{T}'$.\newline
+This means that $\vec{T}\perp \vec{T}\,'$.\newline
 
 \noindent
 Define $\boxed{\vec{N}(t)=\frac{\vec{T}^{\prime}(t)}{\left\|\vec{T}^{\prime}(t)\right\|}}$ as
@@ -319,7 +319,7 @@ Fact: the acceleration vector always lies in the plane spanned by $\vec{N}$ and 
 Acceleration $\vec{a}(t)$ is thus split component-wise into $a_T$ from $\vec{T}$
 and $a_N$ from $\vec{N}$:
 
-\[\boxed{a_T=v'(t)=\frac{\vec{a(t)}\cdot \vec{v}(t)}{v(t)}}\]
+\[\boxed{a_T=v\,'(t)=\frac{\vec{a(t)}\cdot \vec{v}(t)}{v(t)}}\]
 \[\boxed{a_N=\kappa(t)v(t)^2=\frac{||\vec{a}(t)\times \vec{v}(t)||}{v(t)}=\sqrt{\|\vec{a}(t)\|^{2}-\left|a_{T}\right|^{2}}}\]
 
 \section{Derivatives of parameterized curves}
@@ -332,7 +332,7 @@ Take the following function:
 
 An arclength parameterization is achieved with the following computation:
 
-\[s=\int_0^t \sqrt{x'(u)^2+y'(u)^2}\;du\]
+\[s=\int_0^t \sqrt{x\,'(u)^2+y\,'(u)^2}\;du\]
 
 Can say that $t=g(s)$, so the arclength parameterization, which is the path in terms of $s$:
 
@@ -341,21 +341,21 @@ Can say that $t=g(s)$, so the arclength parameterization, which is the path in t
 Taking the derivative by the chain rule:
 
 \begin{align*}
-    \vec{r}_1'(s)&=\langle x'(g(s))\cdot g'(s),y'(g(s))\cdot g'(s)\rangle \\
-    &=g'(s)\langle x'(t),y'(t) \rangle \\
+    \vec{r}_1\,'(s)&=\langle x\,'(g(s))\cdot g\,'(s),y\,'(g(s))\cdot g\,'(s)\rangle \\
+    &=g\,'(s)\langle x\,'(t),y\,'(t) \rangle \\
 \end{align*}
 
-Note that $g'(s)=\frac{dt}{ds}=\frac{1}{\frac{ds}{dt}}=\frac{1}{||\vec{r}'(t)||}$ by taking the derivative of the integral for arclength:
+Note that $g\,'(s)=\frac{dt}{ds}=\frac{1}{\frac{ds}{dt}}=\frac{1}{||\vec{r}\,'(t)||}$ by taking the derivative of the integral for arclength:
 
-\[\vec{r}_1'(s)=\frac{1}{||\vec{r}'(t)||}\langle x'(t),y'(t) \rangle=\vec{T}(t)\]
+\[\vec{r}_1\,'(s)=\frac{1}{||\vec{r}\,'(t)||}\langle x\,'(t),y\,'(t) \rangle=\vec{T}(t)\]
 
-Following from this, $g'(s)=\frac{1}{||\vec{r}'(g(s))||}$ so $g''(s)=-\frac{1}{||\vec{r}'(g(s))||^2}\cdot g'(s)=-\frac{1}{||\vec{r}'(t)||^3}$
+Following from this, $g\,'(s)=\frac{1}{||\vec{r}\,'(g(s))||}$ so $g\,'\,'(s)=-\frac{1}{||\vec{r}\,'(g(s))||^2}\cdot g\,'(s)=-\frac{1}{||\vec{r}\,'(t)||^3}$
 
 \subsection{Orthogonal derivative and position vectors}
 
 Observe that $\vec{r}\cdot \vec{r}=||\vec{r}||^2$.
-Thus, $\frac{d}{dt}[\vec{r}\cdot \vec{r}]=2\vec{r}\cdot\vec{r}'=2||\vec{r}||||\vec{r}||'$.
-Rearranging: $\frac{\vec{r}\cdot \vec{r}}{||\vec{r}||}=||\vec{r}||'$.
+Thus, $\frac{d}{dt}[\vec{r}\cdot \vec{r}]=2\vec{r}\cdot\vec{r}\,'=2||\vec{r}||||\vec{r}||\,'$.
+Rearranging: $\frac{\vec{r}\cdot \vec{r}}{||\vec{r}||}=||\vec{r}||\,'$.
 Means that magnitude of position vector has to be a constant value in order for it
 to be $\perp$ to derivative.
 
@@ -366,9 +366,9 @@ to be $\perp$ to derivative.
     \item Law of equal area in equal time -- position vector pointing from sun to planet sweeps out equal area in equal time (so speed must increase/decrease)
 \end{itemize}
 
-Can approximate the area swept in time by $\frac{dA}{dt}=\frac{1}{2}||\vec{r}(t)\times \vec{r}'(t)||=\frac{1}{2}||\vec{J}||$.
-The differential equation for each of Kepler's laws is: $\vec{r}''(t)=-\frac{k}{||\vec{r}(t)||^3}\vec{r}(t)$, so it is in the direction of $\vec{r}(t)$.
-Thus, differentiating $\frac{d\vec{J}}{dt}=\frac{d}{dt}(\vec{r}'(t)\times \vec{r}''(t))=0$.
+Can approximate the area swept in time by $\frac{dA}{dt}=\frac{1}{2}||\vec{r}(t)\times \vec{r}\,'(t)||=\frac{1}{2}||\vec{J}||$.
+The differential equation for each of Kepler\,'s laws is: $\vec{r}\,'\,'(t)=-\frac{k}{||\vec{r}(t)||^3}\vec{r}(t)$, so it is in the direction of $\vec{r}(t)$.
+Thus, differentiating $\frac{d\vec{J}}{dt}=\frac{d}{dt}(\vec{r}\,'(t)\times \vec{r}\,'\,'(t))=0$.
 
 \subsection{Cross-product identities}
 

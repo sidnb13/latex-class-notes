@@ -82,11 +82,11 @@ If $f:\R^2\rightarrow \R$ is given by $f(x,y)=z$ abd $P_0=(a,b)$ is a point in t
 then the partial derivative are:
 \begin{itemize}
     \item If $h:\R\rightarrow \R$ by $h(t)=f(t,b)$, then partial derivative with respect to $x$ at $P_0$
-    is $h'(a)$ with following limit definition
+    is $h\,'(a)$ with following limit definition
 
     \[\left.\frac{\partial f}{\partial x}\right|_{(a, b)}=f_{x}(a, b)=\lim _{h \rightarrow 0} \frac{f(x+h, b)-f(x, b)}{h}=\lim _{x \rightarrow a} \frac{f(x, b)-f(a, b)}{x-a}\]
 
-    \item If $g:\R\rightarrow \R$ by $g(t)=g(t,b)$ then partial derivative with respect to $y$ at $P_0$ is $g'(b)$ with following limit definition
+    \item If $g:\R\rightarrow \R$ by $g(t)=g(t,b)$ then partial derivative with respect to $y$ at $P_0$ is $g\,'(b)$ with following limit definition
     
     \[\left.\frac{\partial f}{\partial y}\right|_{(a, b)}=f_{y}(a, b)=\lim _{h \rightarrow 0} \frac{f(a, x+h)-f(a, b)}{h}=\lim _{y \rightarrow b} \frac{f(a, y)-f(a, b)}{y-b}\]
 
@@ -113,3 +113,15 @@ Building the plane:
 Thus,
 
 \[z=f(a, b)+f_{x}(a, b)(x-a)+f_{y}(a, b)(y-b)\]
+
+\subsection{Higher-order derivatives}
+
+Can be calculated using derivatives of $f_x$ and $f_y$. Notation:
+
+\[f_{xx}=\frac{\partial}{\partial x}(\frac{\partial f}{\partial x}),\; f_{yy}=\frac{\partial}{\partial y}(\frac{\partial f}{\partial y})\]
+
+Can also have mixed partials (read as with respect to $x$ or $y$):
+
+\[f_{xy}=\frac{\partial}{\partial y}(\frac{\partial f}{\partial x}),\; f_{yx}=\frac{\partial}{\partial x}(\frac{\partial f}{\partial y})\]
+
+By Clairaut's Theorem, if $f_{xy}$ and $f_{yx}$ are both continuous functions on a disk $D$, then $f_{xy}(a,b)=f_{yx}(a,b)\: \forall (a,b)\in D$.
