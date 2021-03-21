@@ -1,5 +1,9 @@
 \section{Planes}
 
+\begin{center}
+    \includegraphics[]{normal-plane}
+\end{center}
+
 If $(x,y,z)$ is a point on the plane, then given $\vec{P}_0=(x_0,y_0,z_0)$, $(x-x_0,y-y_0,z-z_0)$ is a vector on the plane perpendicular to $\vec{n}$, the
 normal vector. Thus, $(A,B,C)\cdot(x-x_0,y-y_0,z-z_0)=0$ where $A,B,C$ are vector coordinates of $\vec{n}$. With expansion:
 
@@ -16,7 +20,12 @@ This finds 2 vectors in the plane. Then compute $\vec{c}_1\times \vec{c}_2=\vec{
 
 \noindent
 The trace of a plane is the intersection of a plane $\mathcal{P}$ with $xy$, $xz$, or $yz$ coordinate planes. Can be found by setting respective variable to 0.
+
 \subsection{Cross-product rules and identities}
+
+\begin{center}
+    \includegraphics[]{cross-product}
+\end{center}
 
 Overview
 \begin{itemize}
@@ -124,4 +133,4 @@ Can also have mixed partials (read as with respect to $x$ or $y$):
 
 \[f_{xy}=\frac{\partial}{\partial y}(\frac{\partial f}{\partial x}),\; f_{yx}=\frac{\partial}{\partial x}(\frac{\partial f}{\partial y})\]
 
-By Clairaut's Theorem, if $f_{xy}$ and $f_{yx}$ are both continuous functions on a disk $D$, then $f_{xy}(a,b)=f_{yx}(a,b)\: \forall (a,b)\in D$.
+By Clairaut's Theorem, if $f_{xy}$ and $f_{yx}$ are both continuous functions on a disk $D$, then $f_{xy}(a,b)=f_{yx}(a,b)\: \forall (a,b)\in D$. Means that $f_{xyxy}=f_{xxyy}=f_{yyxx}=f_{yxyx}$.
