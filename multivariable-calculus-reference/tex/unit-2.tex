@@ -134,3 +134,86 @@ Can also have mixed partials (read as with respect to $x$ or $y$):
 \[f_{xy}=\frac{\partial}{\partial y}(\frac{\partial f}{\partial x}),\; f_{yx}=\frac{\partial}{\partial x}(\frac{\partial f}{\partial y})\]
 
 By Clairaut's Theorem, if $f_{xy}$ and $f_{yx}$ are both continuous functions on a disk $D$, then $f_{xy}(a,b)=f_{yx}(a,b)\: \forall (a,b)\in D$. Means that $f_{xyxy}=f_{xxyy}=f_{yyxx}=f_{yxyx}$.
+
+\section{Extrema}
+
+\subsection{Definition and proofs}
+
+A function $f$ has:
+\begin{itemize}
+    \item local maximum at $P_0$ in domain if $f(P_0)>f(x,y)\;\forall\;(x,y)$ sufficiently near $P_0$
+    \item local minimum at $P_0$ in domain if $f(P_0)<f(x,y)\;\forall\;(x,y)$ sufficiently near $P_0$
+\end{itemize}
+
+Sufficiently near: positive radius $R$ used to build a circle centered at $P_0$ that traps points in domain with desired property (min or max).
+Global extrema redefine sufficiently near as in the domain of $f$.
+
+\par 
+Critical point is defined as either of the following:
+\begin{itemize}
+    \item $f_x(P_0)=f_y(P_0)=0$
+    \item either $f_x(P),f_y(P)$ does not exist
+\end{itemize}
+
+Method: find critical value $y$ from $f_y$ and $x$ from $f_x$ through cross-substitution.
+
+\par
+Proof that if $f_x(P),f_y(P)$ both exist and there is a local max at $P$, then both partials are 0:
+
+\par
+Define $g:\;\R\rightarrow \R$ to be single variable function from holding $y=b$ in $f$. Considering points sufficiently near:
+
+\includegraphics[scale=0.5]{Screen Shot 2021-03-21 at 7.55.34 PM.png}
+
+Plugging into function $g$: $g(x) < f(x,b) \leq f(P_0)=g(a)$, so for $x$-values sufficiently
+near $a$, $g(x)\leq g(a)$, so it is a local max of $g$. Invoking theorem of extrema, either $g'(a)=0$ or DNE. As $g'(a)=f_x(P_0)$, demonstrates that
+$f_x=0$ or DNE for a local max. Same can be done for $f_y$.
+
+\par
+Can minimize a function's distance to origin through distance formula. As a square root minimizes
+at its argument, can just concentrate on minimizing the argument.
+
+\par
+Reiteration: If $f: \mathbb{R}^{2} \rightarrow \mathbb{R}$ has continuous first and second order partial derivatives then $f_{x y}(x, y)=f_{y x}(x, y)$.
+Continuous 2nd order partials: $C^2$; continous $n$ order partials: $C^\infty$.
+
+\subsection{Second-derivative test}
+
+Given a function $f:\R^2 \rightarrow \R$ that has continuous 2nd partials near a critical point $P$, define
+the discriminant of $f$ at $P$ to be:
+
+\[D(P)=f_{x x}(P) f_{y y}(P)-\left(f_{x y}(P)\right)^{2}\]
+
+Then:
+\begin{itemize}
+    \item If $D>0$, $P$ is a local extreme of $f$
+    \begin{itemize}
+        \item $f_{xx}(P)>0$ implies a local min
+        \item $f_{xx}(P)<0$ implies a local max
+    \end{itemize}
+    \item If $D<0$ then there is neither a min or max at $P$, but an inflection point (saddle point)
+    \item If $D=0$ then there is no information about $P$
+\end{itemize}
+
+Observe that $D(P)=\operatorname{det}\left(\begin{array}{ll}
+                f_{x x}(P) & f_{x y}(P) \\
+                f_{y x}(P) & f_{y y}(P)
+            \end{array}\right)$
+
+\subsection{Global extrema}
+
+If $f:\R^2 \rightarrow \R$ is continuous on a closed and bounded subset of $\R^2$ then it has a global max/min
+on the subset (at critical point or along boundary)
+
+\par
+A closed subset of $\R^2$ is one that contains the boundary. Boundary points have the property that
+any circle centered around them with positive radius will contain points in and out of the subset.
+Bounded subset is where any distance between 2 points in the set never exceeds some fixed bound $M\in \R$.
+
+\begin{center}
+    \includegraphics[scale=0.5]{Screen Shot 2021-03-22 at 3.01.05 PM.png}
+\end{center}
+
+The boundary curve is denoted as $\partial D$ where $D$ is a disk. By parameterizing $\partial D$ and using function
+composition to take this curve $\vec{c}(t)$ into $f$: $h(t)=f(\vec{c}(t))$. A min/max for $f$ along boundary curve
+is a min/max of $h$. Plug resulting coordinates into $f$ and determine global extrema.
