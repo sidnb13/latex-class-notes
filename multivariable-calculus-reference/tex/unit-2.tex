@@ -148,7 +148,6 @@ A function $f$ has:
 Sufficiently near: positive radius $R$ used to build a circle centered at $P_0$ that traps points in domain with desired property (min or max).
 Global extrema redefine sufficiently near as in the domain of $f$.
 
-\par 
 Critical point is defined as either of the following:
 \begin{itemize}
     \item $f_x(P_0)=f_y(P_0)=0$
@@ -157,10 +156,8 @@ Critical point is defined as either of the following:
 
 Method: find critical value $y$ from $f_y$ and $x$ from $f_x$ through cross-substitution.
 
-\par
 Proof that if $f_x(P),f_y(P)$ both exist and there is a local max at $P$, then both partials are 0:
 
-\par
 Define $g:\;\R\rightarrow \R$ to be single variable function from holding $y=b$ in $f$. Considering points sufficiently near:
 
 \includegraphics[scale=0.5]{Screen Shot 2021-03-21 at 7.55.34 PM.png}
@@ -169,13 +166,17 @@ Plugging into function $g$: $g(x) < f(x,b) \leq f(P_0)=g(a)$, so for $x$-values 
 near $a$, $g(x)\leq g(a)$, so it is a local max of $g$. Invoking theorem of extrema, either $g'(a)=0$ or DNE. As $g'(a)=f_x(P_0)$, demonstrates that
 $f_x=0$ or DNE for a local max. Same can be done for $f_y$.
 
-\par
 Can minimize a function's distance to origin through distance formula. As a square root minimizes
 at its argument, can just concentrate on minimizing the argument.
 
-\par
 Reiteration: If $f: \mathbb{R}^{2} \rightarrow \mathbb{R}$ has continuous first and second order partial derivatives then $f_{x y}(x, y)=f_{y x}(x, y)$.
 Continuous 2nd order partials: $C^2$; continous $n$ order partials: $C^\infty$.
+
+\textbf{Fermat's theorem proof (same as above):} If $f(x,y)$ has a local min/max at $P=(a,b)$, then $P=(a,b)$ is a critical point of $f(x,y)$.
+
+Assuming $f(x,y)$ has a local min at $P$, then this means that $f(x,y) \geq (a,b)$ for $(x,y)$ in the surrounding disk $D(r,P)$.
+For some $y=b$, the distance between any 2 $x$-values must be contained in the disk: $|x-a|<r$. Shows that $g(x)=f(x,b)$ has a local min
+at $x=a$, so $g'(a)=0$ or DNE. Because $g'(a)=f_x(a,b)$, $f_x(a,b)$ is either 0 or DNE. As the same can be said for $f_y$, $P$ is a critical point.
 
 \subsection{Second-derivative test}
 
@@ -193,6 +194,8 @@ Then:
     \end{itemize}
     \item If $D<0$ then there is neither a min or max at $P$, but an inflection point (saddle point)
     \item If $D=0$ then there is no information about $P$
+    \item If $D>0$ and $f_{xx}(a,b)>0$, then local minimum
+    \item If $D>0$ and $f_{xx}(a,b)<0$, then local maximum
 \end{itemize}
 
 Observe that $D(P)=\operatorname{det}\left(\begin{array}{ll}
@@ -205,7 +208,6 @@ Observe that $D(P)=\operatorname{det}\left(\begin{array}{ll}
 If $f:\R^2 \rightarrow \R$ is continuous on a closed and bounded subset of $\R^2$ then it has a global max/min
 on the subset (at critical point or along boundary)
 
-\par
 A closed subset of $\R^2$ is one that contains the boundary. Boundary points have the property that
 any circle centered around them with positive radius will contain points in and out of the subset.
 Bounded subset is where any distance between 2 points in the set never exceeds some fixed bound $M\in \R$.
@@ -217,3 +219,42 @@ Bounded subset is where any distance between 2 points in the set never exceeds s
 The boundary curve is denoted as $\partial D$ where $D$ is a disk. By parameterizing $\partial D$ and using function
 composition to take this curve $\vec{c}(t)$ into $f$: $h(t)=f(\vec{c}(t))$. A min/max for $f$ along boundary curve
 is a min/max of $h$. Plug resulting coordinates into $f$ and determine global extrema.
+
+\section{Lagrange Multipliers}
+
+\subsection{Theory}
+
+Let $f:\R^2\rightarrow \R$ and $\vec{c}:\R\rightarrow \R^2$ such that there is a composite function $h(t)=f(\vec{c}(t))$.
+Then, $h\,'(t)=f_x(\vec{c}(t))x\,'(t)+f_y(\vec{c}(t))y\,'(t)=\left(f_{x}\left(\vec{c}(t)), f_{y} \vec{c}(t)\right) \cdot \vec{c}^{\prime}(t)\right.$.
+This brings definition of gradient vector, so that for $f:\R^2\rightarrow \R$, each point in domain is in domain of $f$ the vector $\left(f_{x}\left(P_{0}\right), f_{y}\left(P_{0}\right)\right)$:
+
+\[\nabla f\left(P_{0}\right)=\left(f_{x}\left(P_{0}\right), f_{y}\left(P_{0}\right)\right)\]
+
+Rewriting chain rule:
+
+\[\frac{d}{dt}f(\vec{c}(t_0))=\nabla f(\vec{c}(t_0))\cdot \vec{c}\,'(t_0)\]
+
+Let $g(x,y)$ be boundary curve function and $f(x,y)$ be original.
+
+Use a boundary curve which is level curve $c=0$ which represents the boundary of the subset where global extrema can be found. 
+If $f$ achieves maximum at point $P$ along curve, then either $g_x(P)=g_y(P)=0$ ($\nabla g(P)=\vec{0}$) or there is a scalar $\lambda$ (Lagrange multiplier)
+such that $f_x(P)=\lambda g_x(P)$ and $f_y(P)=\lambda g_y(P)$ ($\nabla f(P)=\lambda \nabla g(P)$). Can find locations of global extreme without parameterizing.
+
+\subsection{Proof}
+
+Suppose $f(P)\geq f(x,y)\;\forall\;(x,y)$ satisfying $g(x,y)=0$. Parameterizing $g(x,y)=0$ with $\vec{c}(t)$
+such that $\vec{c}(0)=P$: Observe that $h(t)=f(\vec{c}(t))$ is from $\R\rightarrow\R$ with local max at $t=0$.
+Thus, $h'(t)=0$ or DNE. Taking derivative, $h'(t)=\nabla f(\vec{c}(t))\cdot \vec{c}\,'(t)$.
+Then, $h^{\prime}(0)=\nabla f(\vec{c}(0)) \cdot \vec{c}^{\prime}(0)=0$ or DNE. This dot product is either 0 or DNE because
+1 or both vectors could not exist, or if they are $\perp$. Thus, $\nabla f(P)\perp \vec{c}\,'(0)$ and $\vec{c}\,'(0)\neq \vec{0}$ (because $\vec{c}$ is assumed to be regular).
+
+Showing $\nabla g(P)\perp \vec{c}\,'(0)$. Define $j(t)=g(\vec{c}(t))$. Thus, $j^{\prime}(t)=\nabla g(\vec{c}(t)) \cdot \vec{c}^{\prime}(t)$.
+Because $\vec{c}(t)$ is a parameterization of level curve $g(x,y)=0$, it always outputs 0, so $j(t)=g(\vec{c}(t))=0$ always. Can the conclude that
+$j^{\prime}(t)=\nabla g(\vec{c}(t)) \cdot \vec{c}^{\prime}(t)=0$. Plugging in $t=0$ gives $\nabla g(\vec{c}(0)) \cdot \vec{c}^{\prime}(0)=0$ so $\nabla g(P)\perp \vec{c}\,'(0)$.
+
+Because both vectors are perpendicular to $\vec{c}\,'(0)$, they are parallel -- $\nabla f(P)=\lambda \nabla g(P)$. Or:
+
+$$\begin{array}{l}
+    f_{x}(P)=\lambda g_{x}(P) \\
+    f_{y}(P)=\lambda g_{y}(P)
+\end{array}$$
