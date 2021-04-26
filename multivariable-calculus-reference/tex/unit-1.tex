@@ -4,7 +4,7 @@
 
 Unit circle is set of points in $\R^2$ defined as $C=\{(x,y)\in\mathbb{R} ^2|x^2+y^2=1\}$. Ellipse is
 $C=\{(x,y)\in\mathbb{R} ^2|\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\}$
-Has standard parameterization of $\vec{c}(t)=\big(\cos(t),\sin(t)\big)$.
+Has standard parameterization of $\textbf{c}(t)=\big(\cos(t),\sin(t)\big)$.
 When parameterizing, always start from $t=0$ reference unless otherwise given.\newline 
 
 \begin{center}
@@ -13,16 +13,16 @@ When parameterizing, always start from $t=0$ reference unless otherwise given.\n
 
 \noindent Properties
 \begin{itemize}
-    \item Image of $\vec{c}$ is a closed curve (has no endpoints, plane is divided into $\geq 2$ disjoint regions)
-    \item Image of $\vec{c}$ is a simple curve; no self-intersection 
-    \item $\vec{c}(t)$ is an \textbf{injective path}; path is considered injective if $\vec{c}(t_1)=\vec{c}(t_2)$, which implies that $t_1=t_2$ where 
+    \item Image of $\textbf{c}$ is a closed curve (has no endpoints, plane is divided into $\geq 2$ disjoint regions)
+    \item Image of $\textbf{c}$ is a simple curve; no self-intersection 
+    \item $\textbf{c}(t)$ is an \textbf{injective path}; path is considered injective if $\textbf{c}(t_1)=\textbf{c}(t_2)$, which implies that $t_1=t_2$ where 
     these are on the open interval $(a,b)$ even if $a=b$
-    \item Orientation of $\vec{c}$ is counter-clockwise in traversal
+    \item Orientation of $\textbf{c}$ is counter-clockwise in traversal
 \end{itemize}
 
 \subsection{Observations}
 
-\[\boxed{\vec{p}(t)=(a\cos (\pm (nt \pm\theta)) + x_0, b\sin (\pm (nt \pm \theta)) + y_0)}\]
+\[\boxed{\textbf{p}(t)=(a\cos (\pm (nt \pm\theta)) + x_0, b\sin (\pm (nt \pm \theta)) + y_0)}\]
 
 If $-t$ for $t$, orientation is CW, CCW is $t$. If $a=b$, then curve is 
 a circle of radius $a$ or $b$, else an ellipse with horizontal and vertical radii.
@@ -35,24 +35,24 @@ must have $-t$ for $t$. Starting out, $-t$ goes through the angle range and $t$ 
 
 \subsection{Line Parametrics}
 
-A line is a 1D subspace of $\R^2$, so $L=\{t\vec{m}|t\in\R\}$ for $\vec{m}\in\R^2$.
-$\vec{m}=\begin{bmatrix}m_x\\m_y\end{bmatrix}$ is the \textbf{slope vector}.
+A line is a 1D subspace of $\R^2$, so $L=\{t\textbf{m}|t\in\R\}$ for $\textbf{m}\in\R^2$.
+$\textbf{m}=\begin{bmatrix}m_x\\m_y\end{bmatrix}$ is the \textbf{slope vector}.
 Path given by image of $L$: 
 
-\[\vec{c}(t)=\left(m_{x} t, m_{y} t\right),t\in\R\]
+\[\textbf{c}(t)=\left(m_{x} t, m_{y} t\right),t\in\R\]
 
-Can represent $\vec{c}(t)=t\vec{m}$ as well.\newline
+Can represent $\textbf{c}(t)=t\textbf{m}$ as well.\newline
 
 \noindent
 Lines Main Ideas
 \begin{itemize}
-    \item Image of a line is a curve (e.g. $y=x$ represents image curve of $\vec{c}(t)=(t,t)$)
-    \item Lines can have nonzero intercepts, so $\vec{c}(t)=t\vec{m}$ represents $y=2x+1$. Line
-    that has intercept vector $P_0=(x_0,y_0)$ $\parallel$ $\vec{m}=(m_x,m_y)$ can be expressed as:
+    \item Image of a line is a curve (e.g. $y=x$ represents image curve of $\textbf{c}(t)=(t,t)$)
+    \item Lines can have nonzero intercepts, so $\textbf{c}(t)=t\textbf{m}$ represents $y=2x+1$. Line
+    that has intercept vector $P_0=(x_0,y_0)$ $\parallel$ $\textbf{m}=(m_x,m_y)$ can be expressed as:
 
-    \[\boxed{\vec{c}(t)=(x_0+tm_x, y_0+m_yt)=\vec{P_0}+t\vec{m}}\]
+    \[\boxed{\textbf{c} (t)=(x_0+tm_x, y_0+m_yt)= \textbf{$P_0$}+t \textbf{m} }\]
 
-    Note endpoint of $\vec{c}(t)$ is on image line (curve).
+    Note endpoint of $\textbf{c}(t)$ is on image line (curve).
 
 \end{itemize}
 
@@ -66,7 +66,7 @@ the parameter (solve for $t$ in terms of either $x$ or $y$ and plug into the oth
 \noindent
 General form of parameterized curve can be expressed as the following:
 
-\[\boxed{\vec{c}(t)=(\frac{m_x}{\Delta t}(t-a)+x_0,\frac{m_y}{\Delta t}(t-a)+y_0)}\]
+\[\boxed{\textbf{c}(t)=(\frac{m_x}{\Delta t}(t-a)+x_0,\frac{m_y}{\Delta t}(t-a)+y_0)}\]
 
 where $\Delta t$ is the domain interval over $[a,b]$ and $(x_0,y_0)$ represents the desired \textbf{starting coordinate}.
 This is important as when going in reverse, other coordinate can be used and slope might be negative.
@@ -76,17 +76,17 @@ $a$ is used in $(t-a)$ because everything is conventionally done with respect to
 
 \subsection{R3 parameterization}
 
-If $\vec{m}$ is a nonzero vector along $L$ through origin in $\R^3$, then $L=\{t\vec{m}|t\in\R\}$;
-follows that $\vec{m}=(m_x,m_y,m_z)$, the slope or direction vector of the line. The basic parameterization is:
+If $\textbf{m}$ is a nonzero vector along $L$ through origin in $\R^3$, then $L=\{t\textbf{m}|t\in\R\}$;
+follows that $\textbf{m}=(m_x,m_y,m_z)$, the slope or direction vector of the line. The basic parameterization is:
 
-\[\vec{c}(t)=(m_x t,m_y t,m_z t)\]
+\[\textbf{c}(t)=(m_x t,m_y t,m_z t)\]
 
-Basis vectors in $\R^3$ are $\vec{i}, \vec{j}, \vec{k}$. Rewriting parameterization: 
+Basis vectors in $\R^3$ are $\textbf{i}, \textbf{j}, \textbf{k}$. Rewriting parameterization: 
 
-\[\vec{c}(t)=(x_0+m_x t) \vec{i}+(y_0+m_y t) \vec{j}+(z_0+m_z t) \vec{k}\]
+\[\textbf{c}(t)=(x_0+m_x t) \textbf{i}+(y_0+m_y t) \textbf{j}+(z_0+m_z t) \textbf{k}\]
 
-2 lines $\vec{c}_1(t)=P_0+\vec{m}_1t$ and $\vec{c}_2(t)=Q_0+\vec{m}_2t$ are parallel if
-direction vectors are parallel ($\vec{m_1}=k\vec{m}_2$). Collisions still exist. If neither parallel nor intersecting, considered as skew.\newline
+2 lines $\textbf{c}_1(t)=P_0+\textbf{m}_1t$ and $\textbf{c}_2(t)=Q_0+\textbf{m}_2t$ are parallel if
+direction vectors are parallel ($\textbf{$m_1$}=k\textbf{m}_2$). Collisions still exist. If neither parallel nor intersecting, considered as skew.\newline
 
 \noindent
 To determine skew, parallel, or coincide, use parameters $s,t$ for each line and solve SOE.
@@ -101,19 +101,19 @@ must satisfy all relations.
 
 With radius 1 and passing through the origin:
 
-\[\vec{c}(t)=(t-\sin t, 1 - \cos t)\]
+\[\textbf{c}(t)=(t-\sin t, 1 - \cos t)\]
 
 Observe that:
 
-\[\vec{c}^\prime(t)=(1-\cos t, \sin t)\]
+\[\textbf{c}^\prime(t)=(1-\cos t, \sin t)\]
 
-Can define the vector $\vec{u}=\left(\begin{array}{c}x^{\prime}(t) \\0\end{array}\right)$
-such that $\vec{u}$ is always horizontal and $||\vec{u}||=|x^\prime(t)|$. Reaches maximum
+Can define the vector $\textbf{u}=\left(\begin{array}{c}x^{\prime}(t) \\0\end{array}\right)$
+such that $\textbf{u}$ is always horizontal and $||\textbf{u}||=|x^\prime(t)|$. Reaches maximum
 value at $t\in[k\pi|k\in\R]$ and is has minimum cusp where it is 0 at $t\in [2k\pi|k\in\R]$.
 Thus, $x^\prime(t)\geq 0$ always, as the x-coordinate is never decreasing. \newline
 
 \noindent
-Can also define the vector $\vec{v}=\left(\begin{array}{c}0 \\y^{\prime}(t)\end{array}\right)$
+Can also define the vector $\textbf{v}=\left(\begin{array}{c}0 \\y^{\prime}(t)\end{array}\right)$
 with the same properties. Reaches maximum value when $t\in[k\frac{\pi}{2}|k\in\R]$.
 Can change, as observe $t$ when $\sin t < 0$ or $ >0 $.
 
@@ -133,33 +133,33 @@ Can change, as observe $t$ when $\sin t < 0$ or $ >0 $.
 
 \subsection{Definitions}
 
-Vector $\vec{u}(t_0)+\vec{v}(t_0)$ is he velocity vector to the curve $\vec{c}(t)$ at $t=t_0$.\newline
+Vector $\textbf{u}(t_0)+\textbf{v}(t_0)$ is he velocity vector to the curve $\textbf{c}(t)$ at $t=t_0$.\newline
 
 \noindent
-Let $\vec{c}:\;[a,b]\rightarrow \R^n$ have a path $\vec{c}(t)=\left(x_{1}(t), x_{2}(t), x_{3}(t), \ldots, x_{n}(t)\right)$ (let $x_i(t):[a,b]\rightarrow \R$ for each $i$)
+Let $\textbf{c}:\;[a,b]\rightarrow \R^n$ have a path $\textbf{c}(t)=\left(x_{1}(t), x_{2}(t), x_{3}(t), \ldots, x_{n}(t)\right)$ (let $x_i(t):[a,b]\rightarrow \R$ for each $i$)
 \begin{itemize}
-    \item If $t_0\in[a,b]$, then $\vec{c}^{\prime}\left(t_{0}\right):=\left(x_{1}^{\prime}\left(t_{0}\right), x_{2}^{\prime}\left(t_{0}\right), x_{3}^{\prime}\left(t_{0}\right), \ldots, x_{n}^{\prime}\left(t_{0}\right)\right)$; the velocity vector to $\vec{c}$ at $t_0$
-    \item The path $\vec{c}^{\prime}\left(t_{0}\right):=\left(x_{1}^{\prime}\left(t_{0}\right), x_{2}^{\prime}\left(t_{0}\right), x_{3}^{\prime}\left(t_{0}\right), \ldots, x_{n}^{\prime}\left(t_{0}\right)\right)$; the velocity vector to $\vec{c}$ is referred to as velocity of $\vec{c}(t)$
+    \item If $t_0\in[a,b]$, then $\textbf{c}^{\prime}\left(t_{0}\right):=\left(x_{1}^{\prime}\left(t_{0}\right), x_{2}^{\prime}\left(t_{0}\right), x_{3}^{\prime}\left(t_{0}\right), \ldots, x_{n}^{\prime}\left(t_{0}\right)\right)$; the velocity vector to $\textbf{c}$ at $t_0$
+    \item The path $\textbf{c}^{\prime}\left(t_{0}\right):=\left(x_{1}^{\prime}\left(t_{0}\right), x_{2}^{\prime}\left(t_{0}\right), x_{3}^{\prime}\left(t_{0}\right), \ldots, x_{n}^{\prime}\left(t_{0}\right)\right)$; the velocity vector to $\textbf{c}$ is referred to as velocity of $\textbf{c}(t)$
 \end{itemize}
 
 Recall chain rule: if $y=f(x)$ where $x$ is a function of $t$, $y\,'(t)=x\,'f\,'(x)$, not to be confused with product rule.
 Can write $f\,'(x)=\frac{y\,'(t)}{x\,'(t)}$
 
 \begin{itemize}
-    \item If $\vec{p}(t)=\vec{c}(t)+\vec{r}(t),$ then $\vec{p}^{\prime}(t)=\vec{c}^{\prime}(t)+\vec{r}^{\prime}(t)$
-    \item If $g(t)=\vec{c}(t) \cdot \vec{r}(t),$ then $g^{\prime}(t)=\vec{c}^{\prime}(t) \cdot \vec{r}(t)+\vec{c}(t) \cdot \vec{r}^{\prime}(t)$
-    \item If $\vec{p}(t)=f(t) \vec{c}(t),$ then $\vec{p}^{\prime}(t)=f^{\prime}(t) \vec{c}(t)+f(t) \vec{c}^{\prime}(t)$
-    \item If $\vec{p}(t)=\vec{c}(t) \times \vec{r}(t),$ then $\vec{p}^{\prime}(t)=\vec{c}^{\prime}(t) \times \vec{r}(t)+\vec{c}(t) \times \vec{r}^{\prime}(t)$
-    \item If $\vec{p}(t)=\vec{c}(f(t)),$ then $\vec{p}^{\prime}(t)=f^{\prime}(t) \vec{c}^{\prime}(f(t))$
-    \item If $g(t)=\|\vec{c}(t)\|,$ then $g^{\prime}(t)=\frac{\vec{c}(t) \cdot \vec{c}^{\prime}(t)}{\|\vec{c}(t)\|}$
+    \item If $\textbf{p}(t)=\textbf{c}(t)+\textbf{r}(t),$ then $\textbf{p}^{\prime}(t)=\textbf{c}^{\prime}(t)+\textbf{r}^{\prime}(t)$
+    \item If $g(t)=\textbf{c}(t) \cdot \textbf{r}(t),$ then $g^{\prime}(t)=\textbf{c}^{\prime}(t) \cdot \textbf{r}(t)+\textbf{c}(t) \cdot \textbf{r}^{\prime}(t)$
+    \item If $\textbf{p}(t)=f(t) \textbf{c}(t),$ then $\textbf{p}^{\prime}(t)=f^{\prime}(t) \textbf{c}(t)+f(t) \textbf{c}^{\prime}(t)$
+    \item If $\textbf{p}(t)=\textbf{c}(t) \times \textbf{r}(t),$ then $\textbf{p}^{\prime}(t)=\textbf{c}^{\prime}(t) \times \textbf{r}(t)+\textbf{c}(t) \times \textbf{r}^{\prime}(t)$
+    \item If $\textbf{p}(t)=\textbf{c}(f(t)),$ then $\textbf{p}^{\prime}(t)=f^{\prime}(t) \textbf{c}^{\prime}(f(t))$
+    \item If $g(t)=\|\textbf{c}(t)\|,$ then $g^{\prime}(t)=\frac{\textbf{c}(t) \cdot \textbf{c}^{\prime}(t)}{\|\textbf{c}(t)\|}$
 \end{itemize}
 
 \subsection{Tangent Line}
 
 Tangent line can be visualized as a base vector in standard position plus a velocity vector
-tangent to the tip which traces a shifted line in some interval. General formula with base vector $\vec{c}(t_0)$ and slope $\vec{c}\,'(t_0)$:
+tangent to the tip which traces a shifted line in some interval. General formula with base vector $\textbf{c}(t_0)$ and slope $\textbf{c}\,'(t_0)$:
 
-\[\boxed{\ell(t)=\vec{c}(t_0)+(t-t_0)\vec{c}\,'(t_0)}\]
+\[\boxed{\ell(t)=\textbf{c}(t_0)+(t-t_0)\textbf{c}\,'(t_0)}\]
 
 \section{Space Curves}
 
@@ -175,7 +175,7 @@ tangent to the tip which traces a shifted line in some interval. General formula
 
 Speed of a parametric function in $\R^n$ is given by:
 
-$$||\vec{c}\,'(t)||=\sqrt{\displaystyle\sum_{i=1}^{n}c_i(t)^2}$$
+$$||\textbf{c}\,'(t)||=\sqrt{\displaystyle\sum_{i=1}^{n}c_i(t)^2}$$
 
 (being the magnitude of the velocity vector)
 
@@ -183,12 +183,12 @@ $$||\vec{c}\,'(t)||=\sqrt{\displaystyle\sum_{i=1}^{n}c_i(t)^2}$$
 
 Arclength of a parametric function is given by:
 
-\[S=\int_a^b ||\vec{c}\,'(t)||dt=\int_a^b\sqrt{(\frac{dx}{dt})^2+(\frac{dy}{dt})^2+(\frac{dz}{dt})^2+\cdots}\;dt\]
+\[S=\int_a^b ||\textbf{c}\,'(t)||dt=\int_a^b\sqrt{(\frac{dx}{dt})^2+(\frac{dy}{dt})^2+(\frac{dz}{dt})^2+\cdots}\;dt\]
 
 Can approximate arclength as a sum of the lengths of secant vector approximations
-$\vec{s}_i=\vec{c}(t_i)-\vec{c}(t_{i-1})$:
+$\textbf{s}_i=\textbf{c}(t_i)-\textbf{c}(t_{i-1})$:
 
-\[\mbox{arclength}\approx\sum_{i=1}^n||\vec{s}_i||\]
+\[\mbox{arclength}\approx\sum_{i=1}^n||\textbf{s}_i||\]
 
 According to the MVT, there exists a $\hat{t}_i$ in $(t_{i-1},t_i)$ (open interval due to differentiability requirement) such that:
 
@@ -197,21 +197,21 @@ According to the MVT, there exists a $\hat{t}_i$ in $(t_{i-1},t_i)$ (open interv
     y\,'(\hat{t}_i)&=\frac{y(t_i)-y(t_{i-1})}{t_i-t_{i-1}}
 \end{align*}
 
-This means that, since $\vec{s}_i$ is given as the difference between 2 points,
+This means that, since $\textbf{s}_i$ is given as the difference between 2 points,
 being a secant:
 
 \begin{align*}
-    \vec{s}_i&=\left((t_i-t_{i-1})x(\hat{t}_i), (t_i-t_{i-1})y(\hat{t}_i)\right )\\
-    \vec{s}_i&=(t_i-t_{i-1})\left(x\,'(\hat{t}_i),y\,'(\hat{t}_i)\right)\\
-    \vec{s}_i&=(t_i-t_{i-1})\vec{c}\,\,'(\hat{t}_i)
+    \textbf{s}_i&=\left((t_i-t_{i-1})x(\hat{t}_i), (t_i-t_{i-1})y(\hat{t}_i)\right )\\
+    \textbf{s}_i&=(t_i-t_{i-1})\left(x\,'(\hat{t}_i),y\,'(\hat{t}_i)\right)\\
+    \textbf{s}_i&=(t_i-t_{i-1})\textbf{c}\,\,'(\hat{t}_i)
 \end{align*}
 
 Thus,
 
 \begin{align*}
-    \mbox{arclength}&\approx\sum_{i=1}^n||\vec{s}_i||\\
-    \mbox{arclength}&\approx\sum_{i=1}^n||\Delta t \,\vec{c}\,\,'(\hat{t}_i)||\\
-    \mbox{arclength}&\approx\sum_{i=1}^n\Delta t||\vec{c}\,\,'(\hat{t}_i)||
+    \mbox{arclength}&\approx\sum_{i=1}^n||\textbf{s}_i||\\
+    \mbox{arclength}&\approx\sum_{i=1}^n||\Delta t \,\textbf{c}\,\,'(\hat{t}_i)||\\
+    \mbox{arclength}&\approx\sum_{i=1}^n\Delta t||\textbf{c}\,\,'(\hat{t}_i)||
 \end{align*}
 
 Can define the arclength differential as follows:
@@ -224,8 +224,8 @@ Can just define arclength as $\text{arclength}=\int \mathrm{ds}$
 
 Higher the speed of a curve, farther the points are spaced apart.
 An arclength parametrization of a curve is a path whose image is the desired curve and whose speed is constantly one.
-Or, $\vec{c}:[a,b]\to\mathbb{R}^n$ with $||\vec{c}\,\,'(t)||=1$ for $t\in[a,b]$.
-If a curve is not an arclength parameterization, then can do $\frac{\vec{c}(t)}{||\vec{c}\,'(t)||}$ but only dividing the coefficients (slopes).\newline
+Or, $\textbf{c}:[a,b]\to\mathbb{R}^n$ with $||\textbf{c}\,\,'(t)||=1$ for $t\in[a,b]$.
+If a curve is not an arclength parameterization, then can do $\frac{\textbf{c}(t)}{||\textbf{c}\,'(t)||}$ but only dividing the coefficients (slopes).\newline
 
 \noindent
 When speed is variable, is difficult to define arclength parameterization.
@@ -234,13 +234,13 @@ then $s$ is injective because according to FTC, $s\,'(t)=v(t)$.
 By definition, $v\,'(t)\geq 0$ always since it is composed of a radical, so it must be \textbf{increasing}.
 Thus, if $t_1=t_2$, $s(t_1)\neq s(t_2)$. Arclength parameterization:
 
-\[s(t)=\int_0^t||\vec{c}\,'(u)||du\]
+\[s(t)=\int_0^t||\textbf{c}\,'(u)||du\]
 
 \noindent
 This means that $s$ is invertible, so can solve for $t$ to get $t=\varphi(s)$.
 An arclength parameterization can be found by:
 
-\[\boxed{\vec{p}(s)=\vec{c}(\varphi(s))}\]
+\[\boxed{\textbf{p}(s)=\textbf{c}(\varphi(s))}\]
 
 \section{Curvature}
 
@@ -248,79 +248,79 @@ An arclength parameterization can be found by:
 
 Recall that to make an arclength parameterization accumulate the magnitudes of infinitesimal velocity vectors:
 
-\[s(t)=\int_a^t ||\vec{r}\,'(u)||du\]
+\[s(t)=\int_a^t ||\textbf{r}\,'(u)||du\]
 
-Given some curve $\vec{r}(t)$, define an arclength parameterization by $\vec{r}(g(s))\rightarrow \vec{r}_1(s)$, so 
-$\vec{r}$ is defined in terms of $s$. The unit tangent vector $\vec{T}_1(s)$ is then $\frac{\vec{r}_1\,'(s)}{||\vec{r}_1\,'(s)||}=\vec{r}_1\,'(s)$.
+Given some curve $\textbf{r}(t)$, define an arclength parameterization by $\textbf{r}(g(s))\rightarrow \textbf{r}_1(s)$, so 
+$\textbf{r}$ is defined in terms of $s$. The unit tangent vector $\textbf{T}_1(s)$ is then $\frac{\textbf{r}_1\,'(s)}{||\textbf{r}_1\,'(s)||}=\textbf{r}_1\,'(s)$.
 
 \begin{align*}
-    \vec{T}_1(s)&=\vec{r}_1\,'(s)\\
-    &=\frac{d}{ds}\vec{r}_1(s)\\
-    &=\frac{d}{ds}\vec{r}(g(s))\\
-    &=\vec{r}\,'(g(s))\cdot g\,'(s)=\vec{r}\,'(t)\cdot \frac{dt}{ds}\\
-    &=\frac{\vec{r}\,'(t)}{\frac{ds}{dt}}=\frac{\vec{r}\,'(t)}{||\vec{r}\,'(t)||}
+    \textbf{T}_1(s)&=\textbf{r}_1\,'(s)\\
+    &=\frac{d}{ds}\textbf{r}_1(s)\\
+    &=\frac{d}{ds}\textbf{r}(g(s))\\
+    &=\textbf{r}\,'(g(s))\cdot g\,'(s)=\textbf{r}\,'(t)\cdot \frac{dt}{ds}\\
+    &=\frac{\textbf{r}\,'(t)}{\frac{ds}{dt}}=\frac{\textbf{r}\,'(t)}{||\textbf{r}\,'(t)||}
 \end{align*}
 
-This means that $\vec{T}_1(s)=T(t)$
+This means that $\textbf{T}_1(s)=T(t)$
 
 Continuing, to find curvature $\kappa(t)$:
 
 \begin{align*}
-    \vec{T}_1\,'(s)&=\frac{d}{ds}\vec{T}(t)\\
-    &=\frac{d}{ds}\vec{T}(g(s))\\
-    &=\vec{T}\,'(t)\cdot \frac{dt}{ds}\\
-    &=\frac{\vec{T}\,'(t)}{\frac{ds}{dt}}\\
-    &=\frac{\vec{T}\,'(t)}{||\vec{r}\,'(t)||}\\
+    \textbf{T}_1\,'(s)&=\frac{d}{ds}\textbf{T}(t)\\
+    &=\frac{d}{ds}\textbf{T}(g(s))\\
+    &=\textbf{T}\,'(t)\cdot \frac{dt}{ds}\\
+    &=\frac{\textbf{T}\,'(t)}{\frac{ds}{dt}}\\
+    &=\frac{\textbf{T}\,'(t)}{||\textbf{r}\,'(t)||}\\
 \end{align*}
 
-Thus, $\boxed{\kappa(t)=\frac{\vec{T}\,'(t)||}{||\vec{r}\,'(t)||}}$
+Thus, $\boxed{\kappa(t)=\frac{\textbf{T}\,'(t)||}{||\textbf{r}\,'(t)||}}$
 
 \subsection{Definition}
 
-Given a curve $C$ parameterized with arclength by the path $\vec{c}:[a,b]\rightarrow \R^n$,
+Given a curve $C$ parameterized with arclength by the path $\textbf{c}:[a,b]\rightarrow \R^n$,
 curvature is defined as:
 
-\[\boxed{\kappa(s)=||\vec{T}\,'(s)||}\]
+\[\boxed{\kappa(s)=||\textbf{T}\,'(s)||}\]
 
-where $\vec{c}\,'(s)\neq 0$ and $\vec{T}(s)=\frac{\vec{c}\,'(s)}{||\vec{c}\,'(s)||}$ (normalized slope vector).\newline
+where $\textbf{c}\,'(s)\neq 0$ and $\textbf{T}(s)=\frac{\textbf{c}\,'(s)}{||\textbf{c}\,'(s)||}$ (normalized slope vector).\newline
 
 A loose geometric interpretation is that a greater $\kappa(s)$ implies
 more curvature, that is, the curve is changing at a greater rate there.
-When $\vec{c}\,'(s)\neq 0$ is always true for a curve, it is \textbf{regular}.
+When $\textbf{c}\,'(s)\neq 0$ is always true for a curve, it is \textbf{regular}.
 Is defined in terms of arclength parameterization so curvature
 is an intrinsic property of the curve independent of parameterization.\newline
 
 \noindent
-Formula for curvature at the point $\vec{c}(t)$:
+Formula for curvature at the point $\textbf{c}(t)$:
 
-\[\boxed{\kappa(t)=\frac{||T\,'(t)||}{||\vec{c}\,\,'(t)||}=\frac{||\vec{c}\,\,'(t)\times \vec{c}\,\,'\,'(t)||}{||\vec{c}\,\,'(t)||^3}}\]
+\[\boxed{\kappa(t)=\frac{||T\,'(t)||}{||\textbf{c}\,\,'(t)||}=\frac{||\textbf{c}\,\,'(t)\times \textbf{c}\,\,'\,'(t)||}{||\textbf{c}\,\,'(t)||^3}}\]
 
 \section{Motion in 3D space}
 
-Given a path $\vec{c}: \mathbb{R} \rightarrow \mathbb{R}^{3}$ with $\vec{c}(t)=(x(t), y(t), z(t)),$ then we have defined:
+Given a path $\textbf{c}: \mathbb{R} \rightarrow \mathbb{R}^{3}$ with $\textbf{c}(t)=(x(t), y(t), z(t)),$ then we have defined:
 \begin{itemize}
-    \item $\cdot \vec{v}(t)=\vec{c}^{\prime}(t)=\left(x^{\prime}(t), y^{\prime}(t), z^{\prime}(t)\right)$ is also path in $\mathbb{R}^{3}$ called the velocity of $\vec{c}$
-    \item $\vec{a}(t)=\vec{v}^{\prime}(t)=\vec{c}^{\prime \prime}(t)=\left(x^{\prime \prime}(t), y^{\prime \prime}(t), z^{\prime \prime}(t)\right)$ is also a path in $\mathbb{R}^{3}$ called the acceleration of $\vec{c}$
-    \item $v(t)=\|\vec{v}(t)\|=\left\|\vec{c}^{\prime}(t)\right\|$ is a scalar valued function on $\mathbb{R}$ (that\,'s a fancy way of saying the domain and codomain of this function are both $\mathbb{R}$ ) called the speed of $\vec{c}$
-    \item $\vec{T}(t)=\frac{\vec{c}^{\prime}(t)}{v(t)}$ is also a path in $\mathbb{R}^{3}$ called the unit tangent to $\vec{c}$
-    \item $\kappa(t)=\frac{\vec{T}^{\prime}(t)}{v(t)}=\frac{\left\|\vec{c}^{\prime}(t) \times \vec{c}^{\prime \prime}(t)\right\|}{\left\|\vec{c}^{\prime}(t)\right\|^{3}}$ is a scalar valued function on $\mathbb{R}$ called the curvature of $\vec{c}$
+    \item $\cdot \textbf{v}(t)=\textbf{c}^{\prime}(t)=\left(x^{\prime}(t), y^{\prime}(t), z^{\prime}(t)\right)$ is also path in $\mathbb{R}^{3}$ called the velocity of $\textbf{c}$
+    \item $\textbf{a}(t)=\textbf{v}^{\prime}(t)=\textbf{c}^{\prime \prime}(t)=\left(x^{\prime \prime}(t), y^{\prime \prime}(t), z^{\prime \prime}(t)\right)$ is also a path in $\mathbb{R}^{3}$ called the acceleration of $\textbf{c}$
+    \item $v(t)=\|\textbf{v}(t)\|=\left\|\textbf{c}^{\prime}(t)\right\|$ is a scalar valued function on $\mathbb{R}$ (that\,'s a fancy way of saying the domain and codomain of this function are both $\mathbb{R}$ ) called the speed of $\textbf{c}$
+    \item $\textbf{T}(t)=\frac{\textbf{c}^{\prime}(t)}{v(t)}$ is also a path in $\mathbb{R}^{3}$ called the unit tangent to $\textbf{c}$
+    \item $\kappa(t)=\frac{\textbf{T}^{\prime}(t)}{v(t)}=\frac{\left\|\textbf{c}^{\prime}(t) \times \textbf{c}^{\prime \prime}(t)\right\|}{\left\|\textbf{c}^{\prime}(t)\right\|^{3}}$ is a scalar valued function on $\mathbb{R}$ called the curvature of $\textbf{c}$
 \end{itemize}
 
-Note that $\vec{T}\cdot \vec{T}=||\vec{v}||^2=1$.
-Computing the derivative, $\frac{\mathrm{d}}{\mathrm{d} t} \vec{T} \cdot \vec{T}=2 \vec{T} \cdot \vec{T}^{\prime}=0$
-This means that $\vec{T}\perp \vec{T}\,'$.\newline
+Note that $\textbf{T}\cdot \textbf{T}=||\textbf{v}||^2=1$.
+Computing the derivative, $\frac{\mathrm{d}}{\mathrm{d} t} \textbf{T} \cdot \textbf{T}=2 \textbf{T} \cdot \textbf{T}^{\prime}=0$
+This means that $\textbf{T}\perp \textbf{T}\,'$.\newline
 
 \noindent
-Define $\boxed{\vec{N}(t)=\frac{\vec{T}^{\prime}(t)}{\left\|\vec{T}^{\prime}(t)\right\|}}$ as
-the unit normal vector, which is the unit tangent to the unit tangent. From observation, $\vec{T}\perp \vec{N}$.
-Fact: the acceleration vector always lies in the plane spanned by $\vec{N}$ and $\vec{T}$.\newline
+Define $\boxed{\textbf{N}(t)=\frac{\textbf{T}^{\prime}(t)}{\left\|\textbf{T}^{\prime}(t)\right\|}}$ as
+the unit normal vector, which is the unit tangent to the unit tangent. From observation, $\textbf{T}\perp \textbf{N}$.
+Fact: the acceleration vector always lies in the plane spanned by $\textbf{N}$ and $\textbf{T}$.\newline
 
 \noindent
-Acceleration $\vec{a}(t)$ is thus split component-wise into $a_T$ from $\vec{T}$
-and $a_N$ from $\vec{N}$:
+Acceleration $\textbf{a}(t)$ is thus split component-wise into $a_T$ from $\textbf{T}$
+and $a_N$ from $\textbf{N}$:
 
-\[\boxed{a_T=v\,'(t)=\frac{\vec{a(t)}\cdot \vec{v}(t)}{v(t)}}\]
-\[\boxed{a_N=\kappa(t)v(t)^2=\frac{||\vec{a}(t)\times \vec{v}(t)||}{v(t)}=\sqrt{\|\vec{a}(t)\|^{2}-\left|a_{T}\right|^{2}}}\]
+\[\boxed{a_T=v\,'(t)=\frac{\textbf{a(t)}\cdot \textbf{v}(t)}{v(t)}}\]
+\[\boxed{a_N=\kappa(t)v(t)^2=\frac{||\textbf{a}(t)\times \textbf{v}(t)||}{v(t)}=\sqrt{\|\textbf{a}(t)\|^{2}-\left|a_{T}\right|^{2}}}\]
 
 \section{Derivatives of parameterized curves}
 
@@ -328,7 +328,7 @@ and $a_N$ from $\vec{N}$:
 
 Take the following function:
 
-\[\vec{r}(t)=\langle x(t),y(t) \rangle\]
+\[\textbf{r}(t)=\langle x(t),y(t) \rangle\]
 
 An arclength parameterization is achieved with the following computation:
 
@@ -336,26 +336,26 @@ An arclength parameterization is achieved with the following computation:
 
 Can say that $t=g(s)$, so the arclength parameterization, which is the path in terms of $s$:
 
-\[\vec{r}_1(s)=\langle x(g(s)),y(g(s))\rangle\]
+\[\textbf{r}_1(s)=\langle x(g(s)),y(g(s))\rangle\]
 
 Taking the derivative by the chain rule:
 
 \begin{align*}
-    \vec{r}_1\,'(s)&=\langle x\,'(g(s))\cdot g\,'(s),y\,'(g(s))\cdot g\,'(s)\rangle \\
+    \textbf{r}_1\,'(s)&=\langle x\,'(g(s))\cdot g\,'(s),y\,'(g(s))\cdot g\,'(s)\rangle \\
     &=g\,'(s)\langle x\,'(t),y\,'(t) \rangle \\
 \end{align*}
 
-Note that $g\,'(s)=\frac{dt}{ds}=\frac{1}{\frac{ds}{dt}}=\frac{1}{||\vec{r}\,'(t)||}$ by taking the derivative of the integral for arclength:
+Note that $g\,'(s)=\frac{dt}{ds}=\frac{1}{\frac{ds}{dt}}=\frac{1}{||\textbf{r}\,'(t)||}$ by taking the derivative of the integral for arclength:
 
-\[\vec{r}_1\,'(s)=\frac{1}{||\vec{r}\,'(t)||}\langle x\,'(t),y\,'(t) \rangle=\vec{T}(t)\]
+\[\textbf{r}_1\,'(s)=\frac{1}{||\textbf{r}\,'(t)||}\langle x\,'(t),y\,'(t) \rangle=\textbf{T}(t)\]
 
-Following from this, $g\,'(s)=\frac{1}{||\vec{r}\,'(g(s))||}$ so $g\,'\,'(s)=-\frac{1}{||\vec{r}\,'(g(s))||^2}\cdot g\,'(s)=-\frac{1}{||\vec{r}\,'(t)||^3}$
+Following from this, $g\,'(s)=\frac{1}{||\textbf{r}\,'(g(s))||}$ so $g\,'\,'(s)=-\frac{1}{||\textbf{r}\,'(g(s))||^2}\cdot g\,'(s)=-\frac{1}{||\textbf{r}\,'(t)||^3}$
 
 \subsection{Orthogonal derivative and position vectors}
 
-Observe that $\vec{r}\cdot \vec{r}=||\vec{r}||^2$.
-Thus, $\frac{d}{dt}[\vec{r}\cdot \vec{r}]=2\vec{r}\cdot\vec{r}\,'=2||\vec{r}||||\vec{r}||\,'$.
-Rearranging: $\frac{\vec{r}\cdot \vec{r}}{||\vec{r}||}=||\vec{r}||\,'$.
+Observe that $\textbf{r}\cdot \textbf{r}=||\textbf{r}||^2$.
+Thus, $\frac{d}{dt}[\textbf{r}\cdot \textbf{r}]=2\textbf{r}\cdot\textbf{r}\,'=2||\textbf{r}||||\textbf{r}||\,'$.
+Rearranging: $\frac{\textbf{r}\cdot \textbf{r}}{||\textbf{r}||}=||\textbf{r}||\,'$.
 Means that magnitude of position vector has to be a constant value in order for it
 to be $\perp$ to derivative.
 
@@ -366,14 +366,14 @@ to be $\perp$ to derivative.
     \item Law of equal area in equal time -- position vector pointing from sun to planet sweeps out equal area in equal time (so speed must increase/decrease)
 \end{itemize}
 
-Can approximate the area swept in time by $\frac{dA}{dt}=\frac{1}{2}||\vec{r}(t)\times \vec{r}\,'(t)||=\frac{1}{2}||\vec{J}||$.
-The differential equation for each of Kepler\,'s laws is: $\vec{r}\,'\,'(t)=-\frac{k}{||\vec{r}(t)||^3}\vec{r}(t)$, so it is in the direction of $\vec{r}(t)$.
-Thus, differentiating $\frac{d\vec{J}}{dt}=\frac{d}{dt}(\vec{r}\,'(t)\times \vec{r}\,'\,'(t))=0$.
+Can approximate the area swept in time by $\frac{dA}{dt}=\frac{1}{2}||\textbf{r}(t)\times \textbf{r}\,'(t)||=\frac{1}{2}||\textbf{J}||$.
+The differential equation for each of Kepler\,'s laws is: $\textbf{r}\,'\,'(t)=-\frac{k}{||\textbf{r}(t)||^3}\textbf{r}(t)$, so it is in the direction of $\textbf{r}(t)$.
+Thus, differentiating $\frac{d\textbf{J}}{dt}=\frac{d}{dt}(\textbf{r}\,'(t)\times \textbf{r}\,'\,'(t))=0$.
 
 \subsection{Cross-product identities}
 
 Cross product identities:
 \begin{itemize}
-    \item $\boxed{\vec{u}\times(\vec{v}\times \vec{w})=(u\cdot w)\vec{v}-(\vec{u}\cdot \vec{v})\vec{w}}$
-    \item $\boxed{u\cdot(\vec{v}\times \vec{w})=v\cdot(\vec{w}\times \vec{u})=\vec{w}\cdot(\vec{u}\times \vec{v})}$
+    \item $\boxed{\textbf{u}\times(\textbf{v}\times \textbf{w})=(u\cdot w)\textbf{v}-(\textbf{u}\cdot \textbf{v})\textbf{w}}$
+    \item $\boxed{u\cdot(\textbf{v}\times \textbf{w})=v\cdot(\textbf{w}\times \textbf{u})=\textbf{w}\cdot(\textbf{u}\times \textbf{v})}$
 \end{itemize}
