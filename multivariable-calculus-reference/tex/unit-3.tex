@@ -17,7 +17,7 @@ if given any small positive number $\epsilon$, $\delta>0$ is guaranteed so when 
 
 Formally: 
 
-\[\lim _{(x, y) \rightarrow\left(x_{0}, y_{0}\right)} f(x, y)=\lim _{\vec{x} \rightarrow P_{0}} f(x, y)=L \text { if } \forall \varepsilon>0 \;\exists \delta>0\]
+\[\lim _{(x, y) \rightarrow\left(x_{0}, y_{0}\right)} f(x, y)=\lim _{\tb{x} \rightarrow P_{0}} f(x, y)=L \text { if } \forall \varepsilon>0 \;\exists \delta>0\]
 
 such that
 
@@ -84,7 +84,7 @@ Thus, $\lim_{x\to 0}\frac{\sin x}{x}=1$.
 
 A function $f:\R^m \to \R^n$ is differentiable at $P_0$ if there is a linear transformation from $n\times m$ matrix $Df(P_0)$ satisfying
 
-\[\lim_{\vec{x}\to P_0}\frac{\big\vert \big\vert f \big( \vec{x} \big)-\big(f(P_0)+\mathrm{D}f(P_0)(\vec{x}-P_0) \big) \big\vert \big\vert}{\vert \vert \vec{x}-P_0 \vert \vert}=0\]
+\[\lim_{\tb{x}\to P_0}\frac{\big\vert \big\vert f \big( \tb{x} \big)-\big(f(P_0)+\mathrm{D}f(P_0)(\tb{x}-P_0) \big) \big\vert \big\vert}{\vert \vert \tb{x}-P_0 \vert \vert}=0\]
 
 If the function is differentiable at this point, then $Df(P_0)$ is the derivative of $f$ at $P_0$. Called Jacobian matrix of $f$ at $P_0$.
 
@@ -139,14 +139,14 @@ If a function $f:\R^m\to \R^n$ exists, then it is made up of $n$ component funct
 
 The number of rows $n$ depends on components (codomain) of the output space whereas the domain determines columns ($m$). Thus, linear approximation to a function $f:\R^m\to \R^n$ at $P_0$ is
 
-\[L_{P_0}(\vec{x})=f(P_0)+\Big(\mbox{matrix of partial derivatives at}\,P_0\Big)(\vec{x}-P_0)\]
+\[L_{P_0}(\tb{x})=f(P_0)+\Big(\mbox{matrix of partial derivatives at}\,P_0\Big)(\tb{x}-P_0)\]
 
-In parametric equations (paths), let $\vec{c}(t)=\big(x(t), y(t), z(t) \big)$ have continuous partials.
-Thus, the matrix of partials $D\vec c(t)=\begin{bmatrix}x'(t)\\y'(t)\\z'(t)\end{bmatrix}$. Is the vertical velocity vector.
+In parametric equations (paths), let $\tb{c}(t)=\big(x(t), y(t), z(t) \big)$ have continuous partials.
+Thus, the matrix of partials $D\tb c(t)=\begin{bmatrix}x'(t)\\y'(t)\\z'(t)\end{bmatrix}$. Is the vertical velocity vector.
 If the approximation $L_{t_0}(t)$ is found, it yields:
 
 \begin{align*}
-    L_{t_0}(t)&=\vec c(t_0)+
+    L_{t_0}(t)&=\tb c(t_0)+
     \left(
     \begin{matrix}
     x'(t_0)\\
@@ -155,7 +155,7 @@ If the approximation $L_{t_0}(t)$ is found, it yields:
     \end{matrix}
     \right)
     (t-t_0)\\
-    &=\vec{c} (t_0)+(t-t_0)\vec c\,'(t_0)
+    &=\tb{c} (t_0)+(t-t_0)\tb c\,'(t_0)
 \end{align*}
 
 Also, note that matrix of partials for a scalar valued function $f:\R^n\to \R$ is simply the gradient; there is 1 row and $n$ columns in the gradient vector.
@@ -166,13 +166,13 @@ Also, note that matrix of partials for a scalar valued function $f:\R^n\to \R$ i
 
 If $f,g:\R^m\to \R^n$ are differentiable at $P_0\in \R^m$ for $c\in \R$:
 \begin{itemize}
-    \item $h(\vec{x})=cf(\vec{x})\implies \mathrm{D}h(P_0)=cDf(P_0)$
-    \item $h(\vec{x})=f(\vec{x})+g(\vec{x})\implies \mathrm{D}h(P_0)=\mathrm{D}f(P_0)+\mathrm{D}g(P_0)$ (domain = codomain; sum of two $n\times m$ matrices)
+    \item $h(\tb{x})=cf(\tb{x})\implies \mathrm{D}h(P_0)=cDf(P_0)$
+    \item $h(\tb{x})=f(\tb{x})+g(\tb{x})\implies \mathrm{D}h(P_0)=\mathrm{D}f(P_0)+\mathrm{D}g(P_0)$ (domain = codomain; sum of two $n\times m$ matrices)
 \end{itemize}
 
 If $f,g:\R^n\to \R$ are differentiable at $P_0\in \R^n$:
 \begin{itemize}
-    \item $h(\vec{x})=f(\vec{x})g(\vec{x})\implies \mathrm{D}h(P_0)=f(P_0)\mathrm{D}g(P_0)+g(P_0)\mathrm{D}f(P_0)$ (no commutativity as matrix times scalar DNE)
+    \item $h(\tb{x})=f(\tb{x})g(\tb{x})\implies \mathrm{D}h(P_0)=f(P_0)\mathrm{D}g(P_0)+g(P_0)\mathrm{D}f(P_0)$ (no commutativity as matrix times scalar DNE)
 \end{itemize}
 
 If $f,g:\R^n\to \R$ are both differentiable at $P_0\in \R^n$ and $g(P_0)\neq 0$:
@@ -190,9 +190,9 @@ If $g:\R^m\to \R^p$ and $f:\R^p\to \R^n$ and $g$ is differentiable at $P_0\in \R
 Thus, derivative of composites is a matrix product. $\mathrm{D}f(g(P_0))\to n\times p$ and $\mathrm{D}g(P_0)\to p\times m$
 so $\mathrm{D}(f\circ g)(P_0)\to n\times m$.
 
-If $\vec{c}:\R\to \R^n$ is a path differentiable at $t_0\in \R$ and $f:\R^n\to \R$ is differentiable at $\vec{c}(t_0)$, then:
+If $\tb{c}:\R\to \R^n$ is a path differentiable at $t_0\in \R$ and $f:\R^n\to \R$ is differentiable at $\tb{c}(t_0)$, then:
 
-\[\frac{d}{dt}f(\vec{c}(t_0))=\mathrm{D}f(\vec{c}(t_0))D\vec{c}(t_0)=\left[ \nabla f\left( x_{1},x_{2},\ldots x_{n}\right) \right]\begin{bmatrix} \vdots \\ \vec{c}\,'(t_0) \\ \vdots \end{bmatrix}=\nabla f(\vec{c}\,'(t_0))\cdot \vec{c}\,'(t_0)\]
+\[\frac{d}{dt}f(\tb{c}(t_0))=\mathrm{D}f(\tb{c}(t_0))D\tb{c}(t_0)=\left[ \nabla f\left( x_{1},x_{2},\ldots x_{n}\right) \right]\begin{bmatrix} \vdots \\ \tb{c}\,'(t_0) \\ \vdots \end{bmatrix}=\nabla f(\tb{c}\,'(t_0))\cdot \tb{c}\,'(t_0)\]
 
 Thus, derivative of scalar valued function and path is dot product of gradient and velocity.
 
@@ -200,21 +200,21 @@ Thus, derivative of scalar valued function and path is dot product of gradient a
 
 \subsection{Directional Derivative}
 
-Directional derivative of a scalar function $f:\R^n\to \R$ at some $P_0\in\R^n$ in the direction of $\vec{v}\in\R^n$ is given by
+Directional derivative of a scalar function $f:\R^n\to \R$ at some $P_0\in\R^n$ in the direction of $\tb{v}\in\R^n$ is given by
 
-\[\boxed{f_{\vec{v}}\left(P_{0}\right)=\nabla f\left(P_{0}\right) \cdot \frac{\vec{v}}{\|\vec{v}\|}}\]
+\[\boxed{f_{\tb{v}}\left(P_{0}\right)=\nabla f\left(P_{0}\right) \cdot \frac{\tb{v}}{\|\tb{v}\|}}\]
 
 Maximizing the directional derivative involves the dot product. Let $f:\R^n\to \R$ and $P_0\in\R^n$ where $\nabla f(P_0)$ is defined.
-Also, let $\vec{u}$ be a unit vector such that $f_{\vec{u}}(P_0)$ is maximized. The directional derivative is
+Also, let $\tb{u}$ be a unit vector such that $f_{\tb{u}}(P_0)$ is maximized. The directional derivative is
 
-\[f_{\vec u}(P_0)=\nabla f(P_0)\cdot \vec u=\|\nabla f(P_0)\|\cos \theta\]
+\[f_{\tb u}(P_0)=\nabla f(P_0)\cdot \tb u=\|\nabla f(P_0)\|\cos \theta\]
 
-Since $\cos\theta \in [-1,1]$, the directional derivative is maximized at $\cos\theta = 1\implies \vec{u}||\nabla f(P_0)$.
+Since $\cos\theta \in [-1,1]$, the directional derivative is maximized at $\cos\theta = 1\implies \tb{u}||\nabla f(P_0)$.
 \textbf{Thus the gradient of a function at $P_0$ points in the direction of steepest ascent}.
 
-For a more general case given $f:\R^n\to \R$ and $P_0\in\R^n$ where $\nabla f_{\vec{v}}(P_0)$ is maximized and $\nabla f(P_0)$ exists:
+For a more general case given $f:\R^n\to \R$ and $P_0\in\R^n$ where $\nabla f_{\tb{v}}(P_0)$ is maximized and $\nabla f(P_0)$ exists:
 \begin{align*}
-    \nabla f_{\vec{v}}(P_0)&=\nabla f(P_0) \cdot \frac{\vec{v}}{||\vec{v}||}\\
+    \nabla f_{\tb{v}}(P_0)&=\nabla f(P_0) \cdot \frac{\tb{v}}{||\tb{v}||}\\
     &=\nabla f(P_0) \cdot \frac{\nabla f(P_0)}{||\nabla f(P_0)||}\\
     &=\frac{\nabla f(P_0)\cdot \nabla f(P_0)}{||\nabla f(P_0)||}\\
     &=||\nabla f(P_0)||
@@ -227,13 +227,13 @@ Thus, the length of the gradient vector tells how steep the ascent is in the dir
 A image in the codomain $\R^n$ where arrows originating at each point point in the steepest direction $\forall\; P\in \R^n$ where the partials exist.
 Are always perpendicular to level curves of $f$.
 
-Let $f:\R^n\to \R$ and $P\in \R^n$ a point where partials of $f$ exist. Considering the level set $f(\vec{x})=f(P)$,
-all values map to same codomain value as $P$. Also, let $\vec{c}:\R^n\to \R$ have an image entirely within this level set $f(\vec{x})=f(P)$
-and $\vec{c}(t_0)=P$. Then, the proof must show that $\nabla f(P)\cdot \vec c\,'(t_0)=0$.
+Let $f:\R^n\to \R$ and $P\in \R^n$ a point where partials of $f$ exist. Considering the level set $f(\tb{x})=f(P)$,
+all values map to same codomain value as $P$. Also, let $\tb{c}:\R^n\to \R$ have an image entirely within this level set $f(\tb{x})=f(P)$
+and $\tb{c}(t_0)=P$. Then, the proof must show that $\nabla f(P)\cdot \tb c\,'(t_0)=0$.
 
-Note that since $h(t)=f(\vec{c}(t))$, $h'(t_0)=\nabla f \Big(\vec c (t_0) \Big)\cdot \vec c\,'(t_0)=\nabla f (P)\cdot  \vec c\,'(t_0)$.
-Since the image of $\vec{c}(t)$ lies within $f(\vec{x})=f(P)$, $f$ is constant on the image of $\vec{c}$ (every point on $\vec{c}$ maps to $f(P)$ under $f$).
-Thus, $h(t)=f(\vec{c}(t))\implies h'(t)=0\;\forall\;t$.
+Note that since $h(t)=f(\tb{c}(t))$, $h'(t_0)=\nabla f \Big(\tb c (t_0) \Big)\cdot \tb c\,'(t_0)=\nabla f (P)\cdot  \tb c\,'(t_0)$.
+Since the image of $\tb{c}(t)$ lies within $f(\tb{x})=f(P)$, $f$ is constant on the image of $\tb{c}$ (every point on $\tb{c}$ maps to $f(P)$ under $f$).
+Thus, $h(t)=f(\tb{c}(t))\implies h'(t)=0\;\forall\;t$.
 
 \subsection{Sphere}
 
