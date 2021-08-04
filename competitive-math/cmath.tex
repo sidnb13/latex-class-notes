@@ -1,19 +1,45 @@
 \documentclass[11pt]{article}
-
-\usepackage[margin=0.75in]{geometry}
-
+\newcommand{\tb}{\textbf}
+\usepackage{fullpage}
+\usepackage{hyperref}
 \usepackage{amssymb}
 \usepackage{spalign}
 \usepackage{amsmath}
+\usepackage{framed}
+\newcommand{\R}{\mathbb{R}}
+\usepackage[parfill]{parskip}
+
 \usepackage{graphicx}
+\graphicspath{./figures/}
+\setcounter{tocdepth}{2}
+
+\hbadness=99999
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\urlstyle{urlcolor=blue}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Fact}[theorem]
+\newtheorem{lemma}[theorem]{Fact}
+
+\renewcommand{\contentsname}{Table of Contents}
+\title{Competitive Math Notes}
+\author{Sidharth Baskaran}
 
 \begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
 % -------------------------------------
-\begin{center}
-    \textbf{{\LARGE{title}}}
-\end{center}
 
-
+\input{tex/quadratics.tex}
 
 % -------------------------------------
 \end{document}
