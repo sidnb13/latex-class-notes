@@ -1,0 +1,70 @@
+\subsection{Defining Image and Kernel}
+
+\subsubsection{Image}
+
+Of a function, the set of vectors in the codomain hit by the domain.
+The image of a function $f:\;\R^m\rightarrow \R^n$ is:
+
+\[\boxed{
+    \mathrm{Im}(f)=\{\tb{y}\in \R^n | \exists\;\tb{x}\in \R^m\text{ s.t. }f(\tb{x})=\tb{y}\}
+}\]
+
+Similar in concept to the range of a function in non-linear context.
+
+\subsubsection{Kernel}
+
+Set of vectors in the domain that are mapped to $\tb{0}$ in the codomain.
+Kernel of a function $f:\;\R^m\rightarrow \R^n$ is:
+
+\[\boxed{
+    \mathrm{Ker}(f)=\{\tb{x}\in \R^m | f(\tb{x})=\tb{0}\}
+}\]
+
+Analogous to the roots/zeros of a polynomial.
+
+\subsection{Examples}
+
+Following linear transformation's image lives in $\R^2$:
+
+\[T(\tb{x})=\left(\begin{array}{cc}
+    1 & 1 \\
+    -1 & 1
+    \end{array}\right) \tb{x}\]
+
+Following linear transformation's image forms a plane that is
+$\R^2$:
+
+\[T(\tb{x})=\left(\begin{array}{cc}
+    1 & -1 \\
+    0 & 2 \\
+    2 & 2
+    \end{array}\right) \tb{x}\]
+
+\subsection{Span}
+
+If $A$ is an $n\times m$ matrix, then image of $T(\tb{x})=A\tb{x}$ is set of all vectors in $\R^n$
+that are linear combinations of column vectors of $A$.\\
+
+\noindent
+Thus, the span of a set of $n$ vectors is all linear combinations of those vectors:
+
+\[\boxed{
+    \mathrm{span}(\tb{v}_1,\tb{v}_2,\cdots,\tb{v}_n)=\{\sum c_i\tb{v}_i | c_i\in\R\}
+}\]
+
+So the span of column vectors of $A$ is the image of the associated linear transformation.
+
+\subsection{Kernel}
+
+Kernel amounts to finding solutions to $A\tb{x}=\tb{0}$. Kernels are closed under linear combinations.
+Kernel can never be empty set, it always holds true that $T(\tb{0})=\tb{0}$.
+
+\subsection{Invertible Linear Transformations}
+
+Main conclusions about image and kernel:
+
+\begin{itemize}
+    \item Kernel is always (trivially) $\{\tb{0}\}$, else would imply dependance and therefore singularity in the associated matrix $A$
+    so $\boxed{\mathrm{ker}(T)=\{\tb{0}\}}$
+    \item Image is always the space $\R^n$ if associated matrix $A$ is $n\times n$, so $\boxed{\mathrm{Im}(T)=\R^n}$
+\end{itemize}

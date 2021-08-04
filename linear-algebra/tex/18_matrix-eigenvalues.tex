@@ -1,0 +1,82 @@
+\subsection{Eigenvalue for rotation transformation}
+
+\textbf{\textit{Claim:}} 
+If $0< \theta <2\pi$ then transformation $R_\theta : \R^2\rightarrow \R^2$ only has an eigenvector when $\theta=\pi$ (when $\lambda=-1$).
+\newline \noindent
+\textbf{\textit{Proof:}}
+\noindent
+The matrix is $A=\begin{bmatrix}\cos\theta & -\sin\theta\\\sin\theta & \cos\theta\end{bmatrix}$. Following by the definition of an eigenvector:
+
+\[
+    \begin{aligned}
+        A \tb{v} &=\lambda v \Longleftrightarrow \\
+        A \tb{v}-\lambda \tb{v} &=\overrightarrow{0} \Longleftrightarrow \\
+        A \tb{v}-\lambda(I \tb{v}) &=\overrightarrow{0} \Longleftrightarrow \\
+        A \bar{v}-(\lambda I) \tb{v} &=\overrightarrow{0} \Longleftrightarrow \\
+        (A-\lambda I) \tb{v} &=\overrightarrow{0} \Longleftrightarrow \\
+            \operatorname{det}(A-\lambda I)&=0
+        \end{aligned}    
+\]
+
+Thus,
+
+\[
+    \begin{aligned}
+        \operatorname{det}(A-\lambda I) &=0 \\
+        \operatorname{det}\left(\begin{array}{cc}
+        \cos \theta-\lambda & -\sin \theta \\
+        \sin \theta & \cos \theta-\lambda
+        \end{array}\right) &=0 \\
+        \lambda^{2}-2 \lambda \cos \theta+\cos ^{2} \theta+\sin ^{2} \theta &=0 \\
+        \lambda^{2}-2 \lambda \cos \theta+1 &=0
+        \end{aligned}    
+\]
+
+The discriminant of this quadratic ($b^2-4ac$) is $4\cos^2\theta-4$, so for a real solution $4\cos^2\theta-4\geq 0$. It then follows
+that:
+
+\begin{align*}
+    4\cos^2\theta-4&\geq 0\\
+    \cos^2\theta&\geq 1\\
+    \cos^2\theta&=\pm 1\\
+    \theta&=\pi
+\end{align*}
+
+Note that because $(A-\lambda I)\tb{v}=\tb{0}$ implies a nontrivial kernel for $A-\lambda I$, $\mathrm{det}(A-\lambda I)=0$.
+
+\subsection{Characteristic Polynomials}
+
+Characteristic polynomial is for $\mathrm{det}(A-\lambda I)$ with variable $\lambda$: 
+
+\[\boxed{P_A(\lambda)=\mathrm{det}(A-\lambda I)}\]
+
+General polynomial for $A=\begin{bmatrix}a&b\\c&d\end{bmatrix}$:
+
+\[
+    \begin{aligned}
+        p_{A}(\lambda) &=\operatorname{det}(A-\lambda I) \\
+        &=\operatorname{det}\left(\begin{array}{cc}
+        a-\lambda & b \\
+        c & d-\lambda
+        \end{array}\right) \\
+        &=(a-\lambda)(d-\lambda)-b c \\
+        &=\lambda^{2}-(a+b) \lambda+(a d-b c)    
+    \end{aligned}
+\]
+
+Ends up that $\mathrm{tr}(A)=a+d$ and $\mathrm{det}(A)=ad-bc$:
+
+\[\boxed{p_{A}(\lambda)=\lambda^{2}-\operatorname{tr} A \lambda+\operatorname{det} A}\]
+
+\subsubsection{General formula}
+
+In general, if $A$ is an $n\times n$ matrix, then
+
+\[\boxed{p_{A}(\lambda)=(-1)^{n} \lambda^{n}+(-1)^{n-1} \operatorname{tr} A \lambda^{n-1}+\cdots+\operatorname{det} A}\]
+
+Conjectures:
+\begin{itemize}
+    \item By FTLA, degree $n$ polynomial will have $n$ complex roots so at least $n$ real eigenvalues
+    \item If all $n$ roots are real, then $\mathrm{tr}(A)$ is sum of eigenvalues and determinant is the product of them
+    \item Since roots are either real or in complex conjugate pairs, ($a+bi$ or $a-bi$) then when $n$ is odd $A$ has at least 1 real eigenvalue
+\end{itemize}

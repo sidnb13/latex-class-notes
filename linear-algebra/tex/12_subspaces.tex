@@ -1,0 +1,117 @@
+\subsection{Image and Kernel}
+
+If $T:\;\R^m\rightarrow \R^n$ then $\mathrm{Im}(T)\subset \R^n$ and
+$\mathrm{ker}(T)\subset \R^m$ because the associated matrix $A$ is $n\times m$ in dimension.\newline
+
+\noindent
+Both are closed under linear combinations:
+\begin{itemize}
+    \item If $\tb y_1 ,\tb y_2 \in \mathrm{Im}(T)$ then $a \tb{y}_{1}+b \tb{y}_{2} \in \mathrm{Im}(T)$ as well
+    \item If $\tb x_1 ,\tb x_2 \in \mathrm{Ker}(T)$ then $a\tb x_1 +b\tb x_2 \in \mathrm{Ker}(T)$ as well
+\end{itemize}
+
+\subsection{Subspaces}
+
+Collection of vectors in $\R^n$ is called a subspace in $\R^n$ if collection is nonempty and closed under linear combinations.
+Examples (and counterexamples):
+
+\begin{itemize}
+    \item $W=\left\{\left(\begin{array}{c}
+        3 s \\
+        2+5 s
+        \end{array}\right) \mid s \in \mathbb{R}\right\} \subset \mathbb{R}^{2}$
+        is not a subspace because $\tb{0}$ is not contained within the set, so not closed under linear combinations
+    \item $W=\left\{\left(\begin{array}{l}
+        x_{1} \\
+        x_{2} \\
+        x_{2}
+        \end{array}\right) \mid 2 x_{1}+x_{2}-x_{3}=0\right\}$ is a subspace due to matrix representation and 
+        the image of this matrix containing $\tb{0}$ due to $T(\tb{0}=\tb{0})$
+\end{itemize}
+
+\noindent
+$\R^2$ is not a subspace of $\R^3$ because though a plane can be drawn in $\R^3$, its components will be of the form
+$\begin{bmatrix}x\\ y\\k\end{bmatrix}$, where $k$ is fixed. Since $\R^3$ vectors always have 3 coordinates, they can't represent $\R^2$.
+$\R^2$ can only be represented by $\R^2$ vectors. Thus, $R^n$ is not a subspace of $\R^{n+1}$.\\
+
+\noindent
+\textbf{\textit{Claim:}} Span of a set of vectors in $\R^n$ is a subspace of $\R^n$.\\
+\textbf{\textit{Proof:}}\\
+Let $S=\{\tb v_1 ,\tb v_2 ,\cdots\tb v_m \}$. Let $\tb w ,\tb{y}\in \mathrm{span}(S)$.
+Thus, $\tb w =\sum c_i\tb v_i$ and $\tb{y}=\sum d_i\tb v_i $ where $d_i,c_i\in \R$.
+
+\begin{align*}
+    a\tb w +b\tb{y}&=a\sum c_i\tb v_i+b\sum d_i\tb v_i\\
+    &=\sum a c_{i} \tb v_{i}+\sum b d_{i} \tb v_i\\
+    &=\sum (a c_i+b d_i) \tb v_i \in \operatorname{span}(S)
+\end{align*}
+
+\noindent
+List of subspaces in $\R^2$ would be $\R^2$, $\{t\tb{v}\mid t\in\R\}$, $\{\tb{0}\}$.
+
+\subsection{Intersection and Union}
+
+If $V$ and $W$ are collections of vectors in $\R^n$:
+\begin{itemize}
+    \item $V \cap W=\{\tb{x} \mid \tb{x} \in V \text { and } \tb{x} \in W\}$ is the intersection
+    \item $V \cup W=\{\tb{x} \mid \tb{x} \in V \text { or } \tb{x} \in W\}$ is the union
+\end{itemize}
+
+\subsection{Redundant Vectors}
+
+If for some transformation $T$ there exists the following:
+
+\[\operatorname{im}(T)=\operatorname{span}\left\{\left(\begin{array}{l}
+    1 \\
+    1 \\
+    1
+    \end{array}\right),\left(\begin{array}{l}
+    2 \\
+    2 \\
+    2
+    \end{array}\right),\left(\begin{array}{l}
+    1 \\
+    2 \\
+    3
+    \end{array}\right),\left(\begin{array}{l}
+    2 \\
+    3 \\
+    4
+    \end{array}\right)\right\}\]
+
+There are redundant vectors in this case. The minimum number of vectors in the span is 2, 
+for $\tb{0}$ cannot be produced then. With 3 vectors in $\R^3$, any one can be the result of linear combinations of the other 2.
+So, it would be appropriate to say that:
+
+\[\operatorname{im}(T)=\left\{\left(\begin{array}{l}
+    1 \\
+    1 \\
+    1
+    \end{array}\right),\left(\begin{array}{l}
+    1 \\
+    2 \\
+    3
+    \end{array}\right)\right\}\]
+
+These are then \textbf{linearly independent}. This set forms a \textbf{basis} for that set of vectors.
+Thus, the basis can be found for any matrix. The basis of $I_n$ is then $\{\tb{e}_1,\tb{e}_2\cdots \tb{e}_n\}$.
+
+\subsection{Intersection and Union}
+
+\begin{framed}
+    \noindent If $V$ and $W$ are subspaces of $\R^n$, then $V\cap W$ 
+    is a subspace of $\R^n$ and $V\cup W$ is \textbf{not} a subspace of $\R^n$.
+\end{framed}
+
+\noindent
+An intersection is the items contained in both sets, so $\tb{0}\in V\cap W$.
+If $\tb{v},\tb{w}\in V\cap W$, then $\tb{v},\tb{w}\in V$ and $\tb{v},\tb{w}\in W$. This means that
+$\tb{v}+\tb{w}\in V$ and $\tb{v}+\tb{w}\in W$ so $\tb{v}+\tb{w}\in V\cap W$.
+Similarly, if some $k\tb{v}\in V\cap W$ where $k\in \R$ then $k\tb{v}\in V$ and $k\tb{v}\in V$. 
+Thus, $V\cap W$ is a subspace of $\R^n$.\\
+
+\noindent
+The union is the items contained in either set.
+If $V=\mathrm{span}(\tb{e}_2)$ and $W=\mathrm{span}(\tb{e}_1)$, then let $\tb{y}=\begin{bmatrix}0\\ y\end{bmatrix}\in V$
+and $\tb{x}=\begin{bmatrix}x\\ 0\end{bmatrix}\in W$. Thus, $\tb{y},\tb{x}\in V\cup W$. However,
+$a\tb{x}+b\tb{y}\notin V\cup W$ where $a,b\in \R$.

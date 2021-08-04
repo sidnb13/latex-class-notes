@@ -1,0 +1,63 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\tb}{\textbf}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\urlstyle{urlcolor=blue}
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usetikzlibrary{patterns}
+\usepackage{amsmath}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccsc}{arccsc}
+\DeclareMathOperator{\DNE}{DNE}
+\setcounter{tocdepth}{2}
+\renewcommand{\contentsname}{Table of Contents}
+
+\title{AP Calculus BC Reference}
+\author{Sidharth Baskaran}
+
+\pgfplotsset{compat=newest}
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Limits and Continuity}\label{sec:limits-and-continuity}
+\input{latex/limits-and-continuity}
+
+\section{Derivatives}\label{sec:derivatives}
+\input{latex/derivatives}
+
+\section{Applications of Derivatives}\label{sec:applications-of-derivatives}
+\input{latex/applications-of-derivatives}
+
+\section{Graphing and Analytical Applications}\label{sec:graphing-and-analytical-applications}
+\input{latex/graphing-and-analytical-applications}
+
+\section{Integration}\label{sec:integration}
+\input{latex/integration}
+
+\section{Differential Equations}\label{sec:differential-equations}
+\input{latex/differential-equations}
+
+\section{Applications of Integration}\label{sec:applications-of-integration}
+\input{latex/applications-of-integration}
+
+\section{Infinite Series}\label{sec:infinite-series}
+\input{latex/infinite-series}
+
+\end{document}

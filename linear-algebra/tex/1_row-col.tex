@@ -1,0 +1,61 @@
+\subsection{Row picture}
+
+Involves viewing matrix as linear equations graphed on a line or plane. Take the example $A\tb{x}=\tb{b}$ below:
+
+\[\begin{bmatrix}
+        1&2&3\\
+        3&4&5\\
+        4&5&6
+    \end{bmatrix}
+    \begin{bmatrix}
+        x\\y\\z
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        8\\9\\10
+    \end{bmatrix}
+\]
+
+This can be viewed as the following system:
+
+\[
+    \spalignsys{
+    1x + 2y + 3z = 8 ;
+    3x + 4y + 5z = 9 ;
+     4 + 5y + 6z = 10
+    }
+\]
+
+\subsection{Column picture}
+
+Involves viewing this setup as a linear combination of column vectors. Take $A\tb{x}=\tb{b}$ again:
+
+\[
+    x\begin{bmatrix}
+        1\\3\\4
+    \end{bmatrix}
+    +y\begin{bmatrix}
+        2\\4\\5
+    \end{bmatrix}
+    +z\begin{bmatrix}
+        3\\5\\6
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+        8\\9\\10
+    \end{bmatrix}.
+\]
+
+\subsection{Visualization in Space and Solutions}
+
+\subsubsection{2D space}
+
+In $\R^2$, the equations form a line. Independent column vectors means infinite linear combinations of these to get
+a set of $\tb{b}$ in $\R^2$. If one column vector is dependent on another, they are parallel and various
+combinations of $\tb{b}$ are on a line.
+
+\subsubsection{3D space}
+
+The equations form a plane in $\R^3$. If column vectors independent, infinite linear combination of $\tb{b}$
+exist in 3D space. If one vector is a scaled combination of another and the third is independent, then solutions lie
+on a line. If all three are interdependent, the solution is on a line.

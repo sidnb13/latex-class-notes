@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\newcommand{\tb}{\textbf}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{spalign}
+\usepackage{amsmath}
+\usepackage{framed}
+\usepackage{tcolorbox}
+\newtcolorbox{mybox}[1]{colback=red!5!white,colframe=red!75!black,fonttitle=\bfseries,title=#1}
+\newcommand{\R}{\mathbb{R}}
+\usepackage[parfill]{parskip}
+
+\usepackage{graphicx}
+\graphicspath{./figures/}
+\setcounter{tocdepth}{2}
+
+\hbadness=99999
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\urlstyle{urlcolor=blue}
+
+\renewcommand{\contentsname}{Table of Contents}
+\title{Multivariable Calculus Reference}
+\author{Sidharth Baskaran}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+% -------------------------------------
+
+\input{tex/unit-1.tex}
+\input{tex/unit-2.tex}
+\input{tex/unit-3.tex}
+
+% -------------------------------------
+\end{document}
