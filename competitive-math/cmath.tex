@@ -12,6 +12,7 @@
 \usepackage{graphicx}
 \graphicspath{./figures/}
 \setcounter{tocdepth}{2}
+\usepackage{amsthm}
 
 \hbadness=99999
 
@@ -24,9 +25,11 @@
 }
 \urlstyle{urlcolor=blue}
 
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{corollary}{Fact}[theorem]
-\newtheorem{lemma}[theorem]{Fact}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
 
 \renewcommand{\contentsname}{Table of Contents}
 \title{Competitive Math Notes}
@@ -39,7 +42,8 @@
 \newpage
 % -------------------------------------
 
-\input{tex/quadratics.tex}
+\input{tex/quad-factor.tex}
+\input{tex/linearsystems.tex}
 
 % -------------------------------------
 \end{document}

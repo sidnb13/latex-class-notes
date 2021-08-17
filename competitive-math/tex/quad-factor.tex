@@ -1,0 +1,89 @@
+\section{Quadratics and Polynomials}
+
+\subsection{Basic factoring}
+
+Given some $ax^2+bx+c$, try and find the factorization $(sx+u)(tx+v)$ by expanding this template expression.
+
+\begin{remark}
+    If one root is 0, the product of roots is 0 so
+    the equation is of form $ax^2+bx=0$.
+\end{remark}
+
+\begin{remark}
+    Difference of squares are of the form $x^2-a^2=0\implies (x-a)(x+a)=0$.
+\end{remark}
+
+\begin{remark}
+    A perfect square is of the form $(x+a)^2=x^2+2ax+a^2$. This is a case of a "double root."
+\end{remark}
+
+\subsection{Quadratic Formula}
+
+By manipulating $ax^2+bx+c=0$ by completing the square, the quadratic formula can be found.
+
+\begin{equation}
+    x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}
+\end{equation}
+
+\subsection{Expansions}
+
+\begin{eqnarray}
+    (a+b)^2=a^2+2ab+b^2\\
+    (a+b)^3 = a^3 + 3a^2b+3ab^2+b^3
+\end{eqnarray}
+
+\subsection{Factoring}
+
+\begin{definition}[Difference of squares]
+    \begin{equation}
+        a^2-b^2=(a+b)(a-b)
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Sum of squares]
+    \begin{equation}
+        a^2+b^2=(a+b)^2-2ab
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Sum of cubes]
+    \begin{equation}
+        a^3+b^3=(a+b)(a^2-ab+b^2)
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Difference of cubes]
+    \begin{equation}
+        a^3-b^3=(a-b)(a^2+ab+b^2)
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Some cube identity]
+    \begin{equation}
+        a^3+b^3+c^3-3abc=(a+b+c)(a^2+b^2+c^2-ab-ac-bc)
+    \end{equation}
+\end{definition}
+
+\begin{definition}[Simon factoring trick]
+    Used to factor in a diophantine equation.
+    If $ab + ka + nb = c$, then $(a+n)(b+k)=c+nk$.
+\end{definition}
+
+\subsection{Vieta's Formulas}
+
+\begin{eqnarray}
+    x^2+ax+b=(x-p)(x-q)\\
+    x^2+ax+b=x^2-(p+q)x+pq
+\end{eqnarray}
+
+Thus, $a=p+q$ and $b=pq$. Generally,
+
+\begin{align*}	 
+    s_1&= & r_1+r_2+r_3&+\cdots+r_n & &=-\frac{a_{n-1}}{a_n} \\	 s_2&= & r_1r_2+r_1r_3+r_1r_4&+\cdots+r_{n-2}r_{n-1} & &=\phantom{-}\frac{a_{n-2}}{a_n} \\	 s_3&= & r_1r_2r_3+r_1r_2r_4&+\cdots+r_{n-2}r_{n-1}r_n & &=-\frac{a_{n-3}}{a_n} \\	 & & &\vdots & & \\	 s_n&= & r_1r_2r_3&\cdots r_n & &=(-1)^n\frac{a_0}{a_n}.\\	 
+\end{align*}
+
+\begin{definition}[AM-GM Inequality]
+    \begin{equation}
+        \frac{a_1+\ldots+a_n}{n}\geq \sqrt[n]{a_1a_2\ldots a_n}
+    \end{equation}
+\end{definition}
