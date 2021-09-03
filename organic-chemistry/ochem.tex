@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+\newcommand{\tb}{\textbf}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{spalign}
+\usepackage{amsmath}
+\usepackage{framed}
+\usepackage[parfill]{parskip}
+
+\usepackage{graphicx}
+\graphicspath{./figures/}
+\setcounter{tocdepth}{2}
+
+\hbadness=99999
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\urlstyle{urlcolor=blue}
+
+\renewcommand{\contentsname}{Table of Contents}
+\title{Logic and Set Theory}
+\author{Sidharth Baskaran}
+
+\begin{document}
+\maketitle
+
+% \tableofcontents
+% \newpage
+% -------------------------------------
+
+\input{tex/substitution-elimination.tex}
+
+% -------------------------------------
+\end{document}
