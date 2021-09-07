@@ -1,0 +1,52 @@
+\section{Homogeneous Differential Equations}
+
+\subsection{Homogeneity}
+
+\begin{definition}[Homogeneity of polynomials]
+    Polynomials where all terms are of the same degree are homogeneous.
+\end{definition}
+
+Homoegeneity of functions is analogous to assigning physical dimensions (e.g. length) to all of the variables.
+If the function has the length dimension to the $k$th power, then it is homogeneous of degree $k$.
+
+\begin{example}
+    If $x,y$ are lengths, then the following is homogeneous of degree 3.
+    \begin{equation}
+        f(x,y)=2y^3\exp(\frac{y}{z})-\frac{x^4}{x+3y}
+    \end{equation}
+\end{example}
+
+Alternate definition also suffices for generality.
+
+\begin{definition}[Homogeneous function]
+    $f(x,y)$ is homogeneous of degree $k$ iff $f(\lambda x, \lambda y)=\lambda^kf(x,y)$.
+\end{definition}
+
+\begin{definition}[Alternate definition of homogeneity]
+    If $f(x,y)$ can be rewritten as $f(\frac{y}{x})$ or $f(\frac{x}{y})$ then it is homogeneous.
+\end{definition}
+
+\subsection{Homogeneous Differential Equations}
+
+\begin{corollary}[Homogeneous DEs]
+    If $M(x,y)$ and $N(x,y)$ are homogeneous and of same degree, then $M(x,y)dx+N(x,y)dy=0$
+    is a homogeneous DE.
+\end{corollary}
+    
+\begin{corollary}[Homogeneous DEs]
+    $M(x,y)/N(x,y)$ is homogeneous of degree 0.
+\end{corollary}
+
+\begin{corollary}[Homogeneous DEs]
+    If $f(x,y)$ is homogeneous of degree 0 in $x,y$, then $f(x,y)$ is a function of $y/x$ alone.
+\end{corollary}
+
+The ratio $M/N$ is a function of $y/x$, so the above can be rewritten as
+
+\begin{align}
+    \frac{dy}{dx}+g(\frac{y}{x})&=0\\
+    \frac{d}{dx}(vx)+g(v)&=\frac{dv}{dx}+v+g(v)=0
+\end{align}
+    
+Can thus transform into SOV problem by substituting $y=vx$ or $x=vy$, where $v$ is a function of $y$ or $x$.
+Then, substitute back $v=\frac{y}{x}$ to obtain a general solution.

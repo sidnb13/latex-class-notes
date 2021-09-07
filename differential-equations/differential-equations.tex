@@ -5,6 +5,7 @@
 \usepackage{amssymb}
 \usepackage{spalign}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{framed}
 \newcommand{\R}{\mathbb{R}}
 \usepackage[parfill]{parskip}
@@ -24,22 +25,28 @@
 }
 \urlstyle{urlcolor=blue}
 
+\theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
-\newtheorem{axiom}[theorem]{Axiom}
+\theoremstyle{definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
 \newtheorem{example}[theorem]{Example}
 
 \renewcommand{\contentsname}{Table of Contents}
-\title{Logic and Set Theory}
+\title{Differential Equations}
 \author{Sidharth Baskaran}
 
 \begin{document}
 \maketitle
 
-% \tableofcontents
-% \newpage
+\tableofcontents
+\newpage
 % -------------------------------------
 
+\input{tex/unit-1.tex}
+\input{tex/unit-2.tex}
 
 % -------------------------------------
 \end{document}

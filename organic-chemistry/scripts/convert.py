@@ -25,6 +25,8 @@ def main():
                 match = re.findall(r'image\d+', line)
                 line = line.replace(match[0], match[0] + '.png') + '\n'
             purified.append(line)
+
+    
         
     with open('converted.md', 'w') as w:
         w.writelines(purified)
