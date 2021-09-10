@@ -1,0 +1,151 @@
+\section{Common Sense Reasoning (Bonevac)}
+
+\begin{itemize}
+    \item Thoughts are organized by general principle, 
+    e.g. acids being corrosive, what goes up must come down.
+    \item Are not \textbf{universal or necessary} as they have exceptions.
+    Thus, inference from principle to conclusions are not deductively valid.
+    \item To formalize principles, need to be able to draw conclusions from them but also withdraw these
+    with further information. Classical logic does not allow for widthdrawable conclusions, for a valid argument does not need to
+    revalidated-\textbf{guarantees} truth of its conclusion.
+    \item Thus, need a system of logic to reach \textit{defeasible} conclusions-reasonable but defeatable with further info
+    \item Classical logic is monotonic-if set $S$ implies conclusion $\mathcal{B}$, then any set with all of $S$ also implies $\mathcal{B}$, so adding premises cannot make valid argument invalid
+    \item New system of logic is non-monotonic, adding premises can sometimes make invalid argument
+\end{itemize}
+
+\subsection{Good arguments going bad}
+
+Can add a premise to a deductively invalid argument to make it valid. A conditional always works.
+
+\begin{example}
+    Invalid: Mt. Everest is there. So Mt. Everest should be climbed.\newline
+    With premise: Mt. Everest is there. \textbf{If it is there, it should be climbed.} So Mt. Everest should be climbed.
+\end{example}
+
+\begin{itemize}
+    \item A deductively valid argument cannot be invalidated with additional premises
+    \item An argument is valid if the truth of premises guarantees truth of conclusion, so if the premises are true the conclusion \textbf{must} be true, \textit{but also if} falsity of premises implies falsity of conclusions
+    \item In real-world arguments, premise cannot guarantee truth of conclusion. Additional information may cause withdrawal of inference.
+    \begin{itemize}
+        \item Validity doesn't require the truth of the premises, instead it merely necessitates that conclusion follows from the formers without violating the correctness of the logical form
+    \end{itemize}
+    \item An argument can be deductively invalid but inductively valid, or \textit{defeasibly valid/allowed}, so premises \textit{defeasibly imply} conclusion.
+    \begin{itemize}
+        \item Argument is defeasibly valid iff premises are true \textbf{and} reasonable to expect conclusion to be true.
+    \end{itemize}
+    \item Precisely term this as a \textbf{counterexample}, circumstance in which premises are true but conclusion false
+\end{itemize}
+
+\section{Abstraction and truth functional logic}
+
+\begin{itemize}
+    \item Use \textit{atomic sentences} (e.g. $A$ or $B$) to express information as a statement, whereas the statement is its \textit{extension}.
+    Always are capital letters and are simplest way to express information.
+    \item Use parentheses in truth-functional expressions to clearly convey information
+\end{itemize}
+
+\begin{definition}[Case]
+    A case is a particular assignment of truth values to atomic sentences. $n$ atomic sentences correspond to $2^n$ cases.
+\end{definition}
+
+\begin{axiom}[Principle of Excluded Middle]
+    The principle of the excluded middle says that given a sentence, either it or the negation is true in any case.
+\end{axiom}
+
+\begin{axiom}[Principle of Non-Contradiction]
+    A sentence and its negation can't be true in the same case.
+\end{axiom}
+
+\subsection{Logical Operators}
+
+\begin{center}
+\begin{tabular}[]{|c|c|c|}
+    Operator & Name & Vernacular equivalent\\
+    \hline
+    $\lnot$ & negation & not\\
+    $\land$ & conjunction & and\\
+    $\lor$ & disjunction & or\\
+    $\then$ & conditional & if-then, only if\\
+    $\leftrightarrow$ & biconditional & iff, necessary + sufficient, exactly when
+\end{tabular}
+\end{center}
+
+\section{Arguments}
+
+\begin{itemize}
+    \item Consists of a non-negative number of premises along with one conclusion
+    \item Premise is a sentence, just like conclusion
+    \item Standard form lists premises, followed by horizontal line (therefore) and the conclusion
+    \item Logic assesses \textit{validity} of arguments and we can see if the argument is \textit{sound}
+\end{itemize}
+
+\begin{definition}[Validity]
+    An argument is valid iff every case in which all its premises are true forces the conclusion to be true.
+\end{definition}
+
+\begin{definition} [Soundness]
+    An argument is sound iff it is valid and premises are actually true (i.e. in real life).
+\end{definition}
+
+\begin{definition}[Counterexample]
+    A case in which an argument's premises are all true but the conclusion is false.
+\end{definition}
+
+A valid argument therefore has a relaxed definition; it is only invalid if there exists a counterexample to it.
+
+\subsection{Arguments and theorems}
+
+\begin{itemize}
+    \item Propositions are the mathematical analogue of arguments
+    \item A true proposition in all cases (tautology) is a theorem. Are written as conditional sentences.
+\end{itemize}
+
+\section{Common Fallacies (Bennett)}
+
+\begin{itemize}
+    \item \textbf{Error of Conversion}. Can't affirm the antecedent given the premise that affirms the consequent. In other words, given $\{p\then q,q\}$ as premises, cannot conclude that $p$ is true.
+    \item \textbf{Error of Inversion}. Denying the antecedent and incorrectly denying the consequent. In the premises $p$ is not true then $q$ is true, $p$ is not true, incorrect to conclude that $q$ is not true.
+\end{itemize}
+
+\section{Informal proof}
+
+Formal proofs are computationally verified (e.g. truth table) and informal proofs fall in one of below categories.
+The below methodology is to prove validity of an argument.
+
+\subsection{Conditional proof}
+
+\begin{itemize}
+    \item Assume premises are true
+    \item Use light of reasoning to show that conclusion is also true in such a case
+    \item Conclude that argument is valid
+    \item Is sufficient to prove validity because we don't care about a case with false premises
+\end{itemize}
+
+\subsection{Proof by contradiction}
+
+\begin{itemize}
+    \item Assume there exists a counterexample (true premises and a false conclusion)
+    \item Show this assumption leads to a contradiction
+    \item Conclude that the argument is valid
+\end{itemize}
+
+\section{Logical Equivalence}
+
+\begin{itemize}
+    \item Conditional Disjunction: $(\lnot A\lor B)\Leftrightarrow (A\then B)$
+    \item Contrapositives: $(A\then B)\Leftrightarrow (\lnot B\then \lnot A)$
+    \item Two versions of DeMorgan's Law
+    \begin{itemize}
+        \item $\lnot(A\land B)\Leftrightarrow\lnot A\lor \lnot B$
+        \item $\lnot(A\lor B)\Leftrightarrow\lnot A\land \lnot B$
+    \end{itemize}
+    \item Definition of Equivalence: $(A\leftrightarrow B)\Leftrightarrow (A\then B)\land (B\then A)$
+\end{itemize}
+
+Final operator applied in evaluation is the \textbf{main operator}.
+
+\section{Natural deduction}
+
+Begin by listing \textbf{premises}, then apply set of logical equivalences
+or rules of inference to arrive at the \textbf{conclusion}. See 1.6 of Textbook
+for equivalences and inference rules.

@@ -1,0 +1,6 @@
+output/*
+!output/*.pdf
+.DS_Store
+.vscode/
+problems/
+temp.txt
