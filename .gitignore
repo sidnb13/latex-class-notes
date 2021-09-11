@@ -2,3 +2,4 @@ output/*
 !output/*.pdf
 .DS_Store
 .vscode/
+organic-chemistry
