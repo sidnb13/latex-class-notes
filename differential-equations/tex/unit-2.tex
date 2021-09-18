@@ -50,3 +50,178 @@ The ratio $M/N$ is a function of $y/x$, so the above can be rewritten as
     
 Can thus transform into SOV problem by substituting $y=vx$ or $x=vy$, where $v$ is a function of $y$ or $x$.
 Then, substitute back $v=\frac{y}{x}$ to obtain a general solution.
+
+\section{Exact Equations}
+
+If there exists an equation of the form $A(x)dx+B(y)dy=0$, the solution is a function with differential $A(x)dx+B(y)dy$.
+Idea works for equations of form
+
+\begin{equation}
+    dF=Mdx+Ndy.
+\end{equation}
+
+So, $F(x,y)=c\implies dF=0$ and
+
+\begin{equation}
+    Mdx+Ndy=0.
+\end{equation}
+
+If there's a function $F$ such that $Mdx+Ndy$ is the \textbf{total differential}
+of $F$, then Eq. 5 is an \textit{exact equation} by definition. Can rewrite the total differential from the chain rule:
+
+\begin{equation}
+    dF=\frac{\partial F}{\partial x}dx+\frac{\partial F}{\partial y}dy.
+\end{equation}
+
+So $M=\frac{\partial F}{\partial x},N=\frac{\partial F}{\partial y}$. We can take 2nd derivative to show these are equal because the partials are continuous (Clairaut's theorem).
+
+\begin{eqnarray}
+    \frac{\partial M}{\partial y}=\frac{\partial^2 F}{\partial y\partial x}\\
+    \frac{\partial N}{\partial x}=\frac{\partial^2 F}{\partial y\partial x}.
+\end{eqnarray}
+
+\begin{definition}[Exactness]
+    \begin{equation}
+        \frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}.
+    \end{equation}
+\end{definition}
+
+\begin{proof}
+    Let $\phi(x,y)$ be a function where $\frac{\partial \phi}{\partial x}=M$. $\phi$ is the function you get from integrating $Mdx$ wrt $x$ and holding $y$. Then
+
+    \begin{equation}
+        \frac{\partial^2\phi}{\partial y\partial x}=\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}
+    \end{equation}
+
+    Integrating both sides wrt $x$:
+
+    \begin{equation}
+        \frac{\partial \phi}{\partial x}=N+B'(y)
+    \end{equation}
+
+    where $B'(y)$ is the integration constant. Let
+
+    \begin{equation}
+        F=\phi(x,y)-B(y)
+    \end{equation}
+
+    such that 
+
+    \begin{align}
+        dF&=\frac{\partial \phi}{\partial x}dx+\frac{\partial \phi}{\partial y}dy-B'(y)dy\\
+        &=Mdx+\left[N+B'(y)\right]dy-B'(y)dy\\
+        &=Mdx+Ndy
+    \end{align}
+\end{proof}
+
+\begin{example} We have the DE
+    \begin{equation}
+        3x(xy-2)dx+(x^3+2y)dy=0.
+    \end{equation}
+
+    Then, 
+
+    \begin{equation}
+        \frac{\partial M}{\partial y}=3x^2,\frac{\partial N}{\partial y}=3x^2
+    \end{equation}
+
+    The DE is exact, and $F=c$ is the solution.
+
+    \begin{eqnarray}
+        \frac{\partial F}{\partial x}=M=3x^2y-6x\\
+        \frac{\partial F}{\partial y}=N=x^3+2y
+    \end{eqnarray}
+
+    Try to find $F$ from 18, integrate both sides wrt $x$ with an integration constant $T(y)$.
+
+    \begin{equation}
+        F=x^3y-3x^2+T(y)
+    \end{equation}
+
+    Using Eq. 19, can can find $\frac{\partial F}{\partial y}$ from Eq. 20 and equate:
+
+    \begin{equation}
+        x^3+T'(y)=x^3+2y\implies T'(y)=2y
+    \end{equation}
+
+    Because $F=c$ is the I.C., can conclude 
+
+    \begin{equation}
+        T(y)=y^2
+    \end{equation}
+
+    Thus,
+
+    \begin{equation}
+        F=x^3y-3x^2+y^2\Leftrightarrow x^3y-3x^2+y^2=c
+    \end{equation}
+\end{example}
+
+\subsection{Linear Equations of Order 1}
+
+If an equation is not exact, can attempt to do so by multiplying DE by an integrating factor.
+
+\begin{definition}[Linear DE of order 1]
+    \begin{equation}
+        A(x)\frac{dy}{dx}+B(x)y=C(x)
+    \end{equation}
+\end{definition}
+
+Divide each side by $A(x)$ to obtain
+
+\begin{equation}
+    \frac{dy}{dx}+P(x)y=Q(x)
+\end{equation}
+
+Suppose there exists for Eq. 25 a I.F. $v(x)>0$. Then,
+
+\begin{equation}
+    v(x)\left[\frac{dy}{dx}+P(x)y\right]=v(x)Q(x)
+\end{equation}
+
+becomes exact, or of form $Mdx+Ndy=0$. Here,
+
+\begin{eqnarray}
+    M=vPy-vQ\\
+    N=v
+\end{eqnarray}
+
+Because the requirement is $\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}$,
+
+\begin{align}
+    vP&=\frac{dv}{dx}\\
+    Pdx&=\frac{dv}{v}\\
+    \ln v&=\int Pdx\\
+    v&=\exp(\int Pdx)
+\end{align}
+
+We can then multiply both sides of the DE by this I.F. One side of this eqn will be of the product rule form, the derivative of $y\exp (\int Pdx)$:
+
+\begin{equation}
+    \exp(\int Pdx)\frac{dy}{dx}+P\exp(\int Pdx)y=Q\exp(\int Pdx)
+\end{equation}
+
+\subsection{General Solution of a Linear Equation}
+
+Given the original form
+
+\begin{equation}
+    \frac{dy}{dx}+P(x)y=Q(x)
+\end{equation}
+
+suppose $P$ and $Q$ are continuous on $x\in (a,b)$ and $x=x_0$ is such a number. $y=y_0$ satisfies the initial condition.
+This sol'n satisfies Eq. 34 for all $x$ in the interval. Multiplying Eq. 34 by integrating factor $\exp(\int Pdx)$ gives
+
+\begin{equation}
+    yv=\int vQ\:dx + c
+\end{equation}
+
+Because $v\neq 0$,
+
+\begin{equation}
+    y=v^{-1}\int vQ\: dx + cv^{-1}
+\end{equation}
+
+Given any $x_0,y_0$ in the interval, can find $c$ s.t. the DE is satisfied.
+Every eqn of above form will have $P,Q$ with common interval of continuity and a unique set of solutions with one I.C. obtained by using the integrating factor.
+These solutions are unique, so any other method yields a solution that aligns with the general solution–all possible solutions satisfying the DE on $x\in (a,b)$.
