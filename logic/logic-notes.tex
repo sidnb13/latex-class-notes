@@ -1,9 +1,10 @@
 \documentclass[11pt]{article}
-\newcommand{\tb}{\textbf}
 \usepackage{fullpage}
 \usepackage{hyperref}
 \usepackage{amssymb}
 \usepackage{spalign}
+\usepackage{amsthm}
+\usepackage{float}
 \usepackage{amsmath}
 \usepackage{framed}
 \newcommand{\R}{\mathbb{R}}
@@ -29,10 +30,16 @@
 }
 
 \newcommand{\then}{\rightarrow}
+\newcommand{\tb}{\textbf}
+\newcommand{\ti}{\textit}
 
+\theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
+\theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
-\newtheorem{axiom}[theorem]{Axiom}
+\theoremstyle{definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
 \newtheorem{example}[theorem]{Example}
 
 \renewcommand{\contentsname}{Table of Contents}
