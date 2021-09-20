@@ -73,10 +73,16 @@ Can add a premise to a deductively invalid argument to make it valid. A conditio
 The English word \textit{unless} can be translated as a conditional, but there is a trick in interpretation. 
 Take example of {\color{red} The patient will die ($A$) unless we operate ($B$)}. 
 The correct translation is $\lnot B\then A$, \textbf{not} $B\then \lnot A$. This is due to the definition of the conditional; 
-we cannot say that $B\leftrightarrow \lnot A$. Surgery does not \ti{guarantee} the patient living, but we know that if we don't operate, the patient will surely die.
+we cannot say that $B\leftrightarrow \lnot A$ or the inverse isn't true. Surgery does not \ti{guarantee} the patient living, but we know that if we don't operate, the patient will surely die.
 
 Further note that using the equivalence conditional disjunction equivalence theorem, $(\lnot B\then A)\leftrightarrow (B\lor A)$.
-So we can also interpret "unless" as a simple disjunction.
+So we can also interpret unless as a simple disjunction.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{figures/venn-conditional.png}
+    \caption{Visualization of conditional}
+\end{figure}
 
 \section{Arguments}
 
@@ -150,13 +156,12 @@ Assume premises are true. Use light of reasoning to show that conclusion is also
 \subsection{Proof by contradiction}
 
 Assume there exists a counterexample (true premises and a false conclusion). Show this assumption leads to a contradiction. Then conclude that the argument is valid.
-Notably, this method is effective at proving \textbf{disproving} arguments, because you can determine invalidity by affirming a counterexample or disprove it.
+Notably, this method is effective at proving \textbf{disproving} arguments, because when assuming the existence of a counterexample, you either reach a contradiction or affirm its existence–sufficient for a disproof.
 
 \section{Logical Equivalences and Inference}
 
-\begin{tabular}{|lll|}
-    \hline
-    Name & Tautology & "Code" \\
+\begin{tabular}{l|l|l}
+    \tb{Name} & \tb {Tautology} & \tb{Code} \\
     \hline \hline Conditional Disjunction & $(A \rightarrow B) \leftrightarrow(\neg A \vee B)$ & CDis \\
     Contraposition & $(A \rightarrow B) \leftrightarrow(\neg B \rightarrow \neg A)$ & ContraPos \\
     Definition of Equivalence & $(A \leftrightarrow B) \leftrightarrow((A \rightarrow B) \wedge(B \rightarrow A))$ & Equiv \\
@@ -166,15 +171,13 @@ Notably, this method is effective at proving \textbf{disproving} arguments, beca
     Distribution of Or over And & $(A \vee(B \wedge C)) \leftrightarrow((A \vee B) \wedge(A \vee C))$ & Distr \\
     Double Negation & $\neg \neg A \leftrightarrow A$ & DN \\
     Repetition & $(A \vee A) \leftrightarrow A$ & Rep\\
-    \hline
 \end{tabular}
 
 Also, commute sentences over $\wedge, \mathrm{V}$, and $\leftrightarrow$.
 Final operator applied in evaluation is the \textbf{main operator}.
 
-\begin{tabular}{|lll|}
-    \hline
-    Name & Inference & "Code" \\
+\begin{tabular}{l|l|l}
+    \tb{Name} & \tb {Inference} & \tb{Code} \\
     \hline \hline Addition & From $A$, infer $A \vee B(B$ may be any sentence) & Add \\
     Conjunction & From $\{A, B\}$, infer $A \wedge B$ & Conj \\
     Constructive Dilemma & From $\{A \vee B, A \rightarrow C, B \rightarrow D\}$, infer $C \vee D$ & $\mathrm{CD}$ \\
@@ -184,7 +187,6 @@ Final operator applied in evaluation is the \textbf{main operator}.
     Modus Ponens & From $\{A \rightarrow B, A\}$, infer $B$ & MP \\
     Simplification & From $A \wedge B$, infer $A$ & Simp \\
     Tautology & Infer $A \vee \neg A(A$ may be any sentence) & Taut\\
-    \hline
 \end{tabular}
 
 \section{Natural deduction}
