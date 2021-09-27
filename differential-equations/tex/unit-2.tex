@@ -225,3 +225,103 @@ Because $v\neq 0$,
 Given any $x_0,y_0$ in the interval, can find $c$ s.t. the DE is satisfied.
 Every eqn of above form will have $P,Q$ with common interval of continuity and a unique set of solutions with one I.C. obtained by using the integrating factor.
 These solutions are unique, so any other method yields a solution that aligns with the general solution–all possible solutions satisfying the DE on $x\in (a,b)$.
+
+\subsection{Application of Mixing Problem}
+
+Strategy is to determine the differential equation describing rate of change of a certain quantity, then finding the particular solution with some trivial IC.
+
+\begin{example}
+    100 liter tank contains 10 kg salt mixed with 60 liter water. Sol'n with concentration 0.1 $\frac{\mathrm{kg}}{\mathrm{liter}}$ flows in at rate 5 liters/min.
+    Solution is well stirred (asume equal distribution), outflow rate of 3 liters/min. Need to find salt in tank when it is full.
+
+    Note that the tank will become full, as $\mathrm{in}-\mathrm{out}>0$. Let $x$ be kg of salt.
+    Then, inflow rate is $0.1 \frac{\mathrm{kg}}{\mathrm{liter}}\cdot 5\frac{\mathrm{liter}}{\mathrm{min}}=0.5\frac{\mathrm{kg}}{\mathrm{min}}$. Out is
+    $x \frac{\mathrm{kg}}{60\;\mathrm{liter}}\cdot 3\frac{\mathrm{liter}}{\mathrm{min}}=\frac{x}{20}\frac{\mathrm{kg}}{\mathrm{min}}$. We then express the DE as
+
+    \begin{equation}
+        \frac{dx}{dt}=0.5-\frac{x}{20}
+    \end{equation}
+
+    Then just express in linear form, solve with I.F. method.
+\end{example}
+
+\begin{example}
+    Initially 50 gallons of brine, 10 lb dissolved salt. Inflow of 2 lb salt/gal at 5 gal/min, outflow of 3 gal/min, but \textbf{mixture kept uniform}.
+
+    Inflow is thus 10 lb/min, outflow is $\frac{3x}{50+2t}$. Key here is that mixture concentration on outflow does not change, so the volume dynamically adapts for changing weight.
+    DE is thus
+
+    \begin{equation}
+        \frac{dx}{dt}=10-\frac{3x}{50+2t}
+    \end{equation}
+\end{example}
+
+\subsection{Integrating Factor by Inspection}
+
+By recognizing differentials in a problem, can find the integrating factor by inspection.
+
+\begin{example}
+    Given
+    \begin{equation}
+        ydx+(x+x^3y^2)dy=0
+    \end{equation}
+    the terms can be grouped by like degree so
+    \begin{equation}
+        (ydx+xdy)+x^3y^2dy=0.
+    \end{equation}
+    Can be rewritten as
+    \begin{equation}
+        d(xy)+x^3y^2dy=0
+    \end{equation}
+    then divide by $(xy)^3$ for it does not affect integrability of $d(xy)$ term but keeps function of $y$ with $dy$ term,
+    \begin{equation}
+        \frac{d(xy)}{(xy)^3}+\frac{dy}{y}=0.
+    \end{equation}
+    Integrating:
+    \begin{align}
+        \int (xy)^{-3}d(xy)+\int \frac{dy}{y}&=0\\
+        \frac{(xy)^{-2}}{-2}+\ln|y|=C\\
+        Cy=\frac{(xy)^{-2}}{2}\\
+        Cy(xy)^2=1
+    \end{align}
+\end{example}
+
+\subsection{Determining Complex Integrating Factors}
+
+Let there be the DE
+
+\begin{equation}
+    Mdx+Ndy=0.
+\end{equation}
+
+Suppose $\exists u$, possibly of both $x,y$ that is an integrating factor such that
+
+\begin{equation}
+    uMdx+uNdy=0
+\end{equation}
+
+and for it to be exact,
+
+\begin{equation}
+    \frac{\partial}{\partial y}(uM)=\frac{\partial}{\partial x}(uN)
+\end{equation}
+
+so $u$ satisfies
+
+\begin{eqnarray}
+    u\frac{\pr M}{\pr y}+M\frac{\pr u}{\pr y}=u\frac{\partial N}{\partial x}+N\frac{\pr u}{\pr x}\\
+    u(\frac{\pr M}{\pr y}-\frac{\pr N}{\pr x})=N\frac{\pr u}{\pr x}-M\frac{\pr u}{\pr y}.
+\end{eqnarray}
+
+This does not lead anywhere, so let $u$ be a function of $x$. Thus, $\pr u/\pr y=0,\pr u/\pr x=du/dx$.
+So the above reduces to
+
+\begin{equation}
+    u(\frac{\pr M}{\pr y}-\frac{\pr N}{\pr x})=N\frac{du}{dx}\Leftrightarrow \frac{1}{N}(\frac{\pr M}{\pr y}-\frac{\pr N}{\pr x})dx=\frac{du}{u}
+\end{equation}
+
+and integrating factor is the following, assuming LHS of above is a function of $x$ or $y$ alone
+\begin{eqnarray}
+    u=\exp\left[\int f(x)dx\right]\;(\text{for $x$})\\
+    u=\exp\left[\int -g(y)dy\right]\;(\text{for $y$})
+\end{eqnarray}
