@@ -28,7 +28,7 @@ If the function has the length dimension to the $k$th power, then it is homogene
 \begin{example}
     If $x,y$ are lengths, then the following is homogeneous of degree 3.
     \begin{equation}
-        f(x,y)=2y^3\exp(\frac{y}{z})-\frac{x^4}{x+3y}
+        f(x,y)=2y^3\exp(\frac{y}{x})-\frac{x^4}{x+3y}
     \end{equation}
 \end{example}
 
@@ -44,28 +44,54 @@ Alternate definition also suffices for generality.
 
 \subsection{Homogeneous Differential Equations}
 
-\begin{corollary}[Homogeneous DEs]
+\begin{theorem}[Homogeneous DEs]
     If $M(x,y)$ and $N(x,y)$ are homogeneous and of same degree, then $M(x,y)dx+N(x,y)dy=0$
     is a homogeneous DE.
-\end{corollary}
+\end{theorem}
     
-\begin{corollary}[Homogeneous DEs]
+\begin{theorem}[Homogeneous DEs]
     $M(x,y)/N(x,y)$ is homogeneous of degree 0.
-\end{corollary}
 
-\begin{corollary}[Homogeneous DEs]
+    \begin{proof}
+        If $M,N$ are homogeneous of some degree $n$, then
+        \begin{eqnarray}
+            M(x,y)=M(\lambda x,\lambda y)=\lambda ^nM(x,y)\\
+            M(x,y)=N(\lambda x,\lambda y)=\lambda ^nN(x,y)
+        \end{eqnarray}
+        So for $M/N$,
+        \begin{eqnarray}
+            \frac{M(x,y)}{N(x,y)}=\lambda^0\frac{M(1,v)}{N(1,v)}
+        \end{eqnarray}
+        which is homogeneous of degree 0.
+    \end{proof}
+\end{theorem}
+
+\begin{theorem}[Homogeneous DEs]
     If $f(x,y)$ is homogeneous of degree 0 in $x,y$, then $f(x,y)$ is a function of $y/x$ alone.
-\end{corollary}
+    \begin{proof}
+        Let $y=vx$. Then, $f$ must be proven to be of $v$ alone. Substitute so that
+        \begin{equation}
+            f(x,y)=f(x,vx)=x^0f(1,v)=f(1,v)
+        \end{equation}
+    \end{proof}
+\end{theorem}
 
-The ratio $M/N$ is a function of $y/x$, so the above can be rewritten as
+\subsection{Homogeneous Coefficients}
 
-\begin{align}
-    \frac{dy}{dx}+g(\frac{y}{x})&=0\\
-    \frac{d}{dx}(vx)+g(v)&=\frac{dv}{dx}+v+g(v)=0
-\end{align}
-    
-Can thus transform into SOV problem by substituting $y=vx$ or $x=vy$, where $v$ is a function of $y$ or $x$.
-Then, substitute back $v=\frac{y}{x}$ to obtain a general solution.
+Suppose coefficients $M,N$ in the equation
+
+\begin{equation}
+    M(x,y)dx+N(x,y)dy=0
+\end{equation}
+
+are both homogeneous of same degree. So $M/N$ is a function of $y/x$ alone.
+Can put in form using $y=vx$.
+\begin{eqnarray}
+    \frac{dy}{dx}+g(\frac{y}{x})=0\\
+    x\frac{dv}{dx}+g(v)=0
+\end{eqnarray}
+
+This last equation is separable.
 
 \subsection{Exact Equations}
 
@@ -264,7 +290,8 @@ Strategy is to determine the differential equation describing rate of change of 
 \begin{example}
     Initially 50 gallons of brine, 10 lb dissolved salt. Inflow of 2 lb salt/gal at 5 gal/min, outflow of 3 gal/min, but \textbf{mixture kept uniform}.
 
-    Inflow is thus 10 lb/min, outflow is $\frac{3x}{50+2t}$. Key here is that mixture concentration on outflow does not change, so the volume dynamically adapts for changing weight.
+    Inflow is thus 10 lb/min, outflow is $\frac{3x}{50+2t}$ lb/min. Key here is that mixture concentration on outflow does not change, so the volume dynamically adapts for changing amount of salt.
+    50 gallons initially, influx of 5 gal - 3 gal out $\implies 50+(5-3)t$.
     DE is thus
 
     \begin{equation}
