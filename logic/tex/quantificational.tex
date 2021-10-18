@@ -60,3 +60,77 @@ Socrates is a man can be translated to $Ma$ where $a$ is a constant symbolizing 
     (for some $x$)($x$ is missing)\\
     $\exists x M x$
 \end{example}
+
+\section{Quantificational Logic}
+
+Main idea is that we use predicates to describe properties of variables, which we say are \ti{quantified}.
+Say we define $Lxy$ to be that $x$ likes $y$. $L$ is our predicate, and $x,y$ are variables, of which we can pass any number to an (appropriate) predicate.
+
+Idea of quantifiers
+\begin{itemize}
+    \item $\exists x$: there is some individual $x$ such that
+    \item $\forall x$: every individual $x$ such that
+\end{itemize}
+
+\subsection{Subtlety with quantifier order}
+
+Difference between
+$$\exists y\forall x (Lxy)$$
+and
+$$\forall x\exists y(Lxy)$$
+
+is that for the first, we say there is an individual for all inviduals such that that everyone likes someone, and that someone \ti{can} be unique to everyone.
+For the second sentence: for all individuals there is a single individual such that everyone likes that one individual.
+
+The key difference is that this second intepretation does not offer the possibility of everyone liking whoever they want, all $x$ likes that one $y$.
+
+\subsection{Rules and properties}
+
+An identity predicate exists to test equality of two subjects.
+
+\begin{definition} (Identity predicate)
+    $$x=y:\text{$x$ is equal to $y$}$$
+\end{definition}
+
+We can obviously tell that identical subjects have the same properties, so
+
+\begin{definition} (Leibniz' law)
+    $$\forall x\forall y(x=y\then (Px\leftrightarrow Py))$$
+\end{definition}
+
+We can't ``for loop'' over all properties of subjects, so that must be done manually.
+
+\subsection{Describing quantities}
+
+Let $Px$ mean that $x$ has property $P$. Be aware that we can trivially extend the below equivalences to $n$ subjects.
+
+\begin{tabular}{l|l}
+    Statement & QL\\
+    \hline
+    \hline
+    There is exactly one thing that is $P$ & $\exists x(Px\land \forall y(Py\then x=y))$\\
+    There are exactly two things that are $P$ & $\exists x\exists y(Px\land Py\land x\neq y\land \forall z(Pz\then (z=x\lor z=y))$\\
+    There are at least two things that are $P$ & $\exists x\exists y(Px\land Py\land x\neq y)$\\
+    There are less than two things that are $P$ & $\forall x\forall y(\lnot Px\lor \lnot Py\lor x=y)$ (this is not identical to the first)\\ 
+\end{tabular}
+
+\subsection{Interpretations}
+
+To make interpretations of sentences (i.e. constant values using names) we set $UD=\{a,b,c\}$ or whatever,
+then interpret the predicates with these names $Pa,Pb,Pc$, etc. Here we can cherry pick $a,b,c$ to arbitrarily give truth values to $P$ when interpreted. Useful for informal proofs.
+
+\subsection{Natural deduction}
+
+Below is a list of inferences or tautologies for natural deduction.
+
+\begin{tabular}{l|l|l}
+    Name & Tautology or Inference & Code\\
+    \hline
+    \hline
+    Quantifier Exchange (occurs both ways) & $\exists x(\dots x \dots)\leftrightarrow \forall x \lnot(\dots x\dots)$ & QEx\\
+    Universal Instantiation & $\forall x(\dots x\dots)\therefore \dots a \dots$ where $a$ is a new name in proof & UI\\
+    Universal Generalization & $\dots a \dots\; \therefore\forall x(\dots x\dots)$ iff $a$ was declared by UI & UG\\
+    Existential Instantiation & $\exists x(\dots x\dots)\therefore \dots a\dots$ where $a$ is any name & EI\\
+    Existential Generalization & $\dots a\dots \;\therefore\exists x(\dots x\dots)$ & EG\\
+    Leibniz Law & $\forall x\forall y(x=y\then (Px\leftrightarrow Py))$ & Leibniz
+\end{tabular}
