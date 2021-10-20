@@ -1,0 +1,48 @@
+\section{Linear Equations with Constant Equations}
+
+\subsection{Auxiliary Equation}
+
+Linear homogeneous DE with constant coefficients can be expressed as
+
+\begin{equation}
+    a_{0} \frac{d^{n} y}{d x^{n}}+a_{1} \frac{d^{n-1} y}{d x^{n-1}}+\cdots+a_{n-1} \frac{d y}{d x}+a_{n} y=0
+\end{equation}
+
+Can be written in the form
+
+\begin{equation}
+    f(D)y=0
+\end{equation}
+
+where $f(D)$ is a linear differential operator. If the algebraic eqn $f(m)=0$
+then we know $f(D)e^{mx}=0\implies y=e^{mx}$ is a solution to the form above.
+$f(m)=0$ is the auxiliary equation associated with the DE.
+Since the DE is of order $n$, the auxiliary equation is of degree $n$ with
+roots $m_1,\ldots,m_n$.
+
+Thus we have $n$ solutions $y_1=\exp(m_1x),\ldots,y_n=\exp(m_nx)$ assuming
+the roots are \textbf{real} and \textbf{distinct} are then \textbf{linearly independent}.
+The general solution is thus
+
+\begin{equation}
+    y=c_1\exp(m_1x)+\cdots+c_n\exp(m_nx)
+\end{equation}
+
+with arbitrary constants $c_1,\ldots,c_n$.
+
+\subsubsection{Derivation}
+
+We can say that $y^{(k)}$ is the $k$th derivative of $y$, so say the general form is
+
+$$
+a_ny^{(n)}+a_{n-1}y^{(n-1)}+\cdots+a_1y^\prime +a_0y=0
+$$
+
+If we take $y=e^{rx}$, then observe $y^{(n)}=r^ne^{rx}$. So rewrite the general form as
+
+\begin{align*}
+    a_nr^ne^{rx}+a_{n-1}r^{n-1}e^{rx}+\cdots+a_1re^{rx}+a_0e^{rx}&=0\\
+    a_nr^n+a_{n-1}r^{n-1}+\cdots+a_1r+a_0&=0
+\end{align*}
+
+Solving for the roots $r$ in this characteristic equation helps us obtain the general solution.
