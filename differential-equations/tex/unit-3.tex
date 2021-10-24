@@ -46,3 +46,21 @@ If we take $y=e^{rx}$, then observe $y^{(n)}=r^ne^{rx}$. So rewrite the general 
 \end{align*}
 
 Solving for the roots $r$ in this characteristic equation helps us obtain the general solution.
+
+\subsection{Auxiliary Equation Repeated Roots}
+
+Need method for obtaining $n$ linearly independent solutions for $n$ equal roots of auxiliary equation.
+Suppose auxiliary equation $f(m)=0$ has $n$ roots $m_1=m_2=\cdots=m_n=b$.
+Thus, the operator function $f(D)$ has a factor $(D-b)^n$. Want to find $n$ linearly independent $y$ for which $(D-b)^ny=0$.
+Use the substitution $y_k=x^ke^{bx}$ such that
+
+\begin{equation}
+    (D-b)^n(x^ke^{bx})=0,\;k=0,1,2,\ldots,n-1
+\end{equation}
+
+The functions $y_k=x^ke^{bx}$ are linearly independent because the respective powers $x^0,\ldots,x^k$ are linearly independent.
+So the general solution takes form
+
+\begin{equation}
+    y=c_1e^{bx}+c_2xe^{bx}+\cdots+c_nx^{n-1}e^{bx}
+\end{equation}
