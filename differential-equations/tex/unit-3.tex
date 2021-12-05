@@ -64,3 +64,143 @@ So the general solution takes form
 \begin{equation}
     y=c_1e^{bx}+c_2xe^{bx}+\cdots+c_nx^{n-1}e^{bx}
 \end{equation}
+
+\subsection{Complex roots for the auxiliary equation}
+
+Complex roots typically come in conjugate pairs of the form $a\pm bi$.
+So using the general form of the auxiliary solution and the Euler identity $e^{i\theta}=\sin\theta + i\cos\theta$ and the fact that $\cos(-x)=\cos x, \sin(-x)=-\sin x$, we find that
+
+\begin{align}
+    y_1&=c_1e^{(a+bi)x}=c_1e^{ax}e^{bxi}=c_1e^{ax}\left(\sin bx + i\cos bx\right)\\
+    y_2&=c_2e^{(a-bi)x}=c_2e^{ax}e^{-bxi}=c_2e^{ax}\left(-\sin bx + i\cos bx\right)\\
+    y_1+y_2&=c_1e^{ax}\left(\sin bx + i\cos bx\right)+c_2e^{ax}\left(-\sin bx + i\cos bx\right)\\
+    &=e^{ax}(c_1-c_2)\sin bx + e^{ax}(c_1+c_2)i\cos bx\\
+    &=c_3e^{ax}\sin bx + c_4e^{ax}\cos bx
+\end{align}
+
+\subsection{Linear Independence}
+
+Linear independence of two functions $f_1,f_2$ is calculated with a determinant called the Wronskian $W(f_1,f_2)$.
+
+\begin{equation}
+    W(f_1,f_2)=\left|\begin{matrix}f_1&f_2\\f_1\,'&f_2\,'\end{matrix}\right|
+\end{equation}
+
+Let $f_1,f_2$ be differentiable on $[a,b]$. if $W(f_1,f_2)(t_0)\neq 0$ for some $t\in [a,b]$ then $f_1,f_2$ are linearly independent on $[a,b]$.
+If they are linearly dependent, $W(f_1,f_2)(t)=0\;\forall t$.
+
+\subsection{Review of rational roots, synthetic division}
+
+For rational roots test, take factors of constant coeff. $c$ divided by factors of
+leading coefficient $a$ to get possible roots.
+
+\subsection{Undetermined Coefficients}
+
+
+
+\subsection{Variation of Parameters}
+
+We start with the general equation
+
+\begin{equation}
+    ay''+by'+cy=g(x)
+\end{equation}
+
+First, find complementary solution $y_c$ from $y=y_p+y_c$. This is simply the solution of the homogeneous equation
+
+\begin{equation}
+    ay''+by'+cy=0
+\end{equation}
+
+Then, find the particular solution $y_p=u_1y_1+u_2y_2$ using Cramer's rule. Define 
+
+\begin{equation}
+W=
+\begin{array}{|cc|}
+    y_1&y_2\\
+    y_1'&y_2'
+\end{array}\;\;
+W_1=\begin{array}{|cc|}
+    0&y_2\\
+    g(x)'&y_2'
+\end{array}\;\;
+W_2=\begin{array}{|cc|}
+    y_1&0\\
+    y_1'&g(x)'
+\end{array}
+\end{equation}
+
+When we set up the matrix-vector equation $\mathrm{A}\mathbf{x}=\mathbf{b}$, it corresponds to the following:
+
+\begin{equation}
+    \begin{bmatrix}
+        y_1 & y_2\\
+        y_1' & y_2'
+    \end{bmatrix}
+    \begin{bmatrix}
+        u_1\\u_2
+    \end{bmatrix}
+    =\begin{bmatrix}
+        0\\g(x)
+    \end{bmatrix}
+\end{equation}
+
+Following Cramer's rule, to find the solutions $1,\ldots,n$, we create $A_n$ by replacing the $n$th row of $A$ with $b$.
+
+Strategy is to find $u_1', u_2'$ then integrate to find the coefficients and thus the eventual solution.
+
+\begin{eqnarray}
+    u_1'=\frac{W_1}{W}\\
+    u_2'=\frac{W_2}{W}
+\end{eqnarray}
+
+\subsection{Reduction of Order}
+
+Method is derived from the general 2nd order linear DE. Useful when $y_p$ does not correspond to a template solution class.
+
+\begin{equation}
+    y''+py'+qy=R\label{original}
+\end{equation}
+
+Assume there exists a solution $y=y_1$ of the homogeneous equation (e.g. can pick a solution from $y_c$).
+
+\begin{eqnarray}
+    y''+py"+qy=0
+\end{eqnarray}
+
+We then introduce a dependent variable from $y=y_1v$ as $v$. It follows that
+
+\begin{eqnarray}
+    y'=y_1v'+y_1'v\\
+    y''=y_1v''+2y_1'v'+y_1''v
+\end{eqnarray}
+
+So substituting into \ref{original}, we get
+
+\begin{equation}
+    y_{1} v^{\prime \prime}+2 y_{1}^{\prime} v^{\prime}+y_{1}^{\prime \prime} v+p y_{1} v^{\prime}+p y_{1}^{\prime} v+q y_{1} v=R
+\end{equation}
+
+This rearranges to
+
+\begin{equation}
+    y_{1} v^{\prime \prime}+\left(2 y_{1}^{\prime}+p y_{1}\right) v^{\prime}+\left(y_{1}^{\prime \prime}+p y_{1}^{\prime}+q y_{1}\right) v=R .
+\end{equation}
+
+We use the definition of the homogeneous equation, since $y=y_1$ is a solution of the above.
+
+\begin{equation}
+    y_1v''+(2y_1'+py_1)v'=R
+\end{equation}
+
+If we let $v'=w$ and solve for $w$, then integrate, it is simply a first order problem with integrating factor
+
+\begin{equation}
+    k(x)=\exp{\int 2y_1'+py_1 dx}
+\end{equation}
+
+\subsection{Spring Oscillation}
+
+\subsubsection{Derivation and Amplitude Form}
+
+\subsubsection{Solution Cases}
