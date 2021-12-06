@@ -201,6 +201,137 @@ If we let $v'=w$ and solve for $w$, then integrate, it is simply a first order p
 
 \subsection{Spring Oscillation}
 
-\subsubsection{Derivation and Amplitude Form}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{figures/Screen Shot 2021-12-05 at 5.16.10 PM.png}
+    \caption{Spring at equilibrium and stretched positions}
+\end{figure}
 
-\subsubsection{Solution Cases}
+By setting $E$ as the gravitational equilibrium position with some mass $B$, can avoid consideration of the original length of the spring.
+Mass of the spring comes from $w=mg\implies m = \frac{w}{g}$. In addition to the restoring force which causes the block $B$ to accelerate, there is a
+damping force proportional to velocity that acts in opposition to the direction of motion. Taking downwards to be conventionally positive, net force equation is
+
+\begin{equation}
+    \frac{w}{g}\ddot x=-kx-b\dot x
+\end{equation}
+
+This is better illustrated as follows (for now $F=0$)
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{figures/a-Mass-Spring-Damper-System-b-free-body-diagram.jpg}
+    \caption{Damped spring oscillator}
+\end{figure}
+
+So the form of the DE becomes
+
+\begin{equation}
+    \frac{w}{g}\ddot x+b\dot x+kx=0
+\end{equation}
+
+This is a second order homogeneous equation. If we impose another driving force (as shown above, but with $F$ as a function of $t$) that acts on the mass DE becomes
+
+\begin{equation}
+    \frac{w}{g}\ddot x+b\dot x+kx=F(t)
+\end{equation}
+
+The initial conditions are $x(0)=x_0$, $x'(0)=v_0$. Convenient to rewrite in the form
+
+\begin{equation}
+    \ddot x+2\gamma \dot x+\beta^2 x = F
+\end{equation}
+
+where
+
+\begin{equation}
+    \frac{bg}{w}=2\gamma,\; \frac{kg}{w}=\beta^2
+\end{equation}
+
+We choose $\beta>0$ and $\gamma \geq 0$ because $\gamma = 0\implies b=0$.
+
+\subsubsection{Undamped}
+
+\textbf{Case of $\gamma = 0$}
+
+Results in DE
+
+\begin{equation}
+    \ddot x +\beta^2 x= F
+\end{equation}
+
+Solve aux. eqn $m^2+\beta^2=0$ to get $m =\pm \beta i$ to get complementary solution
+
+\begin{equation}
+    x_c=c_1\cos\beta t + c_2\sin\beta t
+\end{equation}
+
+Use method such as VOP, undetermined coefficient, or reduction of order to find $x_p$ such that
+
+\begin{equation}
+    x = c_1\cos\beta t + c_2\sin\beta t + x_p
+\end{equation}
+
+Note that $\beta = \sqrt{\frac{kg}{w}}$ is the angular frequency, so $T=\frac{2\pi}{\omega}$.
+Want to find amplitude in the form
+
+\begin{equation}
+    x=A\sin (\beta t+\phi)
+\end{equation}
+
+Apply sine angle sum identity
+
+\begin{equation}
+    \sin(\alpha + \beta)=\sin\alpha \cos\beta + \cos\alpha \sin\beta
+\end{equation}
+
+such that
+
+\begin{align}
+    c_1\cos\beta t + c_2\sin\beta t&=A(\sin\beta t\cos\phi +\sin\phi \cos\beta t)\\
+    &=(A\cos\phi)\sin\beta t+(A\sin\phi)\cos\beta t
+\end{align}
+
+Thus it follows that
+
+\begin{align}
+    c_1&=A\cos\phi\\
+    c_2&=A\sin\phi
+\end{align}
+
+Using Pythagorean identity,
+
+\begin{equation}
+    c_1^2+c_2^2=A^2\implies A=\sqrt{c_1^2+c_2^2}
+\end{equation}
+
+\subsubsection{Damped Motion Cases}
+
+The complimentary auxiliary equation is
+
+\begin{equation}
+    m^2+2\gamma m+\beta^2=0
+\end{equation}
+
+with roots $-\gamma \pm \sqrt{\gamma^2-\beta^2}$. We see the three cases arise,
+$\beta > \gamma , \beta=\gamma,\beta <\gamma$.
+
+Examining the first case, $\beta>\gamma\implies \beta^2-\gamma^2=\delta^2$ (\textbf{damped oscillatory}), so
+$m=-\gamma \pm \delta i$. General solution is
+
+\begin{equation}
+    x(t)=e^{-\gamma t}(c_1\cos\delta t+c_2\sin\delta t)
+\end{equation}
+
+assuming $F(t)=0$.
+
+For the case $\gamma = \beta$ (\textbf{critically damped}), roots are equal so
+
+\begin{equation}
+    x(t)=e^{-\gamma t}(c_1+c_2t)
+\end{equation}
+
+If $\beta<\gamma$ (\textbf{overdamped}), then $\gamma^2-\beta^2=\sigma^2$ for $\sigma>0$ so
+
+\begin{equation}
+    x(t)=c_1e^{(-\gamma-\sigma)t}+c_2e^{(-\gamma+\sigma)t}
+\end{equation}
