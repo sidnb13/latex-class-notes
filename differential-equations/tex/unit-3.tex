@@ -96,7 +96,38 @@ leading coefficient $a$ to get possible roots.
 
 \subsection{Undetermined Coefficients}
 
+Can apply to the general form of a problem where
 
+\begin{equation}
+    f(D)y=R(x)
+\end{equation}
+
+Roots of the aux. eqn $f(m)=0$ are $m=m_1,\ldots,m_n$.
+General sol'n is $y=y_c+y_p$. We suppose that $R(x)$ is a particular solution of some equation equation $g(D)R=0$.
+This equation has its own set of roots $m'=m_1',\ldots,m_n'$, which you can find from inspection of $R$.
+
+So the DE $g(D)R=0$, or
+
+\begin{equation}
+    g(D)f(D)y=0
+\end{equation}
+
+has the roots from $m,m'$. So the solution is of the form $y=y_c+y_q$ where $y_q$ satisfied $g(D)=0$.
+We now observe that a particular solution of the original DE $f(D)y=R(x)$ must also satisfy the above DE.
+Thus,
+
+\begin{equation}
+    f(D)(y_c+y_q)=R(x)
+\end{equation}
+
+Since $f(D)y_c=0$,
+
+\begin{equation}
+    f(D)y_q=R(x)
+\end{equation}
+
+So we can find coefficients to satisfy $y_q=y_p$.
+Method can only be applied when $R(x)$ is a solution to homogeneous linear DE with constant coefficients.
 
 \subsection{Variation of Parameters}
 
@@ -196,8 +227,11 @@ We use the definition of the homogeneous equation, since $y=y_1$ is a solution o
 If we let $v'=w$ and solve for $w$, then integrate, it is simply a first order problem with integrating factor
 
 \begin{equation}
-    k(x)=\exp{\int 2y_1'+py_1 dx}
+    k(x)=\exp{\int \frac{2y_1'+py_1}{y_1} dx}
 \end{equation}
+
+Another way to simplify this problem is to derive the general form of the reduction of order coefficient $v$,
+from which solution $y=vy_1$ follows trivially.
 
 \subsection{Spring Oscillation}
 
@@ -304,6 +338,63 @@ Using Pythagorean identity,
     c_1^2+c_2^2=A^2\implies A=\sqrt{c_1^2+c_2^2}
 \end{equation}
 
+\subsubsection{Resonance}
+
+Resonance case involves an increasing amplitude that moves to instability of the system.
+Consider the undamped force motion case (where $2\gamma\ddot x =0$ term) with initial conditions $x(0)=0,\dot x(0) = 0$.
+
+\begin{equation}
+    \ddot x + \omega^2 x=F_0\sin\gamma t
+\end{equation}
+
+Using quadratic formula for $m^2+\omega^2 m=0$,
+
+\begin{align}
+    m&=\frac{\pm \sqrt{-4\omega^2}}{2}\\
+    &=\pm \omega i
+\end{align}
+
+Thus,
+
+\begin{eqnarray}
+    x_c(t)=c_1\cos\omega t+c_2\sin\omega t\\
+    x_p(t)=A\cos\gamma t+B\sin \gamma t
+\end{eqnarray}
+
+We observe that
+
+\begin{equation}
+    \ddot x+\omega^2x_p=A(\omega^2-\gamma^2)\cos\gamma t+B(\omega^2-\gamma^2)\sin\gamma t=F_0\sin\gamma t
+\end{equation}
+
+We get the equations
+
+\begin{eqnarray}
+    A(\omega^2-\gamma^2)=0\implies A=0\\
+    B(\omega^2-\gamma^2)=F_0\implies B=\frac{F_0}{\omega^2-\gamma^2}
+\end{eqnarray}
+
+Thus,
+
+\begin{equation}
+    x(t)=c_1\cos\omega t+c_2\sin\omega t+\frac{F_0}{\omega^2-\gamma^2}\sin\gamma t
+\end{equation}
+
+We skip the IC application, but it ends up being that $c_1=0,c_2=\frac{\gamma F_0}{\omega^2-\gamma^2}$.
+Then,
+
+\begin{equation}
+    x(t)=\frac{F_0}{\omega(\omega^2-\gamma^2)}\left(-\gamma \sin\omega t+\omega \sin\gamma t\right)
+\end{equation}
+
+Resonance is found when we take the limit from $\gamma\to \omega$.
+
+\begin{align}
+    \lim_{\gamma\to \omega}\frac{F_0(-\gamma \sin\omega t+\omega \sin\gamma t)}{\omega(\omega^2-\gamma^2)}&=F_0\lim_{\gamma\to\omega}\frac{\frac{d}{d\gamma}(-\gamma \sin\omega t+\omega \sin\gamma t)}{\frac{d}{d\gamma}\omega(\omega^2-\gamma^2)}\\
+    &=F_0\lim_{\gamma\to \omega}\frac{-\sin\omega t+\omega t\cos \gamma t}{-2\omega\gamma}\\
+    &=F_0\frac{-\sin\omega t+\omega t\cos\gamma t}{-2\omega^2}
+\end{align}
+
 \subsubsection{Damped Motion Cases}
 
 The complimentary auxiliary equation is
@@ -335,3 +426,37 @@ If $\beta<\gamma$ (\textbf{overdamped}), then $\gamma^2-\beta^2=\sigma^2$ for $\
 \begin{equation}
     x(t)=c_1e^{(-\gamma-\sigma)t}+c_2e^{(-\gamma+\sigma)t}
 \end{equation}
+
+\subsection{Circuit Application}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[]{figures/RLC.png}
+    \caption{Basic RLC circuit}
+\end{figure}
+
+Using Kirchoff's law (KVL), the sum of drops is equal to the introduced voltage $E(t)$.
+
+\begin{align}
+    RI+L\dot I+\frac{q}{C}=E(t)\\
+    R\dot q+L\ddot q+\frac{1}{C}q=E(t)
+\end{align}
+
+Thus, the auxiliary equation is
+
+\begin{equation}
+    Lm^2+Rm+\frac{1}{C}=0
+\end{equation}
+
+with solutions
+
+\begin{equation}
+    m=\frac{-R\pm \sqrt{R^2-\frac{4L}{C}}}{2L}\\
+\end{equation}
+
+Thus, the cases that arise are
+\begin{itemize}
+    \item \textbf{Damped Oscillatory}: $R^2-\frac{4L}{C}<0$
+    \item \textbf{Critically Damped}: $R^2-\frac{4L}{C}>0$
+    \item \textbf{Overdamped}: $R^2-\frac{4L}{C}>0$
+\end{itemize}
