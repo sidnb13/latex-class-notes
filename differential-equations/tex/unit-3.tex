@@ -143,22 +143,32 @@ First, find complementary solution $y_c$ from $y=y_p+y_c$. This is simply the so
     ay''+by'+cy=0
 \end{equation}
 
-Then, find the particular solution $y_p=u_1y_1+u_2y_2$ using Cramer's rule. Define 
+Then, find the particular solution $y_p=u_1y_1+u_2y_2$ using Cramer's rule.
+First, we differentiate $y_p$ and impose the condition $\dot u_1y_1+\dot u_2y_2=0$.
+
+\begin{align}
+    y_p&=u_1y_1+u_2y_2\\
+    \dot y_p&= \dot u_1y_1+u_1\dot y_1+\dot u_2y_2+u_2\dot y_2\\
+    &=u_1\dot y_1+u_2\dot y_2\\
+    \ddot y_p&=\dot u_1\dot y_1+u_1\ddot y_1+\dot u_2\dot y_2+u_2\ddot y_2
+\end{align}
+
+Plugging into the original equation,
+
+\begin{align*}
+    &a(\dot u_1\dot y_1+u_1\ddot y_1+\dot u_2\dot y_2+u_2\ddot y_2)\\
+    &+b(u_1\dot y_1+u_2\dot y_2)\\
+    &+c(u_1y_1+u_2y_2)\\
+    &=a\dot u_1\dot y_1 + a\dot u_2\dot y_2=g(x)
+\end{align*}
+
+So the conditions we have to solve for $\dot u_1,\dot u_2$ are
 
 \begin{equation}
-W=
-\begin{array}{|cc|}
-    y_1&y_2\\
-    y_1'&y_2'
-\end{array}\;\;
-W_1=\begin{array}{|cc|}
-    0&y_2\\
-    g(x)'&y_2'
-\end{array}\;\;
-W_2=\begin{array}{|cc|}
-    y_1&0\\
-    y_1'&g(x)'
-\end{array}
+    \begin{cases}
+        \dot u_1y_1+\dot u_2y_2=0\\
+        \dot u_1\dot y_1 + \dot u_2\dot y_2=\frac{g(x)}{a}
+    \end{cases}
 \end{equation}
 
 When we set up the matrix-vector equation $\mathrm{A}\mathbf{x}=\mathbf{b}$, it corresponds to the following:
@@ -166,13 +176,13 @@ When we set up the matrix-vector equation $\mathrm{A}\mathbf{x}=\mathbf{b}$, it 
 \begin{equation}
     \begin{bmatrix}
         y_1 & y_2\\
-        y_1' & y_2'
+        \dot y_1 & \dot y_2
     \end{bmatrix}
     \begin{bmatrix}
-        u_1\\u_2
+        \dot u_1\\\dot u_2
     \end{bmatrix}
     =\begin{bmatrix}
-        0\\g(x)
+        0\\\frac{g(x)}{a}
     \end{bmatrix}
 \end{equation}
 
@@ -184,6 +194,17 @@ Strategy is to find $u_1', u_2'$ then integrate to find the coefficients and thu
     u_1'=\frac{W_1}{W}\\
     u_2'=\frac{W_2}{W}
 \end{eqnarray}
+
+\subsubsection{Determinants}
+
+Can find the determinant of a $n\times n$ matrix $X$ by finding the sum of its cofactors along a row or column. For the below definition,
+assume we fix the row to be some $i$.
+
+\begin{equation}
+    \det (X)=\sum_{j=1}^n A_{ij}=\sum_{j=1}^n (-1)^{i+j}\det (M_{ij})
+\end{equation}
+
+where $M_{ij}$ is the $n-1\times n-1$ matrix determined by excluding values along the axes originating from the element of $X$ at $ij$.
 
 \subsection{Reduction of Order}
 
@@ -246,8 +267,12 @@ Mass of the spring comes from $w=mg\implies m = \frac{w}{g}$. In addition to the
 damping force proportional to velocity that acts in opposition to the direction of motion. Taking downwards to be conventionally positive, net force equation is
 
 \begin{equation}
-    \frac{w}{g}\ddot x=-kx-b\dot x
+    \frac{w}{g}\ddot x=-kx-b\dot x+w
 \end{equation}
+
+Notice that at the equilibrium position, some $s$ below the horizontal, $w-ks=0\implies ks=w$.
+When the mass is further stretched by $x$ downwards and released, $\frac{w}{g}\ddot x=-k(s+x)-b\dot x+w$.
+But $ks=w$ so this reduces to the above.
 
 This is better illustrated as follows (for now $F=0$)
 
@@ -338,6 +363,14 @@ Using Pythagorean identity,
     c_1^2+c_2^2=A^2\implies A=\sqrt{c_1^2+c_2^2}
 \end{equation}
 
+Note that must appropriately add/subtract $\pi$ to $\phi$ when considering sign of $\tan\phi=\frac{c_2}{c_1}$.
+\begin{itemize}
+    \item If $c_1,c_2<0$, we use $\phi+\pi$ as the angle in Q3.
+    \item If $c_1<0,c_2>0$, we use $\phi-\pi$ as the angle in Q2.
+    \item If $c_1,c_2>0$, we use $\phi$ as the angle in Q1.
+    \item If $c_1>0, c_2<0$, we use $\phi$ as the angle in Q4.
+\end{itemize}
+
 \subsubsection{Resonance}
 
 Resonance case involves an increasing amplitude that moves to instability of the system.
@@ -427,6 +460,12 @@ If $\beta<\gamma$ (\textbf{overdamped}), then $\gamma^2-\beta^2=\sigma^2$ for $\
     x(t)=c_1e^{(-\gamma-\sigma)t}+c_2e^{(-\gamma+\sigma)t}
 \end{equation}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{figures/Screen Shot 2021-12-12 at 6.18.51 PM.png}
+    \caption{Graphical spring oscillatory cases}
+\end{figure}
+
 \subsection{Circuit Application}
 
 \begin{figure}[H]
@@ -457,6 +496,22 @@ with solutions
 Thus, the cases that arise are
 \begin{itemize}
     \item \textbf{Damped Oscillatory}: $R^2-\frac{4L}{C}<0$
-    \item \textbf{Critically Damped}: $R^2-\frac{4L}{C}>0$
+    \item \textbf{Critically Damped}: $R^2-\frac{4L}{C}=0$
     \item \textbf{Overdamped}: $R^2-\frac{4L}{C}>0$
 \end{itemize}
+
+\subsection{Dependent Variable Missing}
+
+Let there be a DE of form that doesn't contain DV $y$ explicitly.
+
+\begin{equation}
+    f(\ddot y,\dot y,x)=0
+\end{equation}
+
+Can use a substitution $\dot y= p$ in order to reduce order so that we get
+
+\begin{equation}
+    f(\frac{dp}{dx}, p,x).
+\end{equation}
+
+Solve for $p$, then $y$ using integration.
