@@ -1,0 +1,64 @@
+\section{Laplace Transform}
+
+Laplace transform of a function $F(t)$ denoted by $L\{F(t)\}$.
+Defined as
+
+\begin{equation}
+    L\{F(t)\}=\int_0^\infty e^{-st}F(t)dt
+\end{equation}
+
+Integral is a function of parameter $s$, say $f(s)$ such that $L\{F(t)\}=f(s)$.
+Improper integral will always converge, and can be written as a limit definition:
+
+\begin{equation}
+    \int_0^\infty e^{-st}F(t)dt=\lim_{A\to \infty}\int_0^Ae^{-st}F(t)dt
+\end{equation}
+
+We can derive some general forms based on this idea.
+
+\subsection{Laplace transform definitions}
+
+\begin{definition}($L\{e^{kt}\}$)\\
+    Finding $L\{e^{kt}\}$ for $s>k$ (condition for convergence), we see that 
+
+    \begin{equation}
+        L\{e^{kt}=\lim_{A\to\infty} \int_0^A e^{-st}e^{kt}dt=\lim_{A\to\infty}\frac{1}{k-s}e^{(k-s)t}\mbox{\Large$\mid$}_0^A=\frac{1}{s-k}
+    \end{equation}
+\end{definition}
+
+\newpage
+
+\begin{definition}($L\{\sin kt\}$)\\
+    Evaluating the integral:
+    \begin{align*}
+        \int e^{-st}\sin kt&=-\frac{1}{k}e^{-st}\cos kt-\int se^{-st}\frac{1}{k}\cos kt \;dt\\
+        &=-\frac{1}{k}e^{-st}\cos kt-\frac{s}{k}\int e^{-st}\cos kt \;dt\\
+        &=-\frac{1}{k}e^{-st}\cos kt-\frac{s}{k}\left( \frac{1}{k}e^{-st}\sin kt-\int -\frac{s}{k}e^{-st}\sin kt\;dt \right)\\
+        &=-\frac{1}{k}e^{-st}\cos kt-\frac{s}{k}\left(\frac{1}{k}e^{-st}\sin kt + \int \frac{s}{k}e^{-st}\sin kt\;dt\right)\\
+        (1+\frac{s^2}{k^2})\int e^{-st}\sin kt&=-\frac{1}{k}e^{-st}\cos kt-\frac{s}{k^2}e^{-st}\sin kt\\
+        \frac{k^2+s^2}{k^2}\int e^{-st}\sin kt&=\frac{1}{k}e^{-st}\cos kt-\frac{s}{k^2}e^{-st}\sin kt\\
+        \int e^{-st}\sin kt&=-\frac{ke^{-st}\cos kt}{k^2+s^2}-\frac{se^{-st}\sin kt}{k^2+s^2}\\
+        &=-\frac{e^{-st}}{k^2+s^2}\left(k\cos kt-s\sin kt\right)
+    \end{align*}
+
+    So evaluating the improper integral,
+    
+    \begin{align*}
+        \left[-\frac{e^{-st}}{k^2+s^2}\left(k\cos kt-s\sin kt\right)\right]_0^\infty&=0+\frac{1(k-0)}{s^2+k^2}\\
+        &=\frac{k}{s^2+k^2}
+    \end{align*}
+
+    It can be similarly obtained that $L\{\cos kt\}=\frac{s}{s^2+k^2}$ (for $s>0$ in both cases).
+\end{definition}
+
+\subsection{Transforms of Derivatives}
+
+If $F(t)$ is continuous for $t\geq 0$ and of exponential order as $t\to \infty$, then we can simplify
+
+\begin{align}
+    L\{F'(t)\}&=\int_0^\infty e^{-st}F'(t)\;dt\\
+    &=\left[e^{-st}F(t)\right]_0^\infty+s\int_0^\infty e^{-st}F(t)\;dt\\
+    &=-F(0)+sL\{F(t)\}
+\end{align}
+
+Useful fact that can be resubstituted for \[L\{F''(t)\}=-F'(0)+sL\{F'(t)\}=-F'(0)-sF(0)+s^2L\{F(t)\}.\]
