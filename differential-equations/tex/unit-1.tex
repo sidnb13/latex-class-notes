@@ -5,57 +5,57 @@
 \begin{definition}[Order]
     Order of a DE is the highest-ordered derivative appearing in it.
     So
-    \begin{equation}
+    \begin{equation*}
         \frac{d^2y}{dx^2}+2b(\frac{dy}{dx})^3+y=0
-    \end{equation}
+    \end{equation*}
     is a 2nd order DE. In general,
-    \begin{equation}
+    \begin{equation*}
         F(x,y,y',y'',\ldots,y^{(n)})=0.
-    \end{equation}
+    \end{equation*}
     is an $n$-th order DE.
     Under restrictions on $F$, can find a solution in terms of the other $n+1$ variables
-    \begin{equation}
-        y^{(n)}=f(x,y,y',\ldots,y^{(n-1)}).\label{DESoln}
-    \end{equation}
+    \begin{equation*}
+        y^{(n)}=f(x,y,y',\ldots,y^{(n-1)}).
+    \end{equation*}
 \end{definition}
 
 \begin{definition}[Solution]
-    A function $\phi$ on interval $x\in (a,b)$ is a solution to the DE (\ref{DESoln})
+    A function $\phi$ on interval $x\in (a,b)$ is a solution to the DE
     if the $n$ derivatives exist on $x\in(a,b)$ and $\phi^{(n)}(x)=f(x,\phi(x),\ldots,\phi^{(n-1)}(x))$.
 \end{definition}
 
 \begin{definition}[First order DE]
     A first order DE is of the form
-    \begin{equation}
+    \begin{equation*}
         \frac{dy}{dx}=f(x,y)
-    \end{equation}
+    \end{equation*}
     with solution of the form $y=f(x)$.
     Can be rewritten for convenience in the form
-    \begin{equation}
+    \begin{equation*}
         M(x,y)dx+N(x,y)dy=0
-    \end{equation}
+    \end{equation*}
 \end{definition}
 
 \begin{definition}[Linear ODE]
     An ODE of order $n$ is linear if it can be written in the form
-    \begin{equation}
+    \begin{equation*}
         b_0(x)\frac{d^ny}{dx^n}+b_1(x)\frac{d^{n-1}y}{dx^{n-1}}+\cdots+b_{n-1}(x)\frac{dy}{dx}+b_{n}(x)y=R(x)
-    \end{equation}
+    \end{equation*}
 \end{definition}
 
 \begin{definition}[Partial DE]
     Is of the form, for example
-    \begin{equation}
+    \begin{equation*}
         b_0(x,y)\frac{\pr w}{\pr x}+b_x(x,y)\frac{\pr w}{\pr y}=R(x,y)
-    \end{equation}
+    \end{equation*}
 \end{definition}
 
 \subsection{Families of Solutions}
 
 Solutions to the DE
-\begin{equation}
+\begin{equation*}
     \frac{dy}{dx}=f(x,y)\Leftrightarrow y=\int f(x)dx+c
-\end{equation}
+\end{equation*}
 
 exist as one-parameter families with parameter $c$.
 
@@ -63,9 +63,9 @@ exist as one-parameter families with parameter $c$.
 
 Let there be the DE
 
-\begin{equation}
+\begin{equation*}
     \frac{dy}{dx}=y
-\end{equation}
+\end{equation*}
 
 Isoclines are lines $f(x,y)=y=c$. Example:
 
@@ -77,11 +77,11 @@ Isoclines are lines $f(x,y)=y=c$. Example:
 
 \subsection{Existence Theorem}
 
-Consider equation
+Consider equation*
 
-\begin{equation}
+\begin{equation*}
     \frac{dy}{dx}=f(x,y)
-\end{equation}
+\end{equation*}
 
 Further, let $T$ denote the rectangle defined by
 \begin{eqnarray}

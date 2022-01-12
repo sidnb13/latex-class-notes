@@ -2,17 +2,17 @@
 
 \subsection{Separation of Variables}
 
-We begin with equations of the form
+We begin with equation*s of the form
 
-\begin{equation}
+\begin{equation*}
     Mdx+Ndy=0
-\end{equation}
+\end{equation*}
 where $M$ and $N$ can be multivariate of $x,y$.
 
 It is separable iff
-\begin{equation}
+\begin{equation*}
     A(x)dx+B(y)dy=0.
-\end{equation}
+\end{equation*}
 
 Then find a function $F$ with total differential being the LHS of above, so $F=c$.
 
@@ -27,9 +27,9 @@ If the function has the length dimension to the $k$th power, then it is homogene
 
 \begin{example}
     If $x,y$ are lengths, then the following is homogeneous of degree 3.
-    \begin{equation}
+    \begin{equation*}
         f(x,y)=2y^3\exp(\frac{y}{x})-\frac{x^4}{x+3y}
-    \end{equation}
+    \end{equation*}
 \end{example}
 
 Alternate definition also suffices for generality.
@@ -70,19 +70,19 @@ Alternate definition also suffices for generality.
     If $f(x,y)$ is homogeneous of degree 0 in $x,y$, then $f(x,y)$ is a function of $y/x$ alone.
     \begin{proof}
         Let $y=vx$. Then, $f$ must be proven to be of $v$ alone. Substitute so that
-        \begin{equation}
+        \begin{equation*}
             f(x,y)=f(x,vx)=x^0f(1,v)=f(1,v)
-        \end{equation}
+        \end{equation*}
     \end{proof}
 \end{theorem}
 
 \subsection{Homogeneous Coefficients}
 
-Suppose coefficients $M,N$ in the equation
+Suppose coefficients $M,N$ in the equation*
 
-\begin{equation}
+\begin{equation*}
     M(x,y)dx+N(x,y)dy=0
-\end{equation}
+\end{equation*}
 
 are both homogeneous of same degree. So $M/N$ is a function of $y/x$ alone.
 Can put in form using $y=vx$.
@@ -91,29 +91,29 @@ Can put in form using $y=vx$.
     x\frac{dv}{dx}+g(v)=0
 \end{eqnarray}
 
-This last equation is separable.
+This last equation* is separable.
 
 \subsection{Exact Equations}
 
-If there exists an equation of the form $A(x)dx+B(y)dy=0$, the solution is a function with differential $A(x)dx+B(y)dy$.
-Idea works for equations of form
+If there exists an equation* of the form $A(x)dx+B(y)dy=0$, the solution is a function with differential $A(x)dx+B(y)dy$.
+Idea works for equation*s of form
 
-\begin{equation}
+\begin{equation*}
     dF=Mdx+Ndy.
-\end{equation}
+\end{equation*}
 
 So, $F(x,y)=c\implies dF=0$ and
 
-\begin{equation}
+\begin{equation*}
     Mdx+Ndy=0.
-\end{equation}
+\end{equation*}
 
 If there's a function $F$ such that $Mdx+Ndy$ is the \textbf{total differential}
-of $F$, then Eq. 5 is an \textit{exact equation} by definition. Can rewrite the total differential from the chain rule:
+of $F$, then Eq. 5 is an \textit{exact equation*} by definition. Can rewrite the total differential from the chain rule:
 
-\begin{equation}
+\begin{equation*}
     dF=\frac{\partial F}{\partial x}dx+\frac{\partial F}{\partial y}dy.
-\end{equation}
+\end{equation*}
 
 So $M=\frac{\partial F}{\partial x},N=\frac{\partial F}{\partial y}$. We can take 2nd derivative to show these are equal because the partials are continuous (Clairaut's theorem).
 
@@ -123,49 +123,49 @@ So $M=\frac{\partial F}{\partial x},N=\frac{\partial F}{\partial y}$. We can tak
 \end{eqnarray}
 
 \begin{definition}[Exactness]
-    \begin{equation}
+    \begin{equation*}
         \frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}.
-    \end{equation}
+    \end{equation*}
 \end{definition}
 
 \begin{proof}
     Let $\phi(x,y)$ be a function where $\frac{\partial \phi}{\partial x}=M$. $\phi$ is the function you get from integrating $Mdx$ wrt $x$ and holding $y$. Then
 
-    \begin{equation}
+    \begin{equation*}
         \frac{\partial^2\phi}{\partial y\partial x}=\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}
-    \end{equation}
+    \end{equation*}
 
     Integrating both sides wrt $x$:
 
-    \begin{equation}
+    \begin{equation*}
         \frac{\partial \phi}{\partial x}=N+B'(y)
-    \end{equation}
+    \end{equation*}
 
     where $B'(y)$ is the integration constant. Let
 
-    \begin{equation}
+    \begin{equation*}
         F=\phi(x,y)-B(y)
-    \end{equation}
+    \end{equation*}
 
     such that 
 
-    \begin{align}
+    \begin{align*}
         dF&=\frac{\partial \phi}{\partial x}dx+\frac{\partial \phi}{\partial y}dy-B'(y)dy\\
         &=Mdx+\left[N+B'(y)\right]dy-B'(y)dy\\
         &=Mdx+Ndy
-    \end{align}
+    \end{align*}
 \end{proof}
 
 \begin{example} We have the DE
-    \begin{equation}
+    \begin{equation*}
         3x(xy-2)dx+(x^3+2y)dy=0.
-    \end{equation}
+    \end{equation*}
 
     Then, 
 
-    \begin{equation}
+    \begin{equation*}
         \frac{\partial M}{\partial y}=3x^2,\frac{\partial N}{\partial y}=3x^2
-    \end{equation}
+    \end{equation*}
 
     The DE is exact, and $F=c$ is the solution.
 
@@ -176,50 +176,50 @@ So $M=\frac{\partial F}{\partial x},N=\frac{\partial F}{\partial y}$. We can tak
 
     Try to find $F$ from 18, integrate both sides wrt $x$ with an integration constant $T(y)$.
 
-    \begin{equation}
+    \begin{equation*}
         F=x^3y-3x^2+T(y)
-    \end{equation}
+    \end{equation*}
 
     Using Eq. 19, can can find $\frac{\partial F}{\partial y}$ from Eq. 20 and equate:
 
-    \begin{equation}
+    \begin{equation*}
         x^3+T'(y)=x^3+2y\implies T'(y)=2y
-    \end{equation}
+    \end{equation*}
 
     Because $F=c$ is the I.C., can conclude 
 
-    \begin{equation}
+    \begin{equation*}
         T(y)=y^2
-    \end{equation}
+    \end{equation*}
 
     Thus,
 
-    \begin{equation}
+    \begin{equation*}
         F=x^3y-3x^2+y^2\Leftrightarrow x^3y-3x^2+y^2=c
-    \end{equation}
+    \end{equation*}
 \end{example}
 
 \subsection{Linear Equations of Order 1}
 
-If an equation is not exact, can attempt to do so by multiplying DE by an integrating factor.
+If an equation* is not exact, can attempt to do so by multiplying DE by an integrating factor.
 
 \begin{definition}[Linear DE of order 1]
-    \begin{equation}
+    \begin{equation*}
         A(x)\frac{dy}{dx}+B(x)y=C(x)
-    \end{equation}
+    \end{equation*}
 \end{definition}
 
 Divide each side by $A(x)$ to obtain
 
-\begin{equation}
+\begin{equation*}
     \frac{dy}{dx}+P(x)y=Q(x)
-\end{equation}
+\end{equation*}
 
 Suppose there exists for Eq. 25 a I.F. $v(x)>0$. Then,
 
-\begin{equation}
+\begin{equation*}
     v(x)\left[\frac{dy}{dx}+P(x)y\right]=v(x)Q(x)
-\end{equation}
+\end{equation*}
 
 becomes exact, or of form $Mdx+Ndy=0$. Here,
 
@@ -230,47 +230,47 @@ becomes exact, or of form $Mdx+Ndy=0$. Here,
 
 Because the requirement is $\frac{\partial M}{\partial y}=\frac{\partial N}{\partial x}$,
 
-\begin{align}
+\begin{align*}
     vP&=\frac{dv}{dx}\\
     Pdx&=\frac{dv}{v}\\
     \ln v&=\int Pdx\\
     v&=\exp(\int Pdx)
-\end{align}
+\end{align*}
 
 We can then multiply both sides of the DE by this I.F. One side of this eqn will be of the product rule form, the derivative of $y\exp (\int Pdx)$:
 
-\begin{equation}
+\begin{equation*}
     \exp(\int Pdx)\frac{dy}{dx}+P\exp(\int Pdx)y=Q\exp(\int Pdx)
-\end{equation}
+\end{equation*}
 
 \subsection{General Solution of a Linear Equation}
 
 Given the original form
 
-\begin{equation}
+\begin{equation*}
     \frac{dy}{dx}+P(x)y=Q(x)
-\end{equation}
+\end{equation*}
 
 suppose $P$ and $Q$ are continuous on $x\in (a,b)$ and $x=x_0$ is such a number. $y=y_0$ satisfies the initial condition.
 This sol'n satisfies Eq. 34 for all $x$ in the interval. Multiplying Eq. 34 by integrating factor $\exp(\int Pdx)$ gives
 
-\begin{equation}
+\begin{equation*}
     yv=\int vQ\:dx + c
-\end{equation}
+\end{equation*}
 
 Because $v\neq 0$,
 
-\begin{equation}
+\begin{equation*}
     y=v^{-1}\int vQ\: dx + cv^{-1}
-\end{equation}
+\end{equation*}
 
 Given any $x_0,y_0$ in the interval, can find $c$ s.t. the DE is satisfied.
 Every eqn of above form will have $P,Q$ with common interval of continuity and a unique set of solutions with one I.C. obtained by using the integrating factor.
-These solutions are unique, so any other method yields a solution that aligns with the general solution–all possible solutions satisfying the DE on $x\in (a,b)$.
+These solutions are unique, so any other method yields a solution that align*s with the general solution–all possible solutions satisfying the DE on $x\in (a,b)$.
 
 \subsection{Application of Mixing Problem}
 
-Strategy is to determine the differential equation describing rate of change of a certain quantity, then finding the particular solution with some trivial IC.
+Strategy is to determine the differential equation* describing rate of change of a certain quantity, then finding the particular solution with some trivial IC.
 
 \begin{example}
     100 liter tank contains 10 kg salt mixed with 60 liter water. Sol'n with concentration 0.1 $\frac{\mathrm{kg}}{\mathrm{liter}}$ flows in at rate 5 liters/min.
@@ -280,9 +280,9 @@ Strategy is to determine the differential equation describing rate of change of 
     Then, inflow rate is $0.1 \frac{\mathrm{kg}}{\mathrm{liter}}\cdot 5\frac{\mathrm{liter}}{\mathrm{min}}=0.5\frac{\mathrm{kg}}{\mathrm{min}}$. Out is
     $x \frac{\mathrm{kg}}{60\;\mathrm{liter}}\cdot 3\frac{\mathrm{liter}}{\mathrm{min}}=\frac{x}{20}\frac{\mathrm{kg}}{\mathrm{min}}$. We then express the DE as
 
-    \begin{equation}
+    \begin{equation*}
         \frac{dx}{dt}=0.5-\frac{x}{20}
-    \end{equation}
+    \end{equation*}
 
     Then just express in linear form, solve with I.F. method.
 \end{example}
@@ -294,9 +294,9 @@ Strategy is to determine the differential equation describing rate of change of 
     50 gallons initially, influx of 5 gal - 3 gal out $\implies 50+(5-3)t$.
     DE is thus
 
-    \begin{equation}
+    \begin{equation*}
         \frac{dx}{dt}=10-\frac{3x}{50+2t}
-    \end{equation}
+    \end{equation*}
 \end{example}
 
 \subsection{Integrating Factor by Inspection}
@@ -305,49 +305,49 @@ By recognizing differentials in a problem, can find the integrating factor by in
 
 \begin{example}
     Given
-    \begin{equation}
+    \begin{equation*}
         ydx+(x+x^3y^2)dy=0
-    \end{equation}
+    \end{equation*}
     the terms can be grouped by like degree so
-    \begin{equation}
+    \begin{equation*}
         (ydx+xdy)+x^3y^2dy=0.
-    \end{equation}
+    \end{equation*}
     Can be rewritten as
-    \begin{equation}
+    \begin{equation*}
         d(xy)+x^3y^2dy=0
-    \end{equation}
+    \end{equation*}
     then divide by $(xy)^3$ for it does not affect integrability of $d(xy)$ term but keeps function of $y$ with $dy$ term,
-    \begin{equation}
+    \begin{equation*}
         \frac{d(xy)}{(xy)^3}+\frac{dy}{y}=0.
-    \end{equation}
+    \end{equation*}
     Integrating:
-    \begin{align}
+    \begin{align*}
         \int (xy)^{-3}d(xy)+\int \frac{dy}{y}&=0\\
         \frac{(xy)^{-2}}{-2}+\ln|y|=C\\
         Cy=\frac{(xy)^{-2}}{2}\\
         Cy(xy)^2=1
-    \end{align}
+    \end{align*}
 \end{example}
 
 \subsection{Determining Complex Integrating Factors}
 
 Let there be the DE
 
-\begin{equation}
+\begin{equation*}
     Mdx+Ndy=0.
-\end{equation}
+\end{equation*}
 
 Suppose $\exists u$, possibly of both $x,y$ that is an integrating factor such that
 
-\begin{equation}
+\begin{equation*}
     uMdx+uNdy=0
-\end{equation}
+\end{equation*}
 
 and for it to be exact,
 
-\begin{equation}
+\begin{equation*}
     \frac{\partial}{\partial y}(uM)=\frac{\partial}{\partial x}(uN)
-\end{equation}
+\end{equation*}
 
 so $u$ satisfies
 
@@ -359,9 +359,9 @@ so $u$ satisfies
 This does not lead anywhere, so let $u$ be a function of $x$. Thus, $\pr u/\pr y=0,\pr u/\pr x=du/dx$.
 So the above reduces to
 
-\begin{equation}
+\begin{equation*}
     u(\frac{\pr M}{\pr y}-\frac{\pr N}{\pr x})=N\frac{du}{dx}\Leftrightarrow \frac{1}{N}(\frac{\pr M}{\pr y}-\frac{\pr N}{\pr x})dx=\frac{du}{u}
-\end{equation}
+\end{equation*}
 
 and integrating factor is the following, assuming LHS of above is a function of $x$ or $y$ alone
 \begin{eqnarray}
