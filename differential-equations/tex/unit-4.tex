@@ -159,3 +159,59 @@ Calculating the Laplace transform is simple:
         &=e^{-sa}\mathcal{L}\{f(t)\}
     \end{align*}
 \end{definition}
+
+\subsection{Periodic Functions}
+
+\begin{definition} (Periodic Laplace Transform)
+    If $f(t)$ is periodic, then $f(t-P)=f(t)$ (for $t\geq P$) and
+    \begin{equation}
+        \mathcal{L}\{f(t)\} = \displaystyle\frac{\int_0^Pe^{-st}f(t)dt}{1-e^{-Ps}}
+    \end{equation}
+\end{definition}
+
+\begin{proof}
+    We can write the transform as two integrals,
+    \begin{align}
+        F(s)&=\int_0^P e^{-st}f(t)dt + \int_P^\infty e^{-st}f(t)dt\\
+        &= \int_0^P e^{-st}f(t)dt + \int_P^\infty e^{-st}f(t+P)dt\label{split}
+    \end{align}
+
+    Note that $\tau = t-P\implies t=\tau +P$ so $dt = d\tau$.
+    \begin{align}
+        \int_P^\infty e^{-st}f(t+P)dt &= \int_{2P}^\infty e^{-s(\tau + P)}f(\tau)d\tau\\
+        &= e^{-sP}\int_{0}^\infty e^{-s\tau}f(\tau)d\tau\\
+        &= e^{-sP}F(s)
+    \end{align}
+    Substituting into \ref{split}, we get
+    \begin{equation}
+        F(s)=\int_0^P e^{-st}f(t)dt + e^{-st}F(s)\implies (1-e^{-sP})F(s)=\int_0^P e^{-st}f(t)dt
+    \end{equation}
+\end{proof}
+
+\subsection{Convolution Operation}
+
+\begin{definition} (Convolution Theorem)
+    \begin{equation}
+        f * g = \int_0^t f(r) g(t-r)dr=g * f
+    \end{equation}
+    Applying the Laplace operator,
+    \begin{equation}
+        \mathcal{L}\{f*g\}=\mathcal{L}\{f(t)\}\mathcal{L}\{g(t)\}=F(s)G(s)
+    \end{equation}
+    A more useful property is of the inverse,
+    \begin{equation}
+        f*g=\mathcal{L}^{-1}\{F(s)G(s)\}
+    \end{equation}
+\end{definition}
+
+\begin{example}
+    Finding the the inverse transform, we can apply the Laplace convolution definition,
+    \begin{align*}
+        \mathcal{L}^{-1}\{\frac{a}{s^2(a^2+s^2)}\}&=\int_0^t (t-u)\sin au\,du\\
+        &=t\int_0^t \sin au\, du -\int_0^t u\sin au\, du\\
+        &=-t(\cos at - 1)-\left(-u\cos au\bigg\vert_0^t+\int_0^t \cos au\,du\right)\\
+        &=t(1-\cos at)+t\cos at+\sin at
+    \end{align*}
+\end{example}
+
+\subsection{Integral Transform}
