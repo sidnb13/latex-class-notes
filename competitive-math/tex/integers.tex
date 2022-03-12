@@ -1,0 +1,141 @@
+\section{Integer Mathematics}
+
+\subsection{Last Digit Property}
+
+To find the last digit of the sum of product of two integers,
+we simply apply the operation to the last digit of each contributing integer.
+
+\begin{example}
+    To find the last digit of $7^{42}+42^7$, we break the answer
+    down to the sum of the last digit of each number.
+    \begin{figure}[H]
+        \begin{minipage}[t]{.45\textwidth}
+            \begin{align*}
+                7^{42} &= 7^2\cdot (7^{4})^{10}\\
+                &\implies 9\cdot 1^{10}\\
+                &\implies 9
+            \end{align*}
+        \end{minipage}
+        \begin{minipage}[t]{.45\textwidth}
+            \begin{align*}
+                42^7\implies 2^7=128\implies 8
+            \end{align*}
+        \end{minipage}
+    \end{figure}
+\end{example}
+
+\subsection{Modular arithmetic}
+
+A modulo equation $R=a\mod b$ can be expressed as $a=kb + R$.
+Typically, $a\geq 0$ but if we consider $a<0$, then it must be that $R>0$ and $k<0$
+because $R$ must be in the set of \textit{residues}, which we have as positive.
+
+A complete set of residues $\{a_0,a_1,\ldots,a_{m-1}\}$ (aka a covering system) exist
+if
+
+\begin{equation*}
+    a_i\equiv i\mod m
+\end{equation*}
+
+To denote equivalence of a number $a$ in mod $b$, we say
+\begin{equation*}
+    a\equiv c\mod b
+\end{equation*}
+\begin{example}
+    The last digit problem is simplified, for one can apply the mod operation prior to performing the main operation.
+    \begin{figure}[h!]
+        \centering
+        \begin{minipage}[t]{.45\textwidth}
+            \begin{align*}
+                7^{42}&\equiv 7^2\mod 10\\
+                &\equiv 9\mod 10
+            \end{align*}
+        \end{minipage}
+        \begin{minipage}[t]{.45\textwidth}
+            \begin{align*}
+                42^7&\equiv 2^7\mod 10\\
+                &\equiv 8\mod 10
+            \end{align*}
+        \end{minipage}
+    \end{figure}
+\end{example}
+There are useful properties of modular congruences. Let $a\equiv b\mod m$ and
+$p\equiv q\mod m$. Then, $\forall c\in \Z_+$:
+\begin{gather}
+    a+c\equiv b+c\mod m\\
+    a-c\equiv b-c\mod m\\
+    ac\equiv bc \mod m\\
+    a^c\equiv b^c\mod m\\
+    (a+p)\equiv (b+q)\mod m\\
+    ap\equiv bq\mod m
+\end{gather}
+
+\subsection{Divisibility Rules}
+
+\subsubsection{Divisibility by 2, 4, 8}
+
+To test divisibility by 4 and 8, the last 2 and 3 digits respectively must be divisible by 4 and 8 respectively.
+This is because 4 divides a multiple of 100 and 8 a multiple of 1000. This is proven by breaking the number into its base 10 composition.
+
+Checking a number $n$ for 8, we use the fact that $1000^k\equiv 0\mod 8$.
+\begin{equation*}
+    n\equiv 100a + 10b + c\mod 8
+\end{equation*}
+
+So check if the hundreds, tens and unit places are divisible by 8. Similar argument for 4.
+
+\subsubsection{Divisibility by 3}
+
+Note that $100\equiv 10\cdot 10\mod 3\equiv 1\cdot 1\mod 3$. In
+general we can say that $10^n\equiv 1\mod 3$. If we take for example
+the 4-digit number $abcd$:
+\begin{align*}
+    abcd&\equiv 10^3\cdot a + 10^2\cdot b + 10c + d\mod 3\\
+    &\equiv a+b+c+d\mod 3
+\end{align*}
+
+Thus, if $a+b+c+d\equiv 0\mod 3$, $abcd$ is divisible by 3.
+
+\subsubsection{Divisibility by 5}
+
+The number must end in either 0 or 5.
+
+\subsubsection{Divisibility by 6}
+
+The number must be both divisible by 2 and 3.
+
+\subsubsection{Divisibility by 7}
+
+If we desire to test some $n$, note that we can write $n=10a+b$.
+Multiplying by 2 does not change the divisibility by 7, so
+$2n=20a+2b\implies n = \frac{20a+2b}{2}=\frac{21a - (a - 2b)}{2}$.
+Then, it follows that
+\begin{align*}
+    n&\equiv \frac{21a - (a - 2b)}{2}\mod 7\\
+    &\equiv 2b-a\mod 7
+\end{align*}
+
+\subsubsection{Divisibility by 9}
+
+Similar to 3, $10^n\equiv 1 \mod 9$. Using the same methods as for divisibiity by 3,
+we conclude that the sum of digits in a number must be divisible by 9.
+
+\subsubsection{Divisibility by 11}
+
+We can break a number $N$ into
+\begin{equation*}
+    N=10^na_n + 10^{n-1}a_{n-1} + \ldots + a_0
+\end{equation*}
+
+For $10^k$, if $k$ is odd, then, $10^k\equiv -1\mod 11$ else if even $10^k\equiv 1\mod 11$.
+Let us assume $n$ is even, then
+\begin{align*}
+    N&\equiv a_n-a_{n-1}+a_{n-2}-a_{n-3}+\ldots+a_0\mod 11\\
+    &\equiv (a_n+a_{n-2}+\ldots+a_0)-(a_{n-1}+a_{n-3}+\ldots+a_1)\mod 11
+\end{align*}
+So $N\equiv 0\mod 11$ if the difference of even and odd-indexed digit sums is divisble by 11.
+
+\subsection{Prime Numbers}
+
+A number can be broken into the product of its prime factors.
+Note that the largest factor of a number $N$ must be less than or equal to $\sqrt{N}$.

@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}
+
+\input{../preamble.tex}
+
+\renewcommand{\contentsname}{Table of Contents}
+
+\usepackage{fouriernc}
+
+\title{Math Notes}
+\author{Sidharth Baskaran}
+\date{March 12, 2022}
+
+\setcounter{tocdepth}{2}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\newpage
+% -------------------------------------
+
+\section*{Preface}
+
+These notes are meant to be a resource for discrete and fundamental mathematics
+essential for competitive programming and general-purpose problem-solving.
+The resources used are chiefly EECS70: Discrete Mathematics and Probability and the AoPS Volume 1 book.
+An emphasis is placed on proof techniques as well.
+
+\input{tex/integers.tex}
+
+% -------------------------------------
+\end{document}
