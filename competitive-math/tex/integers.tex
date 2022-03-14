@@ -139,3 +139,22 @@ So $N\equiv 0\mod 11$ if the difference of even and odd-indexed digit sums is di
 
 A number can be broken into the product of its prime factors.
 Note that the largest factor of a number $N$ must be less than or equal to $\sqrt{N}$.
+There are also infinite prime numbers.
+
+\begin{proof}
+    Suppose there exist a finite number of primes $p_1,p_2,\ldots,p_n$.
+    We know that a prime number is only divisible by unity and itself.
+    Then, suppose we have $P=\prod_{i=1}^n p_i + 1$. $P$ is not divisible by any of the primes,
+    only itself or 1. But since $P\geq 1$ it must have a prime factorization, so the list we initially provided does not cover all of the primes.
+\end{proof}
+
+\subsection{Factors}
+
+Greatest common factor (GCF) is the greatest common factor between two numbers.
+Can find by taking product of all prime numbers common to both. Expressed as $(a,b)=c$ where $c=\mathrm{gcf}(a,b)$.
+When $(a,b)=1$, they are relatively prime.
+
+Least common multiple is smallest number that divides both numbers evenly.
+Expressed as $[a,b]=c$ where $c=\mathrm{lcm}(a,b)$. Easily found by observing prime factorization
+and creating a set which contains the factors of either number, and the largest exponent if the bases are the same.
+Identical to finding the least common denominator.
