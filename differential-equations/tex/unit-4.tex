@@ -366,3 +366,58 @@ For $x=-\frac{1}{2}$,
 
 From Laplace table, $\mathcal{L}\{t^{-1/2}\}=(\pi/s)^{1/2}$ so
 $$ \Gamma\left(\frac{1}{2}\right)=\sqrt{\pi} $$
+
+\section{Dirac-Delta Function}
+
+A function that is defined to be 0 everywhere but a single point $a$.
+\begin{equation*}
+    \frac{d}{dt}u(t)=\begin{cases}
+        \infty,t=a\\
+        0,t\neq a
+    \end{cases}
+\end{equation*}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.6]{figures/dirac.png}
+    \caption{Dirac delta parent function}
+\end{figure}
+
+Properties are
+\begin{enumerate}
+    \item $\int_{a-\epsilon}^{a+\epsilon} \delta(t-a)dt=1$
+    \item $\int_{a-\epsilon}^{a+\epsilon} f(t)\delta(t-a)dt=f(a)$
+\end{enumerate}
+
+Let $\delta_\tau(t)$ be defined as
+\begin{equation*}
+    \delta_\tau(t)=\begin{cases}
+        \frac{1}{2\tau},-\tau<t<\tau\\
+        0, \forall t|t\leq-\tau\land t\geq \tau
+    \end{cases}
+\end{equation*}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{figures/dirac-example.png}
+    \caption{Example of $\delta_\tau(t)$}
+\end{figure}
+
+Taking the integral,
+\begin{equation*}
+    \int_{-\infty}^\infty \delta_\tau(t)dt=\int_{-\tau}^\tau \delta_\tau(t)dt=2\tau\left(\frac{1}{2\tau}\right)=1
+\end{equation*}
+
+In general, we can state that
+\begin{equation*}
+    \lim_{\tau\to 0}\delta_\tau(t)=\delta(t)
+\end{equation*}
+
+From physics standpoint, works as a sudden impulse and can be used to model such scenarios.
+We can multiply by a function, so $f(t)\delta(t-c)$.
+
+\begin{align*}
+    \mathcal{L}\{f(t)\delta(t-c)\}&=\int_0^\infty e^{-st}f(t)\delta(t-c)dt\\
+    &=\int_{-\infty}^{\infty} \delta(t-c)dt\\
+    &=e^{-sc}f(c)
+\end{align*}
