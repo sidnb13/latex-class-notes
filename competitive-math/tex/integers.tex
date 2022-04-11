@@ -158,3 +158,14 @@ Least common multiple is smallest number that divides both numbers evenly.
 Expressed as $[a,b]=c$ where $c=\mathrm{lcm}(a,b)$. Easily found by observing prime factorization
 and creating a set which contains the factors of either number, and the largest exponent if the bases are the same.
 Identical to finding the least common denominator.
+
+There is a general identity which can be proved, of which the dual is also true.
+\begin{equation*}
+    \left[a_1,a_2,a_3,a_4,\ldots,a_n\right]\left(\mathrm{permlist}{n\choose 2}\right) = \prod_{i = 1}^n a_i
+\end{equation*}
+\begin{proof}
+    Let $p$ be a prime common to all $a_1,\ldots,a_n$ where $a_1=p^{c_1},a_2=p^{c_2},\ldots,a_n=p^{c_n}$. WLOG, we state that $c_1\leq c_2\cdots \leq c_n$.
+    Then the LCM of all $a_i$ is $p^{c_n}$ and the GCD of all possible two-product permutations is $p^{\sum_{i=1}^{n-1} c_i}$ because the summation power is minimized given those bounds, of which the product is
+    $p^{\sum_{i=1}^n c_i}$. We have found that the product of the GCD and LCM shares a prime factorization term with the product of all the numbers $a$. Each number $a_i$ cannot contain a larger power of $p$ than $c_i$, so the factor $p$ to the power the sum of all $c_i$
+    must only belong to the product of all $a_i$.
+\end{proof}

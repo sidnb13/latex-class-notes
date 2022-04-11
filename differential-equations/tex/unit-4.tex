@@ -412,12 +412,15 @@ In general, we can state that
 \begin{equation*}
     \lim_{\tau\to 0}\delta_\tau(t)=\delta(t)
 \end{equation*}
+because we are taking the ``rectangle'' base $2\tau\to 0$ but maintaining the area of 1 by making the height $\frac{1}{2\tau}\to \infty$ which is why this value is not arbitrary.
 
 From physics standpoint, works as a sudden impulse and can be used to model such scenarios.
 We can multiply by a function, so $f(t)\delta(t-c)$.
 
 \begin{align*}
     \mathcal{L}\{f(t)\delta(t-c)\}&=\int_0^\infty e^{-st}f(t)\delta(t-c)dt\\
-    &=\int_{-\infty}^{\infty} \delta(t-c)dt\\
+    &=\int_{-\infty}^{\infty} e^{-st}f(t)\delta(t-c)dt\\
     &=e^{-sc}f(c)
 \end{align*}
+
+The above works because the delta function is scaled by $e^{-st}f(t)$ at $t=c$.

@@ -1,0 +1,63 @@
+\section{Sequences \& Series}
+
+\subsection{Arithmetic and Geometric Series}
+
+Arithmetic series of form $a,a+d,a+2d,a+3d,\ldots$ has common difference $d$.
+A general term can be described as $a+(n-1)d$ where there are $n$ terms in the sequence.
+To find the sum, we rewrite the terms in reverse order.
+\begin{align*}
+    S&= a + (a + d)  + \ldots + (a + (n-1)d)\\
+    &= (a + (n-1)d) + (a + (n-2)d) + \ldots + a\\
+    2S &= n(2a + (n-1)d)\\
+    S&=\frac{n(2a + (n-1)d)}{2}\\
+    &= \frac{n(a_1 + a_n)}{2}
+\end{align*}
+
+Geometric series have a common ratio $r$, closed-form summation can be derived similarly to above.
+\begin{align*}
+    S&= a + \ldots + ar^{n-1}\\
+    Sr &= ar + \ldots + ar^n\\
+    S(1 - r) &= a(1 - r^n)\\
+    S&=\frac{a(1-r^n)}{1-r}
+\end{align*}
+
+\subsection{Infinite Series}
+
+Infinite series converges if the sums tend to a fixed value. Terms must tend to zero--this means that
+the partial sums of the first $n$ terms approach a fixed value.
+However, terms can tend to zero but the series can itself diverge--if the sums do not tend to a fixed value.
+Arithmetic series can never converge except for a special case.
+
+\begin{proof} (Arithmetic series never converge except for $a=0, d=0$.)\\
+    The formula for the sum of an arithmetic series is
+    \begin{align*}
+        S&=\frac{n(2a+(n-1)d)}{2}\\
+        &=\frac{2an + dn^2-dn}{2}\\
+        &=an + \frac{d}{2}n^2 -\frac{d}{2}n\\
+        &=\frac{d}{2}n^2 + \left(a-\frac{d}{2}\right)n
+    \end{align*}
+    Then, taking the limit of $S(n)$,
+    \begin{align*}
+        \lim_{n\to\infty} \frac{d}{2}n^2 + \left(a-\frac{d}{2}\right)n=\pm\infty\\
+    \end{align*}
+    This remains true unless $a=0,d=0$.
+\end{proof}
+
+Geometric series converge given a special condition.
+\begin{proof} (Convergence of geometric series)\\
+    The geometric series sum of the first $n$ terms is given by
+    \begin{align*}
+        S&=\frac{a(1-r^n)}{1-r}\\
+    \end{align*}
+    Then,
+    \begin{align*}
+        S_c=\lim_{n\to\infty}\frac{a(1-r^n)}{1-r}=\pm\infty
+    \end{align*}
+    where the sum is negative infinity if $n=2k+1|k\in\Z$ and $r<-1$,
+    else if $r>1$ the sum is positive infinity.
+    Taking the special case of $|r|<1$, the limit becomes
+    \begin{equation*}
+        S_c=\frac{a}{1-r}
+    \end{equation*}
+    which is the infinite geometric sum under the convergence case.
+\end{proof}
