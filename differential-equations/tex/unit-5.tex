@@ -1,0 +1,136 @@
+\section{Fourier Series}
+
+\subsection{Integral Identities}
+
+First, note that integrating $\sin mt$ and $\cos mt$ over the full period of $-\pi,\pi$ is 0.
+$\sin t$ is an odd function, so $\sin(-t)=-\sin(t)$.
+\begin{align*}
+    \int_{-\pi}^\pi \sin mt = -\frac{1}{m} \cos mt\Bigg|_{-\pi}^\pi  = \frac{1}{m}(-1 - (-1))= 0\\
+    \int_{-\pi}^\pi \cos mt = \frac{1}{m} \sin mt \Bigg|_{-\pi}^\pi = \frac{1}{m}(0 - 0) = 0
+\end{align*}
+
+The other important identities follow.
+\begin{enumerate}
+    \item Product of sine and cosine.
+    \begin{align*}
+        \int_{-\pi}^\pi \sin mt\cos nt &= \int_{-\pi}^\pi \frac{1}{2}\left(sin(m+n)t + \sin(m-n)t\right)\\
+        &= \frac{1}{2} \left[ \int_{-\pi}^\pi \sin (m-n)t + \int_{-\pi}^\pi \sin(m+n)t \right]\\
+        &= 0
+    \end{align*}
+    if $m\neq n$ else becomes
+    \begin{align*}
+        \frac{1}{2}\int_{-\pi}^\pi \sin 2mt = 0
+    \end{align*}
+    as well.
+    \item Product of sines.
+    \begin{align*}
+        \int_{-\pi}^\pi \sin^2mt &= \frac{1}{2}\left[t - \int_{-\pi}^\pi \cos 2mt\right]\\
+        &= \pi - \frac{1}{2}\left[\frac{1}{2m}\sin 2mt\right]_{-\pi}^\pi\\
+        &= \pi
+    \end{align*}
+    if $m=n$, else integral becomes
+    \begin{align*}
+        \int_{-\pi}^\pi \sin mt\sin nt &= \frac{1}{2}\left[\int_{-\pi}^\pi\cos (m-n)t - \int_{-\pi}^\pi\cos(m+n)t\right]\\
+        &= 0
+    \end{align*}
+    \item Product of cosines. 
+    \begin{align*}
+        \int_{-\pi}^\pi \cos^2mt &= \frac{1}{2}\left[t + \int_{-\pi}^\pi \cos 2mt\right]\\
+        &= \pi + \frac{1}{2}\left[\frac{1}{2m}\sin 2mt\right]_{-\pi}^\pi\\
+        &= \pi
+    \end{align*}
+    if $m=n$ else integral becomes
+    \begin{align*}
+        \int_{-\pi}^\pi \cos mt\cos nt &= \frac{1}{2}\left[\int_{-\pi}^\pi\cos (m-n)t + \int_{-\pi}^\pi\cos(m+n)t\right]\\
+        &= 0
+    \end{align*}
+\end{enumerate}
+
+\subsection{Definition}
+
+Fourier series is defined as
+\begin{equation*}
+    f(t)=a_0 + \sum_{i=0}^n \left(a_i\sin it + b_i\cos it\right)
+\end{equation*}
+
+To find the first term $a_0$, integrate from $0$ to $2\pi$:
+\begin{align*}
+    \int_0^{2\pi} f(t)dt = \int_0^{2\pi} a_0dt = 2\pi a_0
+\end{align*}
+
+because all $\sin it$ and $\cos it$ terms go to zero. Thus,
+\begin{equation*}
+    a_0=\frac{1}{2\pi}\int_0^{2\pi} f(t)dt
+\end{equation*}
+
+This is the average value of $f(t)$ over $[0,2\pi]$.
+To find coefficients of cosine terms, multiply both sides by $\cos nt$.
+\begin{align*}
+    \int_0^{2\pi} f(t)\cos nt &= \int_0^{2\pi} \left[a_0\cos nt + (a_1\cos t\cos nt + b_1\sin t\cos nt) + \ldots + (a_n\cos nt\cos nt + b_n\sin nt\cos nt)\right]\\
+    &=\int_0^{2\pi} a_n\cos^2nt dt = \pi
+\end{align*}
+Thus,
+\begin{equation*}
+    a_n=\frac{1}{\pi} \int_0^{2\pi} f(t)\cos nt\;dt
+\end{equation*}
+
+A similar approach is taken for the sine term coefficients $b_n$.
+\begin{align*}
+    \int_0^{2\pi} f(t)\sin nt &= \int_0^{2\pi} \left[a_0\sin nt + (a_1\cos t\sin nt + b_1\sin t\sin nt) + \ldots + (a_n\cos nt\sin nt + b_n\sin nt\sin nt)\right]\\
+    &=\int_0^{2\pi} b_n\sin^2 nt
+\end{align*}
+Thus,
+\begin{equation*}
+    b_n=\frac{1}{\pi}\int_0^{2\pi} f(t)\sin nt\;dt
+\end{equation*}
+
+\section{Partial Differential Equations}
+
+Main concept is that we can take the Laplace transform wrt to $t$ in $u(x,t)$ to get some $U(x,s)$. So
+$$\mathcal{L}\left\{\frac{\partial^2u}{\partial x^2}\right\}=\frac{d^2}{dx^2}U(x,s).$$
+
+Similarly, initial conditions can be transformed. $u(x,c)$ (if a constant) where $t=c$
+is transformed to $U(x,c)=\frac{u(x,c)}{s}$. Same logic, if we have $u(c,t)=k\in \R$ for some $x=c$, $U(c,s)=\frac{k}{s}$.
+The steps to solve a PDE with Laplace are following:
+\begin{enumerate}
+    \item Apply Laplace transform and use initial conditions to get an equation of the form $f(s,y)=g(s,y)$.
+    \item Find the particular solution using undetermined coefficients with $g(s,y)$ and complementary solution using the characteristic polynomial.
+    \item Utilize initial conditions to find constant coefficients in $f(s,y)$.
+    \item Apply inverse Laplace transform to $U(x,s)$ to find $u(x,t)$ where $u$ is the function in question.
+\end{enumerate}
+
+\section{Solving inverse Laplace transforms}
+
+Given $\mathcal{L}^{-1}\{e^{-\sqrt{s}}\}$, we can find the result through
+re-expression of the given $y=e^{-\sqrt{s}}$.
+
+\begin{equation}
+    y=e^{-\sqrt{s}},\;y'=-\frac{e^{-\sqrt s}}{2\sqrt{s}},\;y''=\frac{e^{-\sqrt s}}{4s}+\frac{e^{-\sqrt{s}}}{4s^{3/2}}
+\end{equation}
+
+A useful Laplace transform is $\mathcal{L}\{t^nf(t)\}=(-1)^n\frac{d^n}{ds^n}\mathcal{L}\{f(t)\}$.
+Then,
+\begin{equation*}
+    4sy''+2y'-y=0
+\end{equation*}
+
+To find the transform of the above,
+\begin{gather}
+    y''=\mathcal{L}\{t^2y\}\\
+    sy''=\mathcal{L}\left\{\frac{d}{dt}[t^2y]\right\}\\
+    y'=\mathcal{L}\left\{-ty\right\}
+\end{gather}
+
+In combining, we get
+\begin{align*}
+    &4\mathcal{L}\left\lbrace t^2y'+2ty\right\rbrace+2\mathcal{L}\left\lbrace -ty\right\rbrace - \mathcal{L}\{y\}=0\\
+\implies & 4t^2y'+6ty-y=4t^2y'+y(6t-1)=0
+\end{align*}
+
+Seperating,
+\begin{align*}
+    \frac{dy}{dt}&=y\frac{(6t-1)}{4t^2}\\
+    \frac{dy}{y}&=\left(\frac{3}{2t}-\frac{1}{4t^2}\right)dt\\
+    \ln y&=\frac{3}{2}\ln t+\frac{1}{4t}+C\\
+    y&=Ct^{3/2}e^{\frac{1}{4t}}
+\end{align*}
